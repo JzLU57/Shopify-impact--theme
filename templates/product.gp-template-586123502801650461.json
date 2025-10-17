@@ -1,0 +1,171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_586123567947580107": {
+      "block_order": [
+        "gp_app_kaching-bundles_gbM4LgEV7a"
+      ],
+      "blocks": {
+        "gp_app_kaching-bundles_gbM4LgEV7a": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        }
+      },
+      "settings": {
+        "checksum": "1a955e2d744fc5fe6d9a594894b43a1e4b814c0de3cf7ec5fb446b634c8ac602_1_1_0_0__1",
+        "gg3epWjUTzq_text": "<p>OFFRE LIMITÉE</p>",
+        "gg5STilxkce_text": "<p>Support 24/7</p><p>Français</p>",
+        "gg6Y1P3nk_z_text": "<p>Jambes légères – Pas de marques</p>",
+        "gg77n2-bp9h_text": "<p>2,500+ Verified Reviews!</p>",
+        "gg8ja1pNpQ4_text": "<p><strong>Innovation Primée 2025 – Compression Graduée</strong></p>",
+        "gg9kiM3VvAO_displayContent": "{percent_discount} off",
+        "ggCw9epTlo6_text": "<p>Livraison</p><p>Offerte</p>",
+        "ggMjZ11rD-c_text": "<p>NOTRE BEST SELLER A -50%</p>",
+        "ggNaEz1sEeC_text": "<p><strong>← </strong>Guide des tailles</p>",
+        "ggOtiDbvq3m_text": "<p>Plus que 20 % du stock disponible !</p>",
+        "ggTtcdsyEnm_text": "<p>La compression sans l’inconfort</p>",
+        "ggZ3Eaamq7C_text": "<p><strong>Améliore la circulation sanguine</strong></p>",
+        "ggcxMadYAVk_text": "<p>Oui. C’est même <strong>la différence numéro 1</strong> avec les chaussettes de pharmacie.</p><p>&nbsp;</p><p><strong>Pas d’effet garrot</strong> : le bord-côte large maintient sans couper la circulation.</p><p>&nbsp;</p><p><strong>Pas de surchauffe</strong> : le bambou respirant garde vos pieds au sec, même l’été.</p><p>&nbsp;</p><p><strong>Pas de fatigue accumulée</strong> : la compression graduée soutient la jambe, du matin au soir.</p><p>&nbsp;</p><p>Résultat : en fin de journée, vos jambes sont <strong>légères, sans marques, sans douleur</strong>… comme si vous veniez juste de commencer la journée.</p>",
+        "ggfdFcfnvHp_text": "<p>Réduit la sensation de jambes lourdes</p>",
+        "ggglYMpZ1Kt_childItem_0": "<p>Est-ce qu’elles seront adaptées à ma morphologie ?</p>",
+        "ggglYMpZ1Kt_childItem_1": "<p>Vont-elles vraiment être confortables toute la journée ?</p>",
+        "ggglYMpZ1Kt_childItem_2": "<p><strong>Est-ce que les effets se ressentent rapidement ?</strong></p>",
+        "ggglYMpZ1Kt_childItem_3": "<p>Livraison et retours</p>",
+        "ggh7YvztYMj_label": "AJOUTER AU PANIER&nbsp;",
+        "ggh7YvztYMj_outOfStockLabel": "Out of stock",
+        "ggh7YvztYMj_unavailableLabel": "Unavailable",
+        "ggh7YvztYMj_variantSelectionRequiredMessage": "Please select a variant to add product to cart",
+        "gglV_7HJU52_text": "<p><strong>Satisfait ou remboursé</strong></p>",
+        "ggoGsZFgz4j_text": "<p>Oui, nos chaussettes sont conçues pour convenir à la <strong>grande majorité des morphologies</strong>.</p><p>Leur <strong>tricot extensible</strong> s’ajuste naturellement à la forme de la jambe.</p><p>&nbsp;</p><p>Elles offrent un <strong>maintien ferme mais confortable</strong>, sans couper la circulation.</p><p>Grâce à leur conception, elles restent <strong>bien en place</strong> toute la journée, sans glisser.</p><p>&nbsp;</p><p>Résultat : un ajustement <strong>parfait et confortable</strong>, quelle que soit votre morphologie.</p>",
+        "ggofA42NGOE_text": "<p><strong>Comment se passe la livraison ?</strong><br>Nous livrons partout en Europe dans un délai de 5 à 7 jours ouvrés. Une fois votre commande expédiée, vous recevrez un email de suivi pour savoir exactement où elle se trouve.</p><p>&nbsp;</p><p><strong>Et si je change d’avis ?</strong><br>Vous avez 30 jours pour exercer votre droit de rétractation, sans justification.</p>",
+        "ggpAJQBncuH_text": "<p>Oui, et <strong>dès la première utilisation</strong>.</p><p>La <strong>compression graduée</strong> soulage immédiatement la cheville et stimule la circulation.</p><p>&nbsp;</p><p>Vous ressentez rapidement <strong>moins de gonflement</strong> et une <strong>légèreté nouvelle</strong>.</p><p>En fin de journée, vos jambes ne sont plus lourdes ni douloureuses comme avant.</p><p>&nbsp;</p><p>Beaucoup de clientes disent avoir eu l’impression de retrouver des <strong>jambes neuves</strong> dès la première semaine.</p>",
+        "ggtyjMEPz8t_text": "<p>+2000 clients satisfaits</p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-586123567947580107"
+    },
+    "gp_section_586124125420913347": {
+      "settings": {
+        "checksum": "e7b7187d21b31b8ba9b5fcf714177bd84ef8bcfb0ecb5b280dbe2c1fee1f0065_1_1_0_0__1",
+        "ggLVTtGoavE_text": "<p>“Une solution élégante et efficace pour garder des jambes légères.”</p>",
+        "ggOf4-VC7PE_text": "<p>“Style et confort réunis dans une chaussette de compression.”</p>",
+        "ggfGxr02Zak_text": "<p>“Une alternative discrète aux modèles médicaux.”</p>",
+        "ggocJFN5PpC_text": "La presse en parle :"
+      },
+      "type": "gp-section-586124125420913347"
+    },
+    "gp_section_586124355168109251": {
+      "settings": {
+        "checksum": "53038b71450fc941983eeb294799d1fc6697cae78606d2bc55450208a1c8dfd8_1_1_0_0__1",
+        "gg20LQ7BG46_text": "Pourquoi c’est différent des paires de pharmacie ?",
+        "gg2ZqFMXbwI_text": "<p>26 % bambou doux &amp; respirant</p>",
+        "gg4C2bnVFuN_text": "<p>Une maille qui <strong>respire</strong> et reste <strong>douce</strong> longtemps : tu gardes la compression sans l’effet “étuve”.</p>",
+        "gg5Y-RuFEWS_text": "<p>LA VÉRITÉ QU'ON NE DIT PAS</p>",
+        "ggPiocQP63p_text": "<p>Soyons honnêtes : les paires de pharmacie font le job… mais au <strong>quotidien</strong> elles peuvent <strong>serrer</strong>, <strong>marquer</strong> et <strong>tenir chaud</strong>. Nous, on a conçu une chaussette que tu as <strong>envie de porter tous les jours !</strong></p>",
+        "ggR6qEUcskP_text": "<p>Le bambou est une fibre <strong>naturellement respirante</strong>, qui évacue l’humidité et limite la transpiration. Contrairement aux matières épaisses des modèles classiques, il reste <strong>léger et doux</strong>, même après plusieurs heures.</p>",
+        "ggYBr4Jdl4J_text": "<strong>Nos chaussettes aident à combattre &nbsp;:</strong>",
+        "ggZ8EyAK118_text": "<p><span style=\"color:#772647;\">✓ </span>Varices</p><p><span style=\"color:#772647;\">✓</span> Œdèmes</p><p><span style=\"color:#772647;\">✓</span> Lymphœdème</p><p><span style=\"color:#772647;\">✓</span> Gonflement pendant la grossesse</p><p><span style=\"color:#772647;\">✓</span> Fatigue liée aux voyages</p><p><span style=\"color:#772647;\">✓</span> Douleurs nerveuses</p><p><span style=\"color:#772647;\">✓</span> Épuisement</p>",
+        "ggbnhPkYU8I_text": "<p>Une compression qui se fait oublier : <strong>26 % bambou</strong> pour respirer, <strong>bord-côte large</strong> qui ne marque pas, <strong>pointe sans couture</strong>. Des jambes légères, toute la journée.</p>",
+        "ggdTwGweDkM_text": "<p>Bord-côte large maintien sans garrot</p>",
+        "ggjxaEaZASn_text": "<p>Compression graduée soutien là où il faut</p>",
+        "gglgyOZ2IkJ_text": "Douceur et fraicheur : Merci le bambou",
+        "ggtcjuzZFXm_text": "Notre promesse : confort et style, sans compromis",
+        "ggxluH0XSV7_text": "<p>Pointe sans couture zéro frottement</p>"
+      },
+      "type": "gp-section-586124355168109251"
+    },
+    "gp_section_586124483597697821": {
+      "settings": {
+        "checksum": "bb98d681183265779e1c81e59474233ab7063472bbd4991537017da4bc41ffa4_1_1_0_0__1",
+        "gg0obFahWM2_text": "Pourquoi nous choisir ?",
+        "ggCZZbLDd6X_text": "<p>Bord-côte large (pas de marques)</p>",
+        "ggDCbNdf4G4_text": "<p>26 % bambou (doux &amp; respirant)</p>",
+        "ggFv9rbR8h9_text": "<p>Compression graduée (soutien ciblé)</p>",
+        "ggLJr2HJuho_text": "<p>LA RÉVOLUTION DU CONFORT</p>",
+        "ggQm0g0k9fd_text": "<p>Pointe sans couture (zéro frottement)</p>",
+        "gglzFYkDpUJ_text": "<p>Autres</p>",
+        "gguSxO3hsk4_text": "<p>Garantie confort 30 jours</p>",
+        "ggwNEyzTJFj_label": "<p>Derniers jours de promo !&nbsp;</p>"
+      },
+      "type": "gp-section-586124483597697821"
+    },
+    "gp_section_586125415152616283": {
+      "settings": {
+        "checksum": "ed01848b886e9e999b1472ddc9dd8757799ada4624a4554546bd0ebd0d211271_1_1_0_0__1",
+        "gg2o5ljRkss_text": "<p>Oui ! Elles sont conçues pour un usage <strong>quotidien</strong> : bureau, trajets, voyages ou journées debout.&nbsp;</p><p>&nbsp;</p><p>Le <strong>26 % de bambou</strong> les rend respirantes et confortables en toutes circonstances.</p>",
+        "gg7ItdoK5Dd_text": "<p>Nos chaussettes sont conçues avec des <strong>fibres résistantes</strong> et gardent leur <strong>compression efficace</strong> même après de nombreux lavages.<br>&nbsp;</p><p>Avec un entretien simple (lavage à 30°C, séchage à l’air libre), elles vous accompagneront <strong>plusieurs mois sans perdre en confort</strong>.</p>",
+        "gg9VGNMP4B7_text": "<strong>Vos questions ? Nos réponses&nbsp;</strong>",
+        "ggMHGNNKcb__text": "<p><strong>BESOIN D'AIDE ?</strong></p>",
+        "ggV5RlDhBD2_text": "<p>Non. Grâce au <strong>bord-côte large</strong>, elles tiennent sans couper la circulation. Résultat : <strong>zéro marques rouges</strong>, même après une longue journée.</p>",
+        "ggVEhX8AmqM_text": "<p>Dès la première utilisation : <strong>moins de fatigue</strong>, <strong>moins de gonflement</strong> et une sensation de <strong>légèreté</strong> qui reste du matin au soir.</p>",
+        "ggVy78htrha_childItem_0": "<p>Est-ce que ça serre comme les chaussettes de pharmacie ?</p>",
+        "ggVy78htrha_childItem_1": "<p>Vont-elles vraiment s’adapter à ma morphologie ?</p>",
+        "ggVy78htrha_childItem_2": "<p>Sont-elles faciles à enfiler ?</p>",
+        "ggVy78htrha_childItem_3": "<p>Quand vais-je sentir une différence ?</p>",
+        "ggVy78htrha_childItem_4": "<p>Puis-je les porter tous les jours ?</p>",
+        "ggVy78htrha_childItem_5": "<p>Combien de temps durent-elles ?</p>",
+        "ggVy78htrha_childItem_6": "<p>Livraison et retours</p>",
+        "ggYQYMZzX-C_text": "<p>Oui. Notre <strong>tricot extensible</strong> épouse naturellement la forme de la jambe et assure un <strong>maintien confortable</strong>.</p><p><br>Elles restent bien en place, <strong>sans glisser ni comprimer</strong>, pour convenir à toutes les morphologies.</p>",
+        "ggluEmoLJ-k_text": "<p>Absolument. Le tricot technique permet un <strong>enfilage en moins d’1 minute</strong>, bien plus simple que les modèles classiques de pharmacie.</p>",
+        "ggzt_XMOG_F_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
+      },
+      "type": "gp-section-586125415152616283"
+    },
+    "gp_section_586149194759144139": {
+      "settings": {
+        "checksum": "43007c03a6394f91e1694e7dd39a9475d4f64dafdacddfd896a1aec92a51237c_1_1_0_0__1",
+        "gg5dwBNzyXf_text": "<p>— Sophie L.</p>",
+        "ggAKYH_8QR6_text": "<p>“Je travaille debout toute la journée, et avec les modèles de pharmacie j’avais vite mal aux jambes. Avec celles-ci, je sens mes jambes soutenues mais sans compression douloureuse. À la fin de la journée, je n’ai plus cette lourdeur insupportable.”</p>",
+        "ggG7HHIxan3_text": "<p><span style=\"color:#242424;\"><strong>— Claire D.</strong></span></p>",
+        "ggLp7S2E9qZ_text": "<p>“Je prends souvent l’avion et mes jambes gonflaient beaucoup. J’ai testé les EIRA sur un long vol, et franchement la différence est énorme. Jambes légères, pas de douleur, et faciles à enfiler en plus.”</p>",
+        "ggcFR7vBmhg_text": "<p>— <strong>Camille D.</strong></p>",
+        "gggNFzupGfH_text": "<p>— <strong>Hélène M.</strong></p>",
+        "gggPPAjAGSr_text": "Elles vous conviennent ou <i><u>on vous rembourse</u></i>",
+        "gghiOBDwNBY_text": "<p>CE QUE PENSENT NOS CLIENTS</p>",
+        "ggpAFrXEYdH_text": "<p>“En quelques jours seulement, j’ai remarqué moins de gonflement aux chevilles. J’avais l’habitude d’avoir la trace des chaussettes de pharmacie, mais là aucune marque, juste du confort. Je les recommande les yeux fermés.”</p>",
+        "ggw07S4mBE6_text": "<p>“Enfin des chaussettes de compression que je peux porter au bureau sans honte ! Elles ressemblent à des chaussettes normales, pas à du matériel médical. Discrètes sous un pantalon et super confortables.”</p>"
+      },
+      "type": "gp-section-586149194759144139"
+    },
+    "gp_section_586189427798180547": {
+      "settings": {
+        "checksum": "2dc6ab44f7833a606bafa3f7a58454fe97e23150bb127be3aacc48e921005e93_1_1_0_0__1",
+        "gg0BftUJRyk_text": "<p><strong>Une question ?</strong></p>",
+        "gg0owiGhsY7_text": "<p>Livraison Offerte</p>",
+        "gg72LVIKSCu_text": "<p><span style=\"background-color:rgb(119,38,71);color:rgb(255,255,255);font-size:13px;\">Visa, Mastercard, Paypal,</span><br><span style=\"background-color:rgb(119,38,71);color:rgb(255,255,255);font-size:13px;\">Apple Pay &amp; Amex</span></p>",
+        "gg9f4crIo_0_text": "<p>sous 30 jours</p>",
+        "ggHp699Gjbe_text": "<p>Retour et échanges Facile</p>",
+        "ggJ28oF-0Uc_text": "<p>Colissimo</p>",
+        "ggN0b7elGAc_text": "<p>Paiement sécurisé</p>",
+        "gg_aPOJKdUg_text": "<p>Réponse sous 24h par email</p>"
+      },
+      "type": "gp-section-586189427798180547"
+    },
+    "gp_section_586198027916542811": {
+      "settings": {
+        "checksum": "2b14c76c514213ef581ea8874f0ce378d120f5b29592449fa4655d2166fa7718_1_1_0_0__1"
+      },
+      "type": "gp-section-586198027916542811"
+    }
+  },
+  "order": [
+    "gp_section_586123567947580107",
+    "gp_section_586124125420913347",
+    "gp_section_586149194759144139",
+    "gp_section_586124355168109251",
+    "gp_section_586124483597697821",
+    "gp_section_586125415152616283",
+    "gp_section_586189427798180547",
+    "gp_section_586198027916542811"
+  ]
+}
