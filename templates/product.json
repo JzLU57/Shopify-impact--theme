@@ -75,14 +75,14 @@
           "type": "collapsible_text",
           "settings": {
             "title": "C'est difficile à construire ?",
-            "content": "<p>Non. Si tu sais faire un puzzle, tu sais faire ça. Les instructions sont ultra-claires avec des images à chaque étape. </p><p>La construction est satisfaisante, pas frustrante. Le plus dur ? Arrêter pour aller dormir.</p>"
+            "content": "<p>Non, c'est accessible à tous. Les instructions sont illustrées étape par étape, très claires. </p><p>Si vous savez faire un puzzle, vous savez faire cela. La construction est satisfaisante et progressive.</p>"
           }
         },
         "collapsible_text_zzhdcH": {
           "type": "collapsible_text",
           "settings": {
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>"
+            "title": "Quelle est la vraie taille ?",
+            "content": "<p>47cm de hauteur. C'est GROS. Pour te donner une idée : la taille d'un gros chat assis, ou 6 canettes empilées. Impossible à rater sur ton étagère. Ça impressionne vraiment.</p>"
           }
         },
         "collapsible_text_jr9Jxb": {
