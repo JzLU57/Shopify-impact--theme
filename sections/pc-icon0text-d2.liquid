@@ -1,0 +1,941 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% liquid
+    assign heading = section.settings.heading
+    assign heading_size = section.settings.heading_size
+    assign heading_weight = section.settings.heading_weight
+    assign heading_color = section.settings.heading_color
+    assign heading_size_mobile = section.settings.heading_size_mobile
+
+    assign text = section.settings.text
+    assign text_size = section.settings.text_size
+    assign text_color = section.settings.text_color
+    assign text_size_mobile = section.settings.text_size_mobile
+
+    assign highlight_color = section.settings.highlight_color
+
+
+    assign item_heading_size = section.settings.item_heading_size
+    assign item_heading_color = section.settings.item_heading_color
+    assign item_heading_weight = section.settings.item_heading_weight
+    assign item_heading_size_mobile = section.settings.item_heading_size_mobile
+
+    assign item_title_size = section.settings.item_title_size
+    assign item_title_color = section.settings.item_title_color
+    assign item_title_weight = section.settings.item_title_weight
+    assign item_title_size_mobile = section.settings.item_title_size_mobile
+
+
+    assign item_text_size = section.settings.item_text_size
+    assign item_text_weight = section.settings.item_text_weight
+    assign item_text_color = section.settings.item_text_color
+    assign item_text_size_mobile = section.settings.item_text_size_mobile
+
+    assign border_width = section.settings.border_width
+    assign border_style = section.settings.border_style
+    assign border_color = section.settings.border_color
+
+    assign button_label = section.settings.button_label
+    assign button_url = section.s3settings.button_size
+    assign button_size = section.settings.button_size
+    assign button_weight = section.settings.button_weight
+    assign button_color = section.settings.button_color 
+    assign button_size_mobile = section.settings.button_size_mobile
+    assign button_background = section.settings.button_background
+    assign button_boder_width = section.settings.button_border_width
+    assign button_border_style = section.settings.button_border_style
+    assign button_border_color = section.settings.button_border_color
+    assign button_border_radius = section.settings.button_border_radius
+
+    assign layout_background = section.settings.layout_background
+    assign layout_margin_top = section.settings.layout_margin_top
+    assign layout_margin_bottom = section.settings.layout_margin_bottom
+
+%}
+<style>
+    .text-and-cards--container_display-column {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .text-and-cards--container_display-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 0;   
+        {% comment %} border-top: {{ border_width }}px {{ border_style }} {{ border_color }};
+        border-bottom: {{ border_width }}px {{ border_style }} {{ border_color }}; {% endcomment %}
+        
+      }
+      
+      .text-and-cards-text--container {
+        flex: 1;
+        padding: 30px 0;
+      }
+      
+      .text-and-cards--card-main-title {
+        font-size: {{ item_heading_size_mobile }}px;
+        font-weight: {{ item_heading_weight }};
+        margin-top: 20px;
+        margin-bottom: 5px;
+        color: {{ item_heading_color }};
+      }
+      @media only screen and (min-width: 990px){
+        .text-and-cards--card-main-title {
+          font-size: {{ item_heading_size }}px;
+        }
+        }
+      .text-and-cards-title {
+        font-size: {{ heading_size_mobile }}px;
+        color: {{ heading_color }};
+        font-weight: {{ heading_weight }};
+        {% comment %} font-weight: 700; {% endcomment %}
+      }
+      @media screen and (min-width: 992px) {
+        .text-and-cards-title {
+          font-size: {{ heading_size }}px;
+        }
+      }
+      
+      .text-and-cards-title strong {
+        font-weight: 700;
+      }
+      
+      .text-and-cards-title strong,
+      .text-and-cards-text p strong {
+        color: {{ highlight_color }};
+      }
+      
+      .text-and-cards-text,
+      .text-and-cards-title,
+      .text-and-cards--card-title {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      
+      .text-and-cards-title {
+        margin-bottom: 20px;
+      }
+      
+      .text-and-cards-text,
+      .text-and-cards--card-title {
+        line-height: 1.3;
+      }
+      
+      .text-and-cards-text p {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: {{ text_size_mobile }}px;
+        color: {{ text_color }};
+
+      }
+      @media only screen and (min-width: 992px) {
+        .text-and-cards-text p {
+          font-size: {{ text_size }}px;
+        }
+      }
+      
+      .text-and-cards-text {
+        margin-bottom: 30px;
+      }
+      
+      .text-and-cards-cards--container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .text-and-cards--card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 150px;
+        flex: 1;
+      }
+      
+      .text-and-cards--card-image {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .text-and-cards--card-image img,
+      .text-and-cards--card-image svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .text-and-cards--card-title p {
+        text-align: center;
+        font-size: {{ item_title_size_mobile }}px;
+        margin: 10px 0 0 0;
+        line-height: 1.3;
+        font-weight: {{ item_title_weight }};
+        z-index: 1;
+        color: {{ item_title_color }};
+      }
+      @media only screen and (min-width: 992px){
+        .text-and-cards--card-title p {
+          font-size: {{ item_title_size }}px;
+        }
+      }
+      
+      .text-and-cards--card-title p strong {
+        background-color: {{ highlight_color }};
+        padding: 0 2px;
+        margin: 0 -2px;
+        z-index: 0;
+      }
+      
+      .text-and-cards--card-text p {
+        text-align: center;
+        font-size: {{ item_text_size_mobile }}px;
+        margin: 0;
+        line-height: 1.4;
+        color: {{ item_text_color }};
+        font-weight: {{ item_text_weight }};
+      }
+        @media only screen and (min-width: 992px){
+            .text-and-cards--card-text p {
+            font-size: {{ item_text_size }}px;
+            }
+        }
+      
+      .text-and-cards-button {
+        text-align: center;
+        background-color: {{ button_background }};
+        color: {{ button_color }};
+        border: {{ button_boder_width }}px {{ button_border_style }} {{ button_border_color }};
+        {% comment %} fill: #3931f8; {% endcomment %}
+        text-decoration: none;
+        -webkit-appearance: none;
+        display: inline-block;
+        height: auto;
+        width: auto;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: {{ button_border_radius }}px;
+        transition: opacity .3s;
+        font-size: {{ button_size_mobile }}px;
+        font-weight: {{ button_weight }};
+        white-space: nowrap;
+      }
+      @media only screen and (min-width: 992px){
+        .text-and-cards-button {
+          font-size: {{ button_size }}px;
+        }
+      }
+      
+      .text-alignement--left {
+        text-align: left !important;
+      }
+      
+      .text-alignement--center {
+        text-align: center !important;
+      }
+      
+      .text-alignement--right {
+        text-align: right !important;
+      }
+      
+      .text-and-cards--reassurances,
+      .text-and-cards--reassurance {
+        display: flex;
+        align-items: center;
+      }
+      
+      .text-and-cards--reassurances {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      
+      .text-and-cards--reassurance {
+        gap: 5px;
+      }
+      
+      .text-and-cards--reassurance img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .text-and-cards--reassurance--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .text-and-cards--order {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+      }
+      
+      
+      
+      .text-and-cards-button--mobile {
+        margin-top: 30px;
+      }
+      
+      .text-and-cards-button--mobile,
+      .text-and-cards-button--desktop {
+        text-align: center;
+      }
+      
+      @media screen and (max-width: 991px) {
+        .text-and-cards-button--desktop {
+          display: none;
+        }
+      
+        .text-and-cards--card {
+          width: calc(50% - 5px);
+          flex: 1 0 auto;
+        }
+      
+        .text-and-cards--card:nth-child(even) {
+          border-left: {{ border_width }}px {{ border_style }} {{ border_color }};
+          padding-left: 20px;
+        }
+      
+        .text-and-cards--card:nth-child(odd) {
+          padding-right: 20px;
+        }
+      
+        .text-and-cards--card {
+          margin: 20px 0;
+        }
+      }
+      
+      @media screen and (min-width: 992px) {
+        .text-and-cards-button--mobile {
+          display: none;
+        }
+      
+        .text-and-cards--card {
+          padding: 0 25px;
+        }
+      
+        .text-and-cards-text--container {
+          flex: 1;
+          padding: 30px 0;
+        }
+        .text-and-cards--card:not(:first-child) {
+          border-left: {{ border_width }}px {{ border_style }} {{ border_color }};
+        }
+      
+        .text-and-cards--card:first-child {
+          padding-left: 0;
+        }
+      
+        .text-and-cards--card:last-child {
+          padding-right: 0;
+        }
+      }
+      
+    </style>
+<div id="shopify-section-template--23908625350989__2387154c-a9a3-4ca4-bd20-a403c136ad17" class="shopify-section">
+  
+
+  <style data-shopify="">
+    .text-and-cards-section {
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+    @media screen and (max-width: 992px) {
+      .text-and-cards-section {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  <div class=" text-and-cards-section " data-cc-animate=""
+    style="
+    margin-top: {{  layout_margin_top }}px;
+        margin-bottom: {{  layout_margin_bottom }}px; 
+    "
+    >
+    <div class="text-and-cards--container text-and-cards--container_display-column" style="background-color: {{ layout_background }}; padding: 30px 0;">
+      <div class="text-and-cards-text--container">
+        {% if heading != blank %}
+        <h2 class="text-and-cards-title text-alignement--center text-alignement--mobile-center">
+          {{heading}}
+        </h2>
+    {% endif %}
+    {% if text != blank %}
+        <div class="text-and-cards-text text-alignement--center text-alignement--mobile-center">
+          {{ text }}
+        </div>
+    {% endif %}
+        {% if button_label != blank %}
+        <div class="text-and-cards-button--desktop">
+          <a href="{{ button_url }}" class="text-and-cards-button">{{ button_label }} </a>
+        </div>
+    {% endif %}
+      </div>
+      <div class="text-and-cards-cards--container">
+        {% for block in section.blocks %}
+        <div class="text-and-cards--card">
+          <div class="text-and-cards--card-image">
+            {% if block.settings.image != blank %}
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              width="50"
+              height="50"
+              loading="lazy"
+             >
+            {% else %}
+                {{ "product-1" | placeholder_svg_tag: 'placeholder_svg' }}
+            {% endif %}
+          </div>
+
+          <div class="text-and-cards--card-main-title">{{ block.settings.title }}</div>
+          <div class="text-and-cards--card-title">
+            <p>{{ block.settings.subtitle }}</p>
+          </div>
+          <div class="text-and-cards--card-text">
+            <p>{{block.settings.text}}</p>
+        </div>
+        </div>
+    {% endfor %}
+      </div>
+
+      <div class="text-and-cards-button--mobile">
+        {% if button_label != blank %}
+        <a href="{{ button_url }}" class="text-and-cards-button">{{ button_label }} </a>
+        {% endif %}
+        <div class="text-and-cards--reassurances">
+          <div class="text-and-cards--reassurance">
+            <div class="text-and-cards--reassurance--text"></div>
+          </div>
+
+          <div class="text-and-cards--reassurance">
+            <div class="text-and-cards--reassurance--text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+    "name": "PC - Icon Text #D2 ",
+    "settings": [
+
+      {
+        "type": "header",
+        "content": "This section is a property of PeakConversion",
+        "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+      },
+        {
+            "type": "header",
+            "content": "Heading Settings"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Default Heading"
+        },
+        {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Heading Size",
+            "default": 26,
+            "min": 10,
+            "max": 50
+        },
+        {
+            "type": "select",
+            "id": "heading_weight",
+            "label": "Heading Weight",
+            "default": "700",
+            "options": [
+                {
+                    "value": "400",
+                    "label": "Normal"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "range",
+            "id": "heading_size_mobile",
+            "label": "Heading Size Mobile",
+            "default": 20,
+            "min": 10,
+            "max": 50
+        },
+        {
+            "type": "header",
+            "content": "Text Settings"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Default text content.</p>"
+        },
+        {
+            "type": "range",
+            "id": "text_size",
+            "label": "Text Size",
+            "default": 14,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "range",
+            "id": "text_size_mobile",
+            "label": "Text Size Mobile",
+            "default": 12,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "color",
+            "id": "highlight_color",
+            "label": "Highlight Color",
+            "default": "#F0ff57"
+        },
+        {
+            "type": "header",
+            "content": "Icon Settings"
+        },
+        {
+            "type": "range",
+            "id": "icon_size",
+            "label": "Icon Size",
+            "default": 45,
+            "min": 20,
+            "max": 100
+        },
+        {
+            "type": "range",
+            "id": "icon_size_mobile",
+            "label": "Icon Size Mobile",
+            "default": 35,
+            "min": 20,
+            "max": 100
+        },
+        {
+            "type": "header",
+            "content": "Item Heading Settings"
+        },
+        {
+            "type": "range",
+            "id": "item_heading_size",
+            "label": "Item Heading Size",
+            "default": 14,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "color",
+            "id": "item_heading_color",
+            "label": "Item Heading Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "select",
+            "id": "item_heading_weight",
+            "label": "Item Heading Weight",
+            "default": "600",
+            "options": [
+                {
+                    "value": "400",
+                    "label": "Normal"
+                },
+                {
+                    "value": "600",
+                    "label": "Semi-Bold"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "item_heading_size_mobile",
+            "label": "Item Heading Size Mobile",
+            "default": 12,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "header",
+            "content": "Item Title Settings"
+        },
+        {
+            "type": "range",
+            "id": "item_title_size",
+            "label": "Item Title Size",
+            "default": 14,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "color",
+            "id": "item_title_color",
+            "label": "Item Title Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "select",
+            "id": "item_title_weight",
+            "label": "Item Title Weight",
+            "default": "600",
+            "options": [
+                {
+                    "value": "400",
+                    "label": "Normal"
+                },
+                {
+                    "value": "600",
+                    "label": "Semi-Bold"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "item_title_size_mobile",
+            "label": "Item Title Size Mobile",
+            "default": 12,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "header",
+            "content": "Item Text Settings"
+        },
+        {
+            "type": "range",
+            "id": "item_text_size",
+            "label": "Item Text Size",
+            "default": 12,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "select",
+            "id": "item_text_weight",
+            "label": "Item Text Weight",
+            "default": "400",
+            "options": [
+                {
+                    "value": "400",
+                    "label": "Normal"
+                },
+                {
+                    "value": "600",
+                    "label": "Semi-Bold"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "item_text_color",
+            "label": "Item Text Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "range",
+            "id": "item_text_size_mobile",
+            "label": "Item Text Size Mobile",
+            "default": 10,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "header",
+            "content": "Border Settings"
+        },
+        {
+            "type": "range",
+            "id": "border_width",
+            "label": "Border Width",
+            "default": 1,
+            "min": 0,
+            "max": 10
+        },
+        {
+            "type": "select",
+            "id": "border_style",
+            "label": "Border Style",
+            "default": "dashed",
+            "options": [
+                {
+                    "value": "solid",
+                    "label": "Solid"
+                },
+                {
+                    "value": "dashed",
+                    "label": "Dashed"
+                },
+                {
+                    "value": "dotted",
+                    "label": "Dotted"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "header",
+            "content": "Button Settings"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Voir le produit"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+        },
+
+        {
+            "type": "range",
+            "id": "button_size",
+            "label": "Button Size",
+            "default": 15,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "select",
+            "id": "button_weight",
+            "label": "Button Weight",
+            "default": "600",
+            "options": [
+                {
+                    "value": "400",
+                    "label": "Normal"
+                },
+                {
+                    "value": "600",
+                    "label": "Semi-Bold"
+                },
+                {
+                    "value": "700",
+                    "label": "Bold"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button Color",
+            "default": "#fff"
+        },
+        {
+            "type": "range",
+            "id": "button_size_mobile",
+            "label": "Button Size Mobile",
+            "default": 15,
+            "min": 10,
+            "max": 30
+        },
+        {
+            "type": "color",
+            "id": "button_background",
+            "label": "Button Background",
+            "default": "#3931f8"
+        },
+        {
+            "type": "range",
+            "id": "button_border_width",
+            "label": "Button Border Width",
+            "default": 1,
+            "min": 0,
+            "max": 10
+        },
+        {
+            "type": "select",
+            "id": "button_border_style",
+            "label": "Button Border Style",
+            "default": "solid",
+            "options": [
+                {
+                    "value": "solid",
+                    "label": "Solid"
+                },
+                {
+                    "value": "dashed",
+                    "label": "Dashed"
+                },
+                {
+                    "value": "dotted",
+                    "label": "Dotted"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Button Border Color",
+            "default": "#3931f8"
+        },
+        {
+            "type": "range",
+            "id": "button_border_radius",
+            "label": "Button Border Radius",
+            "default": 50,
+            "min": 0,
+            "max": 100
+        },
+        {
+            "type": "header",
+            "content": "Layout Settings"
+        },
+        {
+            "type": "color",
+            "id": "layout_background",
+            "label": "Layout Background",
+            "default": "#f3f4ff"
+        },
+        {
+            "type": "range",
+            "id": "layout_margin_top",
+            "label": "Layout Margin Top",
+            "default": 20,
+            "min": 0,
+            "max": 100
+        },
+        {
+            "type": "range",
+            "id": "layout_margin_bottom",
+            "label": "Layout Margin Bottom",
+            "default": 60,
+            "min": 0,
+            "max": 100
+        }
+    ],
+    "blocks":[
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "90%"
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "label": "Subtitle",
+                    "default": "product <strong>Benefit</strong>"
+                },
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "lorem ipsum dolor sit amet consectur"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "text",
+            "name": "PC - Icon Text #D2",
+            "blocks": [
+                {
+                    "type": "item",
+                    "settings": {
+                        "image": "",
+                        "title": "-80%",
+                        "subtitle": "de <strong>lorem utilisé</strong> par jour",
+                        "text": "Tellement plus propre et plus écologique"
+                    }
+                },
+                {
+                    "type": "item",
+                    "settings": {
+                        "image": "",
+                        "title": "+200%",
+                        "subtitle": "de <strong>bien-être</strong> au quotidien",
+                        "text": "Fraîcheur et propreté absolue tel un spa"
+                    }
+                },
+                {
+                    "type": "item",
+                    "settings": {
+                        "image": "",
+                        "title": "90€",
+                        "subtitle": "<strong>économisé</strong> par personne",
+                        "text": " plus d'économies"
+                    }
+                },
+                {
+                    "type": "item",
+                    "settings": {
+                        "image": "",
+                        "title": "10mins",
+                        "subtitle": "<strong>d'installation</strong> sans travaux",
+                        "text": "Pas besoin d'être plombier!"
+                    }
+                },
+                {
+                    "type": "item",
+                    "settings": {
+                        "image": "",
+                        "title": "0",
+                        "subtitle": "Sans <strong>électricité</strong> ni batteries",
+                        "text": "Fonctionne grâce à la pression de l'eau"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

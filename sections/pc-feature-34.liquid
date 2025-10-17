@@ -1,0 +1,1194 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign main_image = section.settings.main_image
+  assign main_image_border_radius = section.settings.main_image_border_radius
+  assign main_image_border_width = section.settings.main_image_border_width
+  assign main_image_border_color = section.settings.main_image_border_color
+  assign main_image_border_style = section.settings.main_image_border_style
+
+  assign heading = section.settings.heading
+  assign heading_size = section.settings.heading_size
+  assign heading_weight = section.settings.heading_weight
+  assign heading_color = section.settings.heading_color
+  assign heading_size_mobile = section.settings.heading_size_mobile
+
+  assign text = section.settings.text
+  assign text_size = section.settings.text_size
+  assign text_color = section.settings.text_color
+  assign text_size_mobile = section.settings.text_size_mobile
+
+  assign feature_item_border_width = section.settings.feature_item_border_width
+  assign feature_item_border_color = section.settings.feature_item_border_color
+  assign feature_item_border_style = section.settings.feature_item_border_style
+  assign feature_item_border_radius = section.settings.feature_item_border_radius
+  assign feature_item_background = section.settings.feature_item_background
+
+  assign feature_icon_border_width = section.settings.feature_icon_border_width
+  assign feature_icon_border_color = section.settings.feature_icon_border_color
+  assign feature_icon_border_style = section.settings.feature_icon_border_style
+  assign feature_icon_border_radius = section.settings.feature_icon_border_radius
+
+  assign feature_title_size = section.settings.feature_title_size
+  assign feature_title_weight = section.settings.feature_title_weight
+  assign feature_title_color = section.settings.feature_title_color
+  assign feature_title_size_mobile = section.settings.feature_title_size_mobile
+
+  assign feature_text_size = section.settings.feature_text_size
+  assign feature_text_color = section.settings.feature_text_color
+  assign feature_text_size_mobile = section.settings.feature_text_size_mobile
+
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+  assign button_text_size = section.settings.button_text_size
+  assign button_text_weight = section.settings.button_text_weight
+  assign button_text_color = section.settings.button_text_color
+  assign button_text_size_mobile = section.settings.button_text_size_mobile
+  assign button_background = section.settings.button_background
+  assign button_border_width = section.settings.button_border_width
+  assign button_border_color = section.settings.button_border_color
+  assign button_border_style = section.settings.button_border_style
+  assign button_border_radius = section.settings.button_border_radius
+  assign button_text_hover_color = section.settings.button_text_hover_color
+  assign button_background_hover = section.settings.button_background_hover
+
+  assign layout_background = section.settings.layout_background
+  assign layout_margin_top = section.settings.layout_margin_top
+  assign layout_margin_bottom = section.settings.layout_margin_bottom
+%}
+
+<style data-shopify="">
+  .section-pc-{{ section.id }} {
+    border-top: solid #121212 0px;
+    border-bottom: solid #121212 0px;
+    margin-top: {{ layout_margin_top }}px;
+    margin-bottom: {{ layout_margin_bottom }}px;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    border-radius: 0px;
+    overflow: hidden;
+  }
+
+  .section-pc-{{ section.id }}-settings {
+    margin: 0 auto;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .feature-body-pc-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-features-pc-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .feature-feature-pc-{{ section.id }} {
+    width: 100%;
+    position: relative;
+    padding: 20px 16px;
+    border: {{ feature_item_border_width }}px {{ feature_item_border_style }} {{ feature_item_border_color }} ;
+    border-radius: {{ feature_item_border_radius }}px;
+    background-color: {{ feature_item_background }};
+  }
+
+  .feature-toggle-pc-{{ section.id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .feature-feature-icon-pc-{{ section.id }} {
+    flex-shrink: 0;
+    border-width: {{ feature_icon_border_width }}px;
+    border-style: {{ feature_icon_border_style }};
+    border-color: {{ feature_icon_border_color }};
+    padding: 5px;
+    border-radius: {{ feature_icon_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .feature-feature-icon-pc-{{ section.id }} img,
+  .feature-feature-icon-pc-{{ section.id }} svg {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+  }
+
+  .feature-title-wrapper-pc-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feature-title-pc-{{ section.id }} {
+    margin: 0px;
+    font-size: {{ feature_title_size_mobile }}px;
+    color: {{ feature_title_color }};
+    line-height: 130%;
+    text-transform: unset;
+    font-weight: {{ feature_title_weight }};
+  }
+
+  .feature-open-icon-pc-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 26px;
+    height: 26px;
+    transition: all 0.25s ease 0s;
+  }
+
+  .feature-open-icon-pc-{{ section.id }}.active {
+    transform: rotate(45deg);
+  }
+
+  .feature-open-icon-pc-{{ section.id }} svg {
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease 0s;
+  }
+
+  .feature-open-icon-pc-{{ section.id }} svg path {
+    stroke: {{ feature_title_color }};
+  }
+
+  .feature-feature-text-pc-{{ section.id }} {
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  .feature-feature-text-pc-{{ section.id }} * {
+    margin: 0px;
+    font-size: {{ feature_text_size_mobile }}px;
+    color: {{ feature_text_color }};
+    line-height: 170%;
+    text-transform: unset;
+    text-wrap: wrap;
+    word-break: break-word;
+  }
+
+  .feature-height-cal-pc-{{ section.id }} {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 32px);
+    padding-top: 20px;
+  }
+
+  .feature-height-cal-pc-{{ section.id }} * {
+    margin: 0px;
+    font-size: {{ feature_text_size_mobile }}px;
+    color: {{ feature_text_color}};
+    line-height: 170%;
+    text-transform: unset;
+    text-wrap: wrap;
+    word-break: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .feature-features-pc-{{ section.id }} {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .feature-feature-pc-{{ section.id }} {
+      width: calc(50% - 24px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-pc-{{ section.id }} {
+      margin-top: {{ layout_margin_top }}px;
+      margin-bottom: {{ layout_margin_bottom }}px;
+      margin-left: 0rem;
+      margin-right: 0rem;
+      border-radius: 0px;
+    }
+
+    .section-pc-{{ section.id }}-settings {
+      padding: 0 5rem;
+      padding-top: 36px;
+      padding-bottom: 36px;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    .feature-body-pc-{{ section.id }} {
+      align-items: center;
+    }
+
+    .feature-features-pc-{{ section.id }} {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 56px;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .feature-feature-pc-{{ section.id }} {
+      width: calc(25% - 24px);
+      padding: 20px 16px;
+    }
+
+    .feature-feature-icon-pc-{{ section.id }} img,
+    .feature-feature-icon-pc-{{ section.id }} svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .feature-title-pc-{{ section.id }} {
+      font-size: {{ feature_title_size }}px;
+    }
+
+    .feature-open-icon-pc-{{ section.id }} {
+      flex: 0 0 26px;
+      height: 26px;
+    }
+
+    .feature-feature-text-pc-{{ section.id }} * {
+      font-size: {{ feature_text_size }}px;
+    }
+
+    .feature-height-cal-pc-{{ section.id }} {
+      width: calc(100% - 32px);
+    }
+
+    .feature-height-cal-pc-{{ section.id }} * {
+      font-size: {{ feature_text_size }}px;
+    }
+  }
+</style>
+
+<style>
+  .feature-logo-logo_k9CdPD {
+    margin-top: 0px;
+    border-radius: {{ main_image_border_radius }}px;
+    max-width: 90px;
+    width: 100%;
+    overflow: hidden;
+    border: {{ main_image_border_width }}px {{ main_image_border_style }} {{ main_image_border_color }};
+  }
+
+  .feature-logo-logo_k9CdPD img,
+  .feature-logo-logo_k9CdPD svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 1024px) {
+    .feature-logo-logo_k9CdPD {
+      margin-top: 0px;
+      max-width: 90px;
+    }
+  }
+</style>
+
+<style>
+  .feature-heading-heading_EYh7mj {
+    width: 100%;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .feature-heading-heading_EYh7mj * {
+    margin: 0;
+    font-size: {{ heading_size_mobile }}px;
+    color: {{ heading_color }};
+    line-height: 130%;
+    text-transform: unset;
+    word-break: break-word;
+    font-weight: {{ heading_weight }};
+  }
+
+  .feature-heading-heading_EYh7mj * strong {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 1024px) {
+    .feature-heading-heading_EYh7mj {
+      width: 70%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .feature-heading-heading_EYh7mj * {
+      font-size: {{ heading_size }}px;
+    }
+  }
+</style>
+
+<style>
+  .feature-heading-heading_EYh7mj {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<style>
+  @media (min-width: 1024px) {
+    .feature-heading-heading_EYh7mj {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+<style>
+  .feature_text-text_XhMdna {
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .feature_text-text_XhMdna * {
+    margin: 0;
+    font-size: {{ text_size_mobile }}px;
+    color: {{ text_color }};
+    line-height: 150%;
+    text-transform: unset;
+    word-break: break-word;
+    text-wrap: wrap;
+  }
+
+  @media (min-width: 1024px) {
+    .feature_text-text_XhMdna {
+      width: 70%;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .feature_text-text_XhMdna * {
+      font-size: {{ text_size }}px;
+    }
+  }
+</style>
+
+<style>
+  .feature_text-text_XhMdna {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<style>
+  @media (min-width: 1024px) {
+    .feature_text-text_XhMdna {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+<style>
+  .feature-feature-icon {
+
+    transition: all 0.25s ease 0s;
+  }
+
+  .feature-feature-icon svg path {
+    fill: #000000;
+  }
+
+  @media (min-width: 1024px) {
+    .feature-toggle-pc-{{ section.id }}:hover .feature-feature-icon {
+
+      transition: all 0.25s ease 0s;
+    }
+
+    .feature-toggle-pc-{{ section.id }}:hover
+      .feature-feature-icon
+      svg
+      path {
+      fill: #000000;
+    }
+  }
+</style>
+
+<style>
+  .feature-button-button_96NBi9 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    margin-top: 32px;
+    font-size: {{ button_text_size_mobile }}px;
+    color: {{ button_text_color }};
+    line-height: 100%;
+    text-align: center;
+    text-transform: unset;
+    text-decoration: none;
+    padding: 12px 36px;
+    border-radius: {{ button_border_radius }}px;
+    transition: all 0.3s ease 0s;
+    background-color: transparent;
+    border: {{ button_border_width }}px {{ button_border_style }} {{ button_border_color }};
+    cursor: pointer;
+    font-weight: {{ button_text_weight }};
+  }
+
+  .feature-button-inner-button_96NBi9 {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .feature-button-button_96NBi9:hover {
+    color: {{ button_text_hover_color }};
+    transition: all 0.25s ease 0s;
+  }
+
+  .feature-button-button_96NBi9 svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .feature-button-button_96NBi9 svg path {
+    fill: #000000;
+    transition: all 0.25s ease 0s;
+  }
+
+  .feature-button-button_96NBi9:hover svg path {
+    fill: #ffffff;
+    transition: all 0.25s ease 0s;
+  }
+
+  @media (min-width: 1024px) {
+    .feature-button-button_96NBi9 {
+      margin-top: 56px;
+      padding: 12px 36px;
+      font-size: {{ button_text_size }}px;
+    }
+  }
+</style>
+
+<style>
+  .feature-button-button_96NBi9 {
+    transition: all 0.3s ease 0s;
+    background-color: {{ button_background }};
+    border: {{ button_border_width }}px {{ button_border_style }} {{ button_border_color }} ;
+  }
+
+  .feature-button-button_96NBi9:hover {
+    transition: all 0.3s ease 0s;
+    background-color: {{ button_background_hover }};
+    border: {{ button_border_width }}px {{ button_border_style }} transparent;
+  }
+</style>
+
+<div
+  class="section-pc-{{ section.id }} feature-pc-{{ section.id }}"
+  style="background-color: {{ layout_background }}; background-image: ;"
+>
+  <div class="section-pc-{{ section.id }}-settings">
+    <div class="feature-body-pc-{{ section.id }}">
+      {% if main_image != blank %}
+        <div class="feature-logo-logo_k9CdPD">
+          <img src="{{ main_image | img_url: 'master' }}" alt="">
+        </div>
+      {% else %}
+        <div class="feature-logo-logo_k9CdPD">
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+        </div>
+      {% endif %}
+
+      {% if heading != blank %}
+        <div class="feature-heading-heading_EYh7mj">
+          <h2>{{ heading }}</h2>
+        </div>
+      {% endif %}
+      {% if text != blank %}
+        <div class="feature_text-text_XhMdna">
+          <p>{{ text }}</p>
+        </div>
+      {% endif %}
+
+      <div class="feature-features-pc-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="feature-feature-pc-{{ section.id }}" id="feature_AYrVhM">
+            <div class="feature-toggle-pc-{{ section.id }}">
+              <div class="feature-title-wrapper-pc-{{ section.id }}">
+                <div class="feature-feature-icon-pc-{{ section.id }} feature-feature-icon">
+                  {% if block.settings.icon != blank %}
+                    <img
+                      src="{{ block.settings.icon | img_url: 'master' }}"
+                      alt=""
+                    >
+                  {% else %}
+                    {{ 'product-2' | placeholder_svg_tag: 'placeholder_svg' }}
+                  {% endif %}
+                </div>
+
+                <p class="feature-title-pc-{{ section.id }}">{{ block.settings.title }}</p>
+              </div>
+              <div class="feature-open-icon-pc-{{ section.id }}">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  role="presentation"
+                  class="icon icon-plus"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 12h6m6 0h-6m0 0V6m0 6v6" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="feature-feature-text-pc-{{ section.id }}"
+              style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
+            >
+              <p>
+                {{ block.settings.text }}
+              </p>
+            </div>
+            <div class="feature-height-cal-pc-{{ section.id }}">
+              <p>
+                {{ block.settings.text }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if button_text != blank %}
+        <a href="{{ button_link }}" class="feature-button-button_96NBi9">
+          <p class="feature-button-inner-button_96NBi9">{{ button_text }}</p>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  function initFeature34() {
+    const textPaddingTop = 20;
+    const textPaddingBottom = 0;
+
+    const buttons = document.querySelectorAll('.feature-toggle-pc-{{ section.id }}');
+    const texts = document.querySelectorAll('.feature-feature-text-pc-{{ section.id }}');
+    const textsHeightCalElements = document.querySelectorAll('.feature-height-cal-pc-{{ section.id }}');
+    const featureIcons = document.querySelectorAll('.feature-open-icon-pc-{{ section.id }}');
+    const featureItems = document.querySelectorAll('.feature-feature-pc-{{ section.id }}');
+
+    let activeIndex = -1;
+
+    function openText(index) {
+      const height = textsHeightCalElements[index].offsetHeight;
+
+      texts[index].style.display = 'block';
+      setTimeout(() => {
+        texts[index].style.paddingTop = `${textPaddingTop}px`;
+        texts[index].style.paddingBottom = `${textPaddingBottom}px`;
+        texts[index].style.height = `${height}px`;
+      });
+
+      featureIcons[index].classList.add('active');
+      featureItems[index].classList.add('active');
+    }
+
+    function closeText(index) {
+      texts[index].style.paddingTop = 0;
+      texts[index].style.paddingBottom = 0;
+      texts[index].style.height = 0;
+
+      setTimeout(() => {
+        texts[index].style.display = 'none';
+      }, 300);
+
+      featureIcons[index].classList.remove('active');
+      featureItems[index].classList.remove('active');
+    }
+
+    function toggleText(index) {
+      if (texts[index].style.display === 'none') {
+        openText(index);
+        activeIndex = index;
+      } else {
+        closeText(index);
+        activeIndex = -1;
+      }
+    }
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        toggleText(index);
+      });
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (activeIndex !== -1) {
+          const height = textsHeightCalElements[activeIndex].offsetHeight;
+          texts[activeIndex].style.height = `${height}px`;
+        }
+      }, 250);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initFeature34);
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:unload', initFeature34);
+    document.addEventListener('shopify:section:load', initFeature34);
+  }
+</script>
+{% schema %}
+{
+  "name": "PC - Feature #34",
+  "settings": [
+    {
+        "type": "header",
+        "content": "This section is a property of PeakConversion",
+        "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+      },
+    {
+      "type": "header",
+      "content": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "range",
+      "id": "main_image_border_radius",
+      "label": "Main Image Border Radius",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "main_image_border_width",
+      "label": "Main Image Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 10,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "main_image_border_color",
+      "label": "Main Image Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "main_image_border_style",
+      "label": "Main Image Border Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Features"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "default": 32,
+      "min": 16,
+      "max": 64,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading Size (Mobile)",
+      "default": 28,
+      "min": 16,
+      "max": 64,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Our products are made with high-quality ingredients and are free from common allergens. We've carefully crafted our recipes to ensure that everyone can enjoy a tasty treat."
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text Size",
+      "default": 16,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Text Size (Mobile)",
+      "default": 14,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Feature Item"
+    },
+    {
+      "type": "range",
+      "id": "feature_item_border_width",
+      "label": "Feature Item Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 10,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "feature_item_border_color",
+      "label": "Feature Item Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "feature_item_border_style",
+      "label": "Feature Item Border Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "feature_item_border_radius",
+      "label": "Feature Item Border Radius",
+      "default": 4,
+      "min": 0,
+      "max": 50,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "feature_item_background",
+      "label": "Feature Item Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Feature Icon"
+    },
+    {
+      "type": "range",
+      "id": "feature_icon_border_width",
+      "label": "Feature Icon Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 10,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_border_color",
+      "label": "Feature Icon Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "feature_icon_border_style",
+      "label": "Feature Icon Border Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "feature_icon_border_radius",
+      "label": "Feature Icon Border Radius",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Feature Title"
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size",
+      "label": "Feature Title Size",
+      "default": 16,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "feature_title_weight",
+      "label": "Feature Title Weight",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "feature_title_color",
+      "label": "Feature Title Color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size_mobile",
+      "label": "Feature Title Size (Mobile)",
+      "default": 14,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Feature Text"
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size",
+      "label": "Feature Text Size",
+      "default": 14,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Feature Text Color",
+      "default": "#707070"
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size_mobile",
+      "label": "Feature Text Size (Mobile)",
+      "default": 14,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button Text Size",
+      "default": 13,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "button_text_weight",
+      "label": "Button Text Weight",
+      "default": "700",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size_mobile",
+      "label": "Button Text Size (Mobile)",
+      "default": 13,
+      "min": 12,
+      "max": 24,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background",
+      "default": "#ffec66"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Button Border Width",
+      "default": 1,
+      "min": 0,
+      "max": 10,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "button_border_style",
+      "label": "Button Border Style",
+      "default": "solid",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button Border Radius",
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "button_text_hover_color",
+      "label": "Button Text Hover Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background_hover",
+      "label": "Button Background Hover",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "layout_background",
+      "label": "Layout Background",
+      "default": "#efece6"
+    },
+    {
+      "type": "range",
+      "id": "layout_margin_top",
+      "label": "Layout Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "layout_margin_bottom",
+      "label": "Layout Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Feature #34",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/sample-icon.svg",
+            "title": "Sample Feature",
+            "text": "This is a sample feature text to showcase the feature block."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/sample-icon.svg",
+            "title": "Sample Feature",
+            "text": "This is a sample feature text to showcase the feature block."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/sample-icon.svg",
+            "title": "Sample Feature",
+            "text": "This is a sample feature text to showcase the feature block."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/sample-icon.svg",
+            "title": "Sample Feature",
+            "text": "This is a sample feature text to showcase the feature block."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

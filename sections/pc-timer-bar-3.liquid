@@ -1,0 +1,619 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign timer_num_size = section.settings.timer_num_size
+  assign timer_num_size_mobile = section.settings.timer_num_size_mobile
+  assign timer_num_weight = section.settings.timer_num_weight
+  assign timer_num_color = section.settings.timer_num_color
+  assign timer_num_radius = section.settings.timer_num_radius
+  assign timer_num_border_w = section.settings.timer_num_border_w
+  assign timer_num_border_color = section.settings.timer_num_border_color
+  assign timer_num_bg = section.settings.timer_num_bg
+
+  assign timer_unit_size = section.settings.timer_unit_size
+  assign timer_unit_size_mobile = section.settings.timer_unit_size_mobile
+  assign timer_unit_weight = section.settings.timer_unit_weight
+  assign timer_unit_color = section.settings.timer_unit_color
+
+  assign text = section.settings.text
+  assign text_size = section.settings.text_size
+  assign text_size_mobile = section.settings.text_size_mobile
+  assign text_weight = section.settings.text_weight
+  assign text_color = section.settings.text_color
+
+  assign expiration_date = section.settings.expiration_date
+  assign expiration_time = section.settings.expiration_time
+
+  assign full_width = section.settings.full_width
+  assign section_mt = section.settings.section_mt
+  assign section_mb = section.settings.section_mb
+  assign full_border = section.settings.full_border
+  assign section_radius = section.settings.section_radius
+  assign section_border_w = section.settings.section_border_w
+  assign section_border_color = section.settings.section_border_color
+  assign section_bg_first = section.settings.section_bg_first
+  assign section_bg_second = section.settings.section_bg_second
+%}
+
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      border-radius: {{section_radius}}px;
+      background: linear-gradient(180deg, {{section_bg_first}}f2 0%, {{section_bg_second}}f2 100%);
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      position: relative;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+  }
+
+  .timer-close-pc-{{section.id}} {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+  }
+
+  .timer-close-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .timer-close-pc-{{section.id}} svg rect {
+      fill: #ffffff;
+  }
+
+  .countdown-timer-content-pc-{{section.id}} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .countdown-timer-text-pc-{{section.id}} {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .countdown-timer-text-pc-{{section.id}} * {
+      margin: 0;
+      font-size: {{ text_size_mobile }}px;
+      color: {{ text_color }};
+      line-height: 130%;
+      text-transform: unset;
+      text-decoration: none;
+      font-weight: {{ text_weight }};
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} {
+      display: flex;
+      position: relative;
+      align-items: center;
+      background-color: ;
+      gap: 15px;
+      padding: 0px 0px;
+      border: 0px solid #ffffff;
+      border-radius: 0px;
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} .time-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      gap: 6px;
+      text-wrap: nowrap
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} .time-block__num {
+      display: flex;
+      gap: 4px;
+      margin: 0;
+      font-size: {{ timer_num_size_mobile }}px;
+      color: {{ timer_num_color }};
+      line-height: 100%;
+      text-transform: unset;
+      font-weight: {{ timer_num_weight }};
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} .time-block__num .digit {
+      padding: 6px;
+      border-radius: {{ timer_num_radius }}px;
+      border:{{ timer_num_border_w }}px solid {{ timer_num_border_color }};
+      background-color: {{ timer_num_bg }};
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} .time-block__unit {
+      margin: 0;
+      font-size: {{ timer_unit_size_mobile }}px;
+      color: {{ timer_unit_color }};
+      line-height: 100%;
+      text-transform: unset;
+      font-weight: {{ timer_unit_weight }};
+      text-align: center;
+  }
+
+  .countdown-timer-timer-pc-{{section.id}} .time-block__text {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          padding-left: 2rem;
+          padding-right: 2rem;
+      }
+
+      .countdown-timer-content-pc-{{section.id}} {
+          flex-direction: row;
+      }
+
+      .countdown-timer-text-pc-{{section.id}} {
+          max-width: 40%;
+          text-align: left;
+      }
+
+      .countdown-timer-text-pc-{{section.id}} * {
+          font-size: {{ text_size }}px;
+      }
+
+      .countdown-timer-timer-pc-{{section.id}} {
+          padding: 0px 0px;
+          gap: 10px;
+      }
+
+      .countdown-timer-timer-pc-{{section.id}} .time-block {
+          flex-direction: row;
+      }
+
+      .countdown-timer-timer-pc-{{section.id}} .time-block__num {
+          font-size: {{ timer_num_size }}px;
+      }
+
+      .countdown-timer-timer-pc-{{section.id}} .time-block__unit {
+          font-size: {{ timer_unit_size }}px;
+          text-align: left;
+      }
+
+  }
+</style>
+
+<div class="section-pc-{{section.id}} countdown-timer-pc-{{section.id}}">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="countdown-timer-content-pc-{{section.id}}">
+      <div class="countdown-timer-timer-pc-{{section.id}}">
+        <div class="time-block">
+          <span class="time-block__num js-timer-days"
+            ><span class="digit">3</span
+            ><span
+              class="digit"
+              >5</span
+            ><span class="digit">4</span></span
+          >
+          <div class="time-block__text">
+            <span class="time-block__unit">DAYS</span>
+          </div>
+        </div>
+        <div class="time-block">
+          <span class="time-block__num js-timer-hours"
+            ><span class="digit">1</span
+            ><span
+              class="digit"
+              >3</span
+            ></span
+          >
+          <div class="time-block__text">
+            <span class="time-block__unit">HOURS</span>
+          </div>
+        </div>
+        <div class="time-block">
+          <span class="time-block__num js-timer-minutes"
+            ><span class="digit">3</span
+            ><span
+              class="digit"
+              >1</span
+            ></span
+          >
+          <div class="time-block__text">
+            <span class="time-block__unit">MINUTES</span>
+          </div>
+        </div>
+        <div class="time-block">
+          <span class="time-block__num js-timer-seconds"
+            ><span class="digit">3</span
+            ><span
+              class="digit"
+              >8</span
+            ></span
+          >
+          <div class="time-block__text">
+            <span class="time-block__unit">SECONDS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown-timer-text-pc-{{section.id}}">
+        <p>{{ text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="countdown-timer-template-pc-{{section.id}}"> </template>
+
+<div id="countdown-timer-local-target-pc-{{section.id}}"></div>
+
+<script>
+        function initCountdownTimerBar3() {
+            setTimeout(() => {
+                // Removing the complex target selection since we already have the timer in the HTML
+                // The timer is already present in the page, no need to clone from template
+
+
+                let section = document.querySelector('.countdown-timer-pc-{{section.id}}');
+
+                let close = document.querySelector('.timer-close-pc-{{section.id}}');
+
+                if (close) {
+                    close.addEventListener('click', () => {
+                        section.style.display = "none";
+                    })
+                }
+
+                function startTimer() {
+                    const second = 1000,
+                        minute = second * 60,
+                        hour = minute * 60,
+                        day = hour * 24,
+                        wrapper = document.querySelector(
+                            '.countdown-timer-timer-pc-{{section.id}}'
+                        ),
+                        countDown = new Date('{{expiration_date}}T{{expiration_time}}Z').getTime();
+
+                    console.log('start timer, end date:' + countDown);
+
+                    function formatNumberToDigits(number) {
+                        // Pad the number with leading zeros to ensure at least 2 digits
+                        const paddedNumber = number.toString().padStart(2, '0');
+                        let digits = '';
+
+                        // Convert each digit to the span format
+                        for (let i = 0; i < paddedNumber.length; i++) {
+                            digits += `<span class="digit">${paddedNumber[i]}</span>`;
+                        }
+
+                        return digits;
+                    }
+
+                    const interval = setInterval(function () {
+                        let now = new Date().getTime(),
+                            distance = countDown - now,
+                            days = Math.floor(distance / day),
+                            hours = Math.floor((distance % day) / hour),
+                            minutes = Math.floor((distance % hour) / minute),
+                            seconds = Math.floor((distance % minute) / second);
+
+                        wrapper.querySelector('.js-timer-days').innerHTML = formatNumberToDigits(days);
+                        wrapper.querySelector('.js-timer-hours').innerHTML = formatNumberToDigits(hours);
+                        wrapper.querySelector('.js-timer-minutes').innerHTML = formatNumberToDigits(minutes);
+                        wrapper.querySelector('.js-timer-seconds').innerHTML = formatNumberToDigits(seconds);
+
+                        if (distance < 0) {
+                            const zeroDigits = '<span class="digit">0</span><span class="digit">0</span>';
+                            wrapper.querySelector('.js-timer-days').innerHTML = zeroDigits;
+                            wrapper.querySelector('.js-timer-hours').innerHTML = zeroDigits;
+                            wrapper.querySelector('.js-timer-minutes').innerHTML = zeroDigits;
+                            wrapper.querySelector('.js-timer-seconds').innerHTML = zeroDigits;
+
+
+
+
+                            section.style.display = 'none';
+
+
+                            clearInterval(interval);
+                        }
+                    }, second);
+                }
+
+                startTimer();
+            }, 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', initCountdownTimerBar3);
+</script>
+
+{% schema %}
+{
+  "name": "PC-Countdown Timer Bar #3",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Timer Number"
+    },
+    {
+      "type": "range",
+      "id": "timer_num_size",
+      "label": "Size",
+      "default":24,
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "timer_num_size_mobile",
+      "label": "Mobile Size",
+      "default":20,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "timer_num_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "timer_num_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "timer_num_radius",
+      "label": "Border Radius",
+      "default":4,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "timer_num_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "timer_num_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "timer_num_bg",
+      "default":"#4c5874"
+    },
+    {
+      "type": "header",
+      "content": "Timer Unit"
+    },
+    {
+      "type": "range",
+      "id": "timer_unit_size",
+      "label": "Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "timer_unit_size_mobile",
+      "label": "Mobile Size",
+      "default":10,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "timer_unit_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "timer_unit_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Timer Text"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label":"Text",
+      "default":"SALE NOW"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Size",
+      "default":18,
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Mobile Size",
+      "default":10,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Time Block"
+    },
+     {
+      "type": "text",
+      "id":"expiration_date",
+      "label": "Expiration Date",
+      "default":"2026-01-01"
+    },
+    {
+      "type": "text",
+      "id":"expiration_time",
+      "label": "Expiration Time",
+      "default":"00:00:00"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Gradient First Color",
+      "id": "section_bg_first",
+      "default":"#1d2944"
+    },
+    {
+      "type": "color",
+      "label": "Background Gradient Second Color",
+      "id": "section_bg_second",
+      "default":"#33466f"
+    },
+  ],
+  "presets": [
+    {
+      "name": "PC-Countdown Timer Bar #3"
+    }
+  ]
+}
+{% endschema %}

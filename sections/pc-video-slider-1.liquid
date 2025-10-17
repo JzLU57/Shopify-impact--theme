@@ -1,0 +1,1299 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign title_size = section.settings.title_size
+  assign title_size_mobile = section.settings.title_size_mobile
+  assign title_weight = section.settings.title_weight
+  assign title_color = section.settings.title_color
+
+  assign slider_icon_w = section.settings.slider_icon_w
+  assign slider_icon_w_mobile = section.settings.slider_icon_w_mobile
+  assign slider_icon_color = section.settings.slider_icon_color
+  assign slider_icon_color_hover = section.settings.slider_icon_color_hover
+  assign slider_icon_radius = section.settings.slider_icon_radius
+  assign slider_icon_border_w = section.settings.slider_icon_border_w
+  assign slider_icon_border_color = section.settings.slider_icon_border_color
+  assign slider_icon_border_color_hover = section.settings.slider_icon_border_color_hover
+  assign slider_icon_bg = section.settings.slider_icon_bg
+  assign slider_icon_bg_hover = section.settings.slider_icon_bg_hover
+  assign slider_icon_shadow = section.settings.slider_icon_shadow
+
+  assign slider_star_w = section.settings.slider_star_w
+  assign slider_star_w_mobile = section.settings.slider_star_w_mobile
+  assign slider_star_color = section.settings.slider_star_color
+
+  assign slider_video_radius = section.settings.slider_video_radius
+  assign slider_video_border_w = section.settings.slider_video_border_w
+  assign slider_video_border_color = section.settings.slider_video_border_color
+
+  assign nav_btn_w = section.settings.nav_btn_w
+  assign nav_btn_radius = section.settings.nav_btn_radius
+  assign nav_btn_border_w = section.settings.nav_btn_border_w
+  assign nav_btn_color = section.settings.nav_btn_color
+  assign nav_btn_border_color = section.settings.nav_btn_border_color
+  assign nav_btn_bg = section.settings.nav_btn_bg
+  assign nav_btn_shadow = section.settings.nav_btn_shadow
+
+  assign full_width = section.settings.full_width
+  assign section_mt = section.settings.section_mt
+  assign section_mb = section.settings.section_mb
+  assign full_border = section.settings.full_border
+  assign section_radius = section.settings.section_radius
+  assign section_border_w = section.settings.section_border_w
+  assign section_border_color = section.settings.section_border_color
+  assign section_bg = section.settings.section_bg
+%}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+     {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      background-color: {{section_bg}};
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 0rem;
+      padding-right: 0rem;
+      position: relative;
+  }
+
+  .slider-slider-pc-{{section.id}} {
+      overflow: hidden !important;
+      padding: 2px;
+  }
+
+  .slider-slide-pc-{{section.id}} {
+      position: relative;
+      box-sizing: border-box !important;
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+      overflow: hidden;
+  }
+
+  .slider-video-pc-{{section.id}} {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+  }
+
+  .slider-video-pc-{{section.id}}:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 0;
+      /* display: none; */
+  }
+
+  .slider-video-pc-{{section.id}} video,
+  .slider-video-pc-{{section.id}} iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border: 0px;
+  }
+
+  .slider-video-pc-{{section.id}} .video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border: 0px;
+  }
+
+  .slider-content-pc-{{section.id}} {
+      display: flex !important;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      padding: 24px 30px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* display: none !important; */
+  }
+
+  .slider-title-pc-{{section.id}} {
+      margin: 0;
+      font-size: {{title_size_mobile}}px;
+      color: {{title_color}};
+      font-weight:{{title_weight}};
+      line-height: 100%;
+      text-transform: unset;
+      text-align: center;
+  }
+
+  .slider-stars-pc-{{section.id}} {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+  }
+
+  .slider-stars-pc-{{section.id}} svg,
+  .slider-stars-pc-{{section.id}} img {
+      display: block;
+      width: {{slider_star_w_mobile}}px;
+      height: {{slider_star_w_mobile}}px;
+      object-fit: cover;
+  }
+
+  .slider-btn-prev-pc-{{section.id}},
+  .slider-btn-next-pc-{{section.id}} {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      width: {{nav_btn_w}}px;
+      height: {{nav_btn_w}}px;
+      border: 0px;
+      border: {{nav_btn_border_w}}px solid {{nav_btn_border_color}};
+      border-radius: {{nav_btn_radius}}px;
+      background: transparent;
+      background: {{nav_btn_bg}};
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      box-shadow: 0px 0px 10px 0px {{nav_btn_shadow}}26;
+  }
+
+  .slider-btn-prev-pc-{{section.id}} {
+      left: 16px;
+  }
+
+  .slider-btn-next-pc-{{section.id}} {
+      right: 16px;
+  }
+
+  .slider-btn-prev-pc-{{section.id}} .animate-icon,
+  .slider-btn-next-pc-{{section.id}} .animate-icon {
+      pointer-events: none;
+      place-items: center;
+      display: grid;
+  }
+
+  .slider-btn-prev-pc-{{section.id}} .animate-icon:before,
+  .slider-btn-next-pc-{{section.id}} .animate-icon:before {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease;
+      width: 8px;
+      height: 8px;
+      transform: rotate(calc(1 * 45deg));
+      box-sizing: border-box;
+      border-style: solid;
+      border: 0px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      position: relative;
+      left: -1px;
+  }
+
+  .slider-btn-prev-pc-{{section.id}} .animate-icon:before {
+      left: unset;
+      right: -1px;
+      border-right: 0px;
+      border-top: 0px;
+      border-bottom: 2px solid currentColor;
+      border-left: 2px solid currentColor;
+  }
+
+  .slider-btn-prev-pc-{{section.id}} .animate-icon:after,
+  .slider-btn-next-pc-{{section.id}} .animate-icon:after {
+      content: "";
+      grid-area: 1 / -1;
+      transition: all .2s ease;
+      width: 7.7px;
+      height: 1.6px;
+      transform-origin: center;
+      opacity: 0;
+      background: currentColor;
+      transform: scaleX(.5);
+  }
+
+  .slider-btn-prev-pc-{{section.id}} span,
+  .slider-btn-next-pc-{{section.id}} span {
+      color: {{nav_btn_color}};
+  }
+
+  .slider-btn-prev-pc-{{section.id}}.swiper-button-disabled,
+  .slider-btn-next-pc-{{section.id}}.swiper-button-disabled {
+      opacity: 0.5;
+  }
+
+  .slider-controls-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      justify-content: end;
+      z-index: 2;
+      padding: 10px;
+  }
+
+  .slider-action-pc-{{section.id}} {
+      width: 40px;
+      height: 40px;
+      border: {{slider_icon_border_w}}px solid {{slider_icon_border_color}};
+      border-radius: {{slider_icon_radius}}%;
+      background: {{slider_icon_bg}}4d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      z-index: 2;
+      box-shadow: 0px 0px 10px 0px {{slider_icon_shadow}}26;
+  }
+
+  .slider-action-pc-{{section.id}} svg {
+      height: {{slider_icon_w_mobile}}px;
+      width: {{slider_icon_w_mobile}}px;
+  }
+
+  .slider-action-pc-{{section.id}} svg path {
+      fill: {{slider_icon_color}};
+      transition: all 0.3s ease 0s;
+  }
+
+  .slider-action-pc-{{section.id}}:hover {
+      transition: all 0.3s ease 0s;
+      border: {{slider_icon_border_w}}px solid {{slider_icon_border_color_hover}};
+      background: {{slider_icon_bg_hover}}4d;
+  }
+
+  .slider-action-pc-{{section.id}}:hover svg path {
+      fill: {{slider_icon_color_hover}};
+      transition: all 0.3s ease 0s;
+  }
+
+  .slider-action-pc-{{section.id}} .slider-unmute-pc-{{section.id}} {
+      display: none !important;
+  }
+
+  .slider-action-pc-{{section.id}}.active .slider-unmute-pc-{{section.id}} {
+      display: block !important;
+  }
+
+  .slider-action-pc-{{section.id}}.active .slider-mute-pc-{{section.id}} {
+      display: none !important;
+  }
+
+  .slider-sound-pc-{{section.id}} {
+      width: 40px;
+      height: 40px;
+      border: {{slider_icon_border_w}}px solid {{slider_icon_border_color}};
+      border-radius: {{slider_icon_radius}}%;
+      background: {{slider_icon_bg}}4d;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transition: all 0.25s ease 0s;
+      z-index: 2;
+      box-shadow: 0px 0px 10px 0px {{slider_icon_shadow}}26;
+  }
+
+  .slider-sound-pc-{{section.id}}:hover {
+      transition: all 0.25s ease 0s;
+      border: {{slider_icon_border_w}}px solid {{slider_icon_border_color_hover}};
+      background: {{slider_icon_bg_hover}}4d;
+  }
+
+  .slider-sound-pc-{{section.id}} svg {
+      height: {{slider_icon_w_mobile}}px;
+      width: {{slider_icon_w_mobile}}px;
+  }
+
+  .slider-sound-pc-{{section.id}} svg {
+      fill: {{slider_icon_color}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .slider-sound-pc-{{section.id}}:hover svg {
+      fill: {{slider_icon_color_hover}};
+      transition: all 0.25s ease 0s;
+  }
+
+  .slider-sound-pc-{{section.id}} .slider-unmute-pc-{{section.id}} {
+      display: none;
+  }
+
+  .slider-sound-pc-{{section.id}}.active .slider-unmute-pc-{{section.id}} {
+      display: block;
+  }
+
+  .slider-sound-pc-{{section.id}}.active .slider-mute-pc-{{section.id}} {
+      display: none;
+  }
+
+  .slider-wrapper-pc-{{section.id}} {
+      position: relative;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 0rem;
+          padding-right: 0rem;
+      }
+
+      .slider-content-pc-{{section.id}} {
+          align-items: center;
+          justify-content: end;
+          padding: 24px 40px;
+      }
+
+      .slider-title-pc-{{section.id}} {
+          font-size: {{title_size}}px;
+          text-align: center;
+      }
+
+      .slider-stars-pc-{{section.id}} {
+          margin-top: 16px;
+          justify-content: center;
+      }
+
+      .slider-btn-prev-pc-{{section.id}},
+      .slider-btn-next-pc-{{section.id}} {
+          width: {{nav_btn_w}}px;
+          height: {{nav_btn_w}}px;
+          transition: all 0.25s ease 0s;
+      }
+
+      .slider-btn-prev-pc-{{section.id}} .animate-icon:before,
+      .slider-btn-next-pc-{{section.id}} .animate-icon:before {
+          width: 8px;
+          height: 8px;
+      }
+
+      .slider-btn-prev-pc-{{section.id}} .animate-icon:after,
+      .slider-btn-next-pc-{{section.id}} .animate-icon:after {
+          width: 7.7px;
+      }
+
+      .slider-btn-prev-pc-{{section.id}} {
+          left: 40px !important;
+      }
+
+      .slider-btn-next-pc-{{section.id}} {
+          right: 40px !important;
+      }
+
+      .slider-stars-pc-{{section.id}} svg,
+      .slider-stars-pc-{{section.id}} img {
+          width: {{slider_star_w}}px;
+          height: {{slider_star_w}}px;
+      }
+
+      .slider-action-pc-{{section.id}} {
+          width: 40px;
+          height: 40px;
+      }
+
+      .slider-action-pc-{{section.id}} svg {
+          height: {{slider_icon_w}}px;
+          width: {{slider_icon_w}}px;
+      }
+
+      .slider-sound-pc-{{section.id}} {
+          width: 40px;
+          height: 40px;
+      }
+
+      .slider-sound-pc-{{section.id}} svg {
+          width: {{slider_icon_w}}px;
+          height: {{slider_icon_w}}px;
+      }
+  }
+
+
+  .slider-slide-pc-{{section.id}} {
+      aspect-ratio: 9.6/14;
+  }
+
+
+  @media(min-width: 1024px) {
+      .slider-slide-pc-{{section.id}} {
+          aspect-ratio: 9.6/14;
+      }
+  }
+
+
+  .slider-btn-prev-pc-{{section.id}}:hover,
+  .slider-btn-next-pc-{{section.id}}:hover {
+      transform: scale(0.9) translateY(-50%);
+  }
+
+  @media(min-width: 1024px) {
+
+      .slider-btn-prev-pc-{{section.id}}:hover,
+      .slider-btn-next-pc-{{section.id}}:hover {
+          transform: scale(0.9) translateY(-50%);
+      }
+  }
+
+
+  .slider-btn-prev-pc-{{section.id}},
+  .slider-btn-next-pc-{{section.id}} {
+      display: none;
+  }
+
+
+  @media(min-width: 1024px) {
+
+      .slider-btn-prev-pc-{{section.id}},
+      .slider-btn-next-pc-{{section.id}} {
+          display: flex;
+      }
+  }
+
+
+  .slider-controls-pc-{{section.id}} {
+      top: 0px;
+  }
+
+
+  @media(min-width: 1024px) {
+      .slider-controls-pc-{{section.id}} {
+          top: 0px;
+          bottom: unset;
+      }
+  }
+
+
+  .slider-slider-pc-{{section.id}}.preview .swiper-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      gap: 4px;
+      padding: 10px;
+  }
+
+  .slider-slider-pc-{{section.id}}.preview .slider-slide-pc-{{section.id}} {
+      width: calc((100% - (4px * (5 - 1))) / 5);
+  }
+
+  .slider-slider-pc-{{section.id}}.preview .slider-slide-pc-{{section.id}}:not(:first-child) {
+      margin-left: 0;
+      /* Remove the existing margin */
+  }
+
+  @media(min-width: 1024px) {
+      .slider-slider-pc-{{section.id}}.preview .slider-slide-pc-{{section.id}} {
+          width: 33%;
+      }
+
+      .slider-slider-pc-{{section.id}}.preview .slider-slide-pc-{{section.id}} {
+          transform: scale(0.9) !important;
+      }
+
+      .slider-slider-pc-{{section.id}}.preview .slider-slide-pc-{{section.id}}:nth-child(2) {
+          transform: scale(1) !important;
+      }
+  }
+</style>
+
+<div class="section-pc-{{section.id}} slider-pc-{{section.id}}">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="slider-wrapper-pc-{{section.id}}">
+      <div
+        class="slider-slider-pc-{{section.id}} swiper-coverflow swiper-3d "
+        data-slider-view="5"
+        data-slider-view-mobile="1.5"
+        data-slider-view-tablet="3"
+        data-slider-gap="4"
+        data-slider-gap-mobile="4"
+        data-slider-rotate="0"
+      >
+        <div class="swiper-wrapper" id="swiper-wrapper-pc-{{section.id}}">
+          {% for i in (1..2) %}
+            {% for block in section.blocks %}
+              <div class="swiper-slide slider-slide-pc-{{section.id}}">
+                <div class="slider-controls-pc-{{section.id}}">
+                  <div class="slider-sound-pc-{{section.id}}">
+                    <svg
+                      class="slider-mute-pc-{{section.id}}"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                          d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+                      </path>
+                    </svg>
+                    <svg
+                      class="slider-unmute-pc-{{section.id}}"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                          d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+                      </path>
+                    </svg>
+                  </div>
+
+                  <div class="slider-action-pc-{{section.id}}">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      height="1em"
+                      role="presentation"
+                      class="slider-mute-pc-{{section.id}}"
+                    >
+                      <path
+                          d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z">
+                      </path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      role="presentation"
+                      class="slider-unmute-pc-{{section.id}}"
+                    >
+                      <path
+                          d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="slider-video-pc-{{section.id}}">
+                  {% if block.settings.video != blank %}
+                    {{ block.settings.video | video_tag: loop: true, muted: true, controls: false, autoplay: false }}
+                  {% else %}
+                    <div class="video">
+                      {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="slider-content-pc-{{section.id}}">
+                  <p class="slider-title-pc-{{section.id}}">{{ block.settings.title }}</p>
+
+                  <div class="slider-stars-pc-{{section.id}}">
+                    {% assign full_stars = block.settings.star | floor %}
+                    {% assign partial_star = block.settings.star | minus: full_stars | ceil %}
+                    {% assign empty_stars = 5 | minus: full_stars | minus: partial_star %}
+
+                    {% for i in (1..full_stars) %}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                        <path d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z" fill="{{slider_star_color}}"></path>
+                      </svg>
+                    {% endfor %}
+                    {% if partial_star > 0 %}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="19"
+                        viewBox="0 0 20 19"
+                        fill="none"
+                      >
+                        <defs>
+                            <linearGradient id="grad{{section.id}}">
+                                <stop offset="0%" stop-color="{{slider_star_color}}"></stop>
+                                <stop offset="50%" stop-color="{{slider_star_color}}"></stop>
+                                <stop offset="50%" stop-color="transparent"></stop>
+                                <stop offset="100%" stop-color="transparent"></stop>
+                            </linearGradient>
+                        </defs>
+
+                        <path stroke="{{slider_star_color}}"
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="url(#grad{{section.id}})">
+                        </path>
+                      </svg>
+                    {% endif %}
+
+                    {% if empty_stars > 0 %}
+                      {% for i in (1..empty_stars) %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="19"
+                          viewBox="0 0 20 19"
+                          fill="none"
+                        >
+                          <path d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z" fill="transparent" stroke="{{slider_star_color}}"></path>
+                        </svg>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      <button class="slider-btn-prev-pc-{{section.id}}">
+        <span class="animate-icon"></span>
+      </button>
+      <button class="slider-btn-next-pc-{{section.id}}">
+        <span class="animate-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+
+<script>
+            function loadSwiper(callback) {
+                if (window.Swiper) {
+                    callback();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+                    script.onload = callback;
+                    document.head.appendChild(script);
+                }
+            }
+
+            function initSlider2() {
+                
+
+                const settings = {
+                    sliderView: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderView,
+                    sliderViewMobile: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderViewMobile,
+                    sliderViewTablet: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderViewTablet,
+                    sliderGap: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderGap,
+                    sliderGapMobile: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderGapMobile,
+                    sliderRotate: document.querySelector('.slider-slider-pc-{{section.id}}').dataset.sliderRotate
+                };
+
+                document.querySelector(`.slider-slider-pc-{{section.id}}`).classList.remove('preview');
+
+                var lazyLoadInstance = new LazyLoad();
+
+                window.addEventListener(
+                    "LazyLoad::Initialized",
+                    function (event) {
+                        window.lazyLoadInstance = event.detail.instance;
+                    },
+                    false
+                );
+
+                const slider = new Swiper(`.slider-slider-pc-{{section.id}}`, {
+                    effect: "coverflow",
+                    navigation: {
+                        nextEl: `.slider-btn-next-pc-{{section.id}}`,
+                        prevEl: `.slider-btn-prev-pc-{{section.id}}`
+                    },
+                    loopAdditionalSlides: 2,
+                    loopedSlides: 4,
+                    loop: true,
+                    initialSlide: 0,
+                    breakpoints: {
+                        320: {
+                            slidesPerView: parseFloat(settings.sliderViewMobile),
+                            centeredSlides: true,
+                            spaceBetween: parseInt(settings.sliderGapMobile),
+                            coverflowEffect: {
+                                rotate: parseInt(settings.sliderRotate),
+                                stretch: 0,
+                                depth: parseInt(settings.sliderGapMobile) === 0 ? 200 : 0,
+                                scale: parseInt(settings.sliderGapMobile) === 0 ? 1 : 0.9,
+                                modifier: 1,
+                                slideShadows: false
+                            },
+                        },
+                        768: {
+                            slidesPerView: parseFloat(settings.sliderViewTablet),
+                            centeredSlides: [3, 5].includes(parseInt(settings.sliderViewTablet)),
+                            spaceBetween: parseInt(settings.sliderGapMobile),
+                            coverflowEffect: {
+                                rotate: parseInt(settings.sliderRotate),
+                                stretch: 0,
+                                depth: parseInt(settings.sliderGapMobile) === 0 ? 200 : 0,
+                                scale: parseInt(settings.sliderGapMobile) === 0 ? 1 : 0.9,
+                                modifier: 1,
+                                slideShadows: false
+                            },
+                        },
+                        1024: {
+                            slidesPerView: parseFloat(settings.sliderView),
+                            centeredSlides: [3, 5].includes(parseInt(settings.sliderView)),
+                            spaceBetween: parseInt(settings.sliderGap),
+                            coverflowEffect: {
+                                rotate: parseInt(settings.sliderRotate),
+                                stretch: 0,
+                                depth: parseInt(settings.sliderGap) === 0 ? 200 : 0,
+                                scale: parseInt(settings.sliderGap) === 0 ? 1 : 0.9,
+                                modifier: 1,
+                                slideShadows: false
+                            },
+                        }
+                    },
+                    on: {
+                        slideChange: function () {
+                            const slides = this.slides;
+                            let activeSlide = slides[this.activeIndex];
+
+                            slides.forEach(slide => {
+                                let video = slide.querySelector('video');
+                                let frame = slide.querySelector('iframe');
+                                let btn = slide.querySelector(`.slider-action-pc-{{section.id}}`);
+
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (frame) {
+                                    let src2 = frame.getAttribute('data-src2');
+                                    frame.src = src2;
+                                }
+
+                                if (btn) {
+                                    btn.classList.remove('active');
+                                }
+                            });
+
+                            if (activeSlide) {
+                                let video = activeSlide.querySelector('video');
+                                let frame = activeSlide.querySelector('iframe');
+                                let btn = activeSlide.querySelector(`.slider-action-pc-{{section.id}}`);
+
+                                if (video) {
+                                    video.play();
+                                }
+
+                                if (frame) {
+                                    let src1 = frame.getAttribute('data-src1');
+                                    frame.src = src1;
+                                }
+
+                                if (btn) {
+                                    btn.classList.add('active');
+                                }
+                            }
+                        }
+                    }
+                });
+
+                initializeControls();
+            }
+
+            function initializeControls() {
+                document.querySelectorAll(`.slider-slide-pc-{{section.id}}`).forEach(el => {
+                    let btn = el.querySelector(`.slider-action-pc-{{section.id}}`);
+                    let soundBtn = el.querySelector(`.slider-sound-pc-{{section.id}}`);
+                    let frame = el.querySelector('iframe');
+                    let video = el.querySelector('video');
+
+                    if (btn) {
+                        btn.addEventListener('click', () => {
+                            btn.classList.toggle('active');
+                            if (btn.classList.contains('active')) {
+                                document.querySelectorAll(`.slider-slide-pc-{{section.id}}`).forEach(element => {
+                                    if (el != element) {
+                                        let btn = element.querySelector(`.slider-action-pc-{{section.id}}`);
+                                        let frame = element.querySelector('iframe');
+                                        let video = element.querySelector('video');
+                                        if (btn) {
+                                            btn.classList.remove('active');
+                                        }
+
+                                        if (frame) {
+                                            let src2 = frame.getAttribute('data-src2');
+                                            frame.src = src2;
+                                        }
+                                        if (video) {
+                                            video.pause();
+                                        }
+                                    }
+                                });
+
+                                if (frame) {
+                                    let src1 = frame.getAttribute('data-src1');
+                                    frame.src = src1;
+                                }
+                                if (video) {
+                                    video.play();
+                                }
+                            } else {
+                                if (frame) {
+                                    let src2 = frame.getAttribute('data-src2');
+                                    frame.src = src2;
+                                }
+                                if (video) {
+                                    video.pause();
+                                }
+                            }
+                        });
+                    }
+
+                    if (soundBtn) {
+                        soundBtn.addEventListener('click', () => {
+                            soundBtn.classList.toggle('active');
+                            if (soundBtn.classList.contains('active')) {
+                                if (frame) {
+                                    let src = frame.getAttribute("src");
+                                    var muteIndex = src.indexOf("mute=");
+                                    var muteValue = src.charAt(muteIndex + 5);
+                                    if (muteValue === "1") {
+                                        frame.src = src.slice(0, muteIndex + 5) + "0" + src.slice(muteIndex + 6);
+                                    }
+                                }
+                                if (video) {
+                                    video.muted = false;
+                                }
+                            } else {
+                                if (frame) {
+                                    let src = frame.getAttribute("src");
+                                    var muteIndex = src.indexOf("mute=");
+                                    var muteValue = src.charAt(muteIndex + 5);
+                                    if (muteValue === "0") {
+                                        frame.src = src.slice(0, muteIndex + 5) + "1" + src.slice(muteIndex + 6);
+                                    }
+                                }
+                                if (video) {
+                                    video.muted = true;
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+            
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSwiper(() => initSlider2()));
+            } else {
+                loadSwiper(() => initSlider2());
+            }
+</script>
+
+{% schema %}
+{
+  "name": "PC - Video Slider #1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Slider Title"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Mobile Size",
+      "default":16,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_weight",
+      "label": "Font Weight",
+      "default":500,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Slider Icon"
+    },
+    {
+      "type": "range",
+      "id": "slider_icon_w",
+      "label": "Width",
+      "default":24,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slider_icon_w_mobile",
+      "label": "Mobile Width",
+      "default":24,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slider_icon_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "slider_icon_color_hover",
+      "label": "Color Hover",
+      "default":"#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "slider_icon_radius",
+      "label": "Border Radius",
+      "default":50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "slider_icon_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "slider_icon_border_color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "label": "Border Color Hover",
+      "id": "slider_icon_border_color_hover",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "slider_icon_bg",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "label": "Background Color Hover",
+      "id": "slider_icon_bg_hover",
+      "default":"#ffffff"
+    },
+    {
+      "type": "color",
+      "label": "Shadow Color",
+      "id": "slider_icon_shadow",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Slider Stars"
+    },
+    {
+      "type": "range",
+      "id": "slider_star_w",
+      "label": "Width",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slider_star_w_mobile",
+      "label": "Width",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slider_star_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Slider Video"
+    },
+    {
+      "type": "range",
+      "id": "slider_video_radius",
+      "label": "Border Radius",
+      "default":12,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slider_video_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slider_video_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+        "type": "header",
+        "content": "Navigation Button"
+    },
+    {
+      "type": "range",
+      "id": "nav_btn_w",
+      "label": "Width",
+      "default":48,
+      "min": 10,
+      "max":80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "nav_btn_radius",
+        "label": "Border Radius",
+        "default":100,
+        "min": 0,
+        "max":100,
+        "step": 1,
+        "unit": "%"
+    },
+    {
+        "type": "range",
+        "id": "nav_btn_border_w",
+        "label": "Border Width",
+        "default":0,
+        "min": 0,
+         "max":20,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "color",
+        "id": "nav_btn_color",
+        "label": "Content Color",
+        "default":"#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "nav_btn_border_color",
+        "label": "Border Color",
+        "default":"#000000"
+    },
+    {
+        "type": "color",
+        "id": "nav_btn_bg",
+        "label": "Background Color",
+        "default":"#434343"
+    },
+    {
+        "type": "color",
+        "id": "nav_btn_shadow",
+        "label": "Shadow Color",
+        "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#ffffff"
+    },
+  ],
+  "blocks":[
+    {
+      "type":"video_slider",
+      "name":"Video Slider Item",
+      "settings":[
+        {
+          "type":"video",
+          "id":"video",
+          "label":"Video"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"range",
+          "id":"star",
+          "label":"Star",
+          "default":3.5,
+          "min":0,
+          "max":5,
+          "step":0.1
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Video Slider #1",
+      "blocks":[
+        {
+          "type":"video_slider",
+          "settings":{
+            "video":"",
+            "title":"John Doe",
+            "star":1.5
+          }
+        },
+        {
+          "type":"video_slider",
+          "settings":{
+            "video":"",
+            "title":"John Doe",
+            "star":3
+          }
+        },
+        {
+          "type":"video_slider",
+          "settings":{
+            "video":"",
+            "title":"John Doe",
+          }
+        },
+        {
+          "type":"video_slider",
+          "settings":{
+            "video":"",
+            "title":"John Doe",
+            "star":5
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

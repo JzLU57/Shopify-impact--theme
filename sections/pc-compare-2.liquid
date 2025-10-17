@@ -1,0 +1,832 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign heading = section.settings.heading
+  assign heading_size = section.settings.heading_size
+  assign heading_weight = section.settings.heading_weight
+  assign heading_color = section.settings.heading_color
+  assign heading_font = section.settings.heading_font
+
+  assign heading_size_mobile = section.settings.heading_size_mobile
+  assign heading_weight_mobile = section.settings.heading_weight_mobile
+
+  assign compare_size = section.settings.compare_size
+  assign compare_weight = section.settings.compare_weight
+  assign compare_color = section.settings.compare_color
+  assign compare_font = section.settings.compare_font
+
+  assign compare_size_mobile = section.settings.compare_size_mobile
+  assign compare_weight_mobile = section.settings.compare_weight_mobile
+
+  assign compare_active_size = section.settings.compare_active_size
+  assign compare_active_weight = section.settings.compare_active_weight
+  assign compare_active_color = section.settings.compare_active_color
+  assign compare_active_font = section.settings.compare_active_font
+  assign compare_active_background = section.settings.compare_active_background
+
+  assign compare_active_size_mobile = section.settings.compare_active_size_mobile
+  assign compare_active_weight_mobile = section.settings.compare_active_weight_mobile
+
+  assign feature_size = section.settings.feature_size
+  assign feature_weight = section.settings.feature_weight
+  assign feature_color = section.settings.feature_color
+  assign feature_font = section.settings.feature_font
+
+  assign feature_size_mobile = section.settings.feature_size_mobile
+  assign feature_weight_mobile = section.settings.feature_weight_mobile
+
+  assign layout_background = section.settings.layout_background
+  assign layout_margin_top = section.settings.layout_margin_top
+  assign layout_margin_bottom = section.settings.layout_margin_bottom
+  assign layout_max_width = section.settings.layout_max_width
+  assign layout_line_color = section.settings.layout_line_color
+  assign layout_border_radius = section.settings.layout_border_radius
+%}
+<style>
+  .section-pc-{{section.id}} {
+    border-top: solid #000000 0px;
+    border-bottom: solid #000000 0px;
+    margin-top: {{ layout_margin_top }}px;
+    margin-bottom: {{ layout_margin_bottom }}px;
+    background: {{ layout_background }};
+  }
+
+  .section-pc-{{section.id}}-settings {
+    margin: 0 auto;
+    padding-top: 27px;
+    padding-bottom: 54px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    {% if layout_max_width == true %}
+        max-width: 100%;
+    {% else %}
+        max-width: 130rem;
+    {% endif %}
+  }
+
+  .product-other-heading-pc-{{section.id}} {
+    margin: 0;
+    font-size: {{ heading_size_mobile }}px;
+    font-weight: {{ heading_weight_mobile }};
+    /* font-style: italic; */
+    color: {{ heading_color }};
+    line-height: 100%;
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    text-transform: unset;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .product-other-body-pc-{{section.id}} {
+    margin-top: 38px;
+  }
+
+  .product-other-grid-pc-{{section.id}} {
+    display: grid;
+
+      grid-template-columns: 29% 24% 23.5% 23.5%;
+
+  }
+
+  .product-other-item-pc-{{section.id}} {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-other-item-pc-{{section.id}}.active {
+    background-color: {{ compare_active_background }};
+  }
+
+  .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}} {
+    padding: 10px 4px;
+  }
+
+  .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active {
+    border-top-left-radius: {{ layout_border_radius }}px;
+    border-top-right-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}} h3 {
+    margin: 0;
+    font-size: {{ compare_size_mobile }}px;
+    color: {{ compare_color }};
+    line-height: 100%;
+    text-transform: unset;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-weight: {{ compare_weight_mobile }};
+    font-family: {{ compare_font.family }}, {{ compare_font.fallback_families }};
+  }
+
+  .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active h3 {
+    color: {{ compare_active_color }};
+  }
+
+  .product-other-grid-header-pc-{{section.id}} + .product-other-grid-pc-{{section.id}} .product-other-item-pc-{{section.id}}:first-child {
+    border-top-left-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-header-pc-{{section.id}} + .product-other-grid-pc-{{section.id}} .product-other-item-pc-{{section.id}}:last-child {
+    border-top-right-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-header-pc-{{section.id}} + .product-other-grid-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active:last-child {
+    border-top-right-radius: 0px;
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}} {
+    padding: 10px 10px;
+    border-top: 3px solid {{ layout_line_color}};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}:first-child {
+    border-left: 3px solid {{ layout_line_color }};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}:last-child {
+    border-right: 3px solid {{ layout_line_color }};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active {
+    position: relative;
+    border-color: {{ compare_active_background }};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0;
+    bottom: -15px;
+    background-color: {{ compare_active_background }};
+    border-bottom-left-radius: {{ layout_border_radius }}px;
+    border-bottom-right-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}} {
+    border-bottom: 3px solid {{ layout_line_color }};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}}.active {
+     border-color: {{ compare_active_background }};
+  }
+
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}}:first-child {
+    border-bottom-left-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}}:last-child {
+    border-bottom-right-radius: {{ layout_border_radius }}px;
+  }
+
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}}.active:last-child {
+    border-bottom-right-radius: 0px;
+  }
+  .product-other-grid-rows-pc-{{section.id}}:last-child .product-other-item-pc-{{section.id}}.active:last-child::after {
+    border-right: 3px solid {{ compare_active_background }};
+    box-sizing: content-box;
+  }
+
+  .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}:first-child h3 {
+    margin: 0;
+    font-size: {{ feature_size_mobile }}px;
+    color: {{ feature_color }};
+    line-height: 100%;
+    text-transform: unset;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-family: {{ feature_font.family }}, {{ feature_font.fallback_families }};
+    font-weight: {{ feature_weight_mobile }};
+  }
+
+  .product-other-icon-pc-{{section.id}} {
+    width: 20px;
+    height: 20px;
+  }
+
+  .product-other-icon-pc-{{section.id}}.icon-yes-pc-{{section.id}} svg path,
+  .product-other-icon-pc-{{section.id}}.icon-no-pc-{{section.id}} svg path{
+    fill: {{ compare_color }};
+  }
+
+  .product-other-item-pc-{{section.id}}.active .product-other-icon-pc-{{section.id}}.icon-yes-pc-{{section.id}} svg path,
+  .product-other-item-pc-{{section.id}}.active .product-other-icon-pc-{{section.id}}.icon-no-pc-{{section.id}} svg path {
+    fill: {{ compare_active_color}};
+  }
+
+  .product-other-icon-pc-{{section.id}} svg,
+  .product-other-icon-pc-{{section.id}} img {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(min-width: 350px) {
+    .product-other-grid-pc-{{section.id}} {
+
+        grid-template-columns: 38% 22% 20% 20%;
+
+    }
+  }
+  @media(min-width: 768px) {
+
+    .section-pc-{{section.id}} {
+      margin-top: {{ layout_margin_top }}px;
+      margin-bottom: {{ layout_margin_bottom }}px;
+    }
+
+    .section-pc-{{section.id}}-settings {
+      padding: 0 5rem;
+      padding-top: 36px;
+      padding-bottom: 72px;
+      padding-left: 5rem;
+      padding-right: 5rem;
+      margin: 0 auto;
+      {% if layout_max_width == true %}
+        max-width: 100%;
+    {% else %}
+        max-width: 130rem;
+    {% endif %}
+    }
+
+    .product-other-grid-pc-{{section.id}} {
+
+        grid-template-columns: 30% 22% 24% 24%;
+
+    }
+
+    .product-other-heading-pc-{{section.id}} {
+      font-size: {{ heading_size }}px;
+        font-weight: {{ heading_weight }};
+    }
+
+    .product-other-body-pc-{{section.id}} {
+      margin-top: 50px;
+    }
+
+    .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}} {
+      padding: 20px 20px;
+    }
+
+    .product-other-grid-header-pc-{{section.id}} .product-other-item-pc-{{section.id}} h3 {
+      font-size: {{ compare_size }}px;
+        font-weight: {{ compare_weight }};
+    }
+
+    .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}} {
+      padding: 20px 20px
+    }
+
+    .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}.active::after {
+      height: 25px;
+      bottom: -25px;
+    }
+
+    .product-other-grid-rows-pc-{{section.id}} .product-other-item-pc-{{section.id}}:first-child h3 {
+      font-size: {{feature_size}}px;
+        font-weight: {{feature_weight}};
+    }
+
+    .product-other-icon-pc-{{section.id}} {
+      width: 32px;
+      height: 32px;
+    }
+
+  }
+</style>
+<style></style>
+
+<div
+  class="section-pc-{{section.id}} product-other-pc-{{section.id}}"
+  style="background-color:{{ layout_background }}; background-image: ;"
+>
+  <div class="section-pc-{{section.id}}-settings ">
+    {% if heading != blank %}
+      <h2 class="product-other-heading-pc-{{section.id}}">{{ heading }}</h2>
+    {% endif %}
+
+    <div class="product-other-body-pc-{{section.id}}">
+      <div class="product-other-grid-pc-{{section.id}} product-other-grid-header-pc-{{section.id}}">
+        <div class="product-other-item-pc-{{section.id}}"></div>
+        {% for block in section.blocks %}
+          {% if block.type == 'compare_header' %}
+            <div class="product-other-item-pc-{{section.id}} {% if forloop.index == 1 %}active{% endif %}">
+              <h3>{{ block.settings.heading }}</h3>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'compare_content' %}
+          <div class="product-other-grid-pc-{{section.id}} product-other-grid-rows-pc-{{section.id}}">
+            <div class="product-other-item-pc-{{section.id}}">
+              <h3>{{ block.settings.heading }}</h3>
+            </div>
+            <div class="product-other-item-pc-{{section.id}} active">
+              <div class="product-other-icon-pc-{{section.id}} icon-yes-pc-{{section.id}}">
+                {% if block.settings.active_1 == true %}
+                  <svg
+                    enable-background="new 0 0 32 32"
+                    height="32px"
+                    id="Слой_1"
+                    version="1.1"
+                    viewBox="0 0 32 32"
+                    width="32px"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g id="Check_Circle"><path d="M16,0C7.163,0,0,7.163,0,16c0,8.837,7.163,16,16,16c8.836,0,16-7.164,16-16C32,7.163,24.836,0,16,0z M16,30   C8.268,30,2,23.732,2,16C2,8.268,8.268,2,16,2s14,6.268,14,14C30,23.732,23.732,30,16,30z" fill="#121313"></path><path d="M23.3,10.393L13.012,20.589l-4.281-4.196c-0.394-0.391-1.034-0.391-1.428,0   c-0.395,0.391-0.395,1.024,0,1.414l4.999,4.899c0.41,0.361,1.023,0.401,1.428,0l10.999-10.899c0.394-0.39,0.394-1.024,0-1.414   C24.334,10.003,23.695,10.003,23.3,10.393z" fill="#121313"></path></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                  </svg>
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                    <path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path>
+                  </svg>
+                {% endif %}
+              </div>
+            </div>
+            {% for item in section.blocks %}
+              {% if item.type == 'compare_header' %}
+                {% if forloop.index == 2 %}
+                  <div class="product-other-item-pc-{{section.id}} ">
+                    <div class="product-other-icon-pc-{{section.id}} icon-yes-pc-{{section.id}}">
+                      {% if block.settings.active_2 == true %}
+                        <svg
+                          enable-background="new 0 0 32 32"
+                          height="32px"
+                          id="Слой_1"
+                          version="1.1"
+                          viewBox="0 0 32 32"
+                          width="32px"
+                          xml:space="preserve"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                          <g id="Check_Circle"><path d="M16,0C7.163,0,0,7.163,0,16c0,8.837,7.163,16,16,16c8.836,0,16-7.164,16-16C32,7.163,24.836,0,16,0z M16,30   C8.268,30,2,23.732,2,16C2,8.268,8.268,2,16,2s14,6.268,14,14C30,23.732,23.732,30,16,30z" fill="#121313"></path><path d="M23.3,10.393L13.012,20.589l-4.281-4.196c-0.394-0.391-1.034-0.391-1.428,0   c-0.395,0.391-0.395,1.024,0,1.414l4.999,4.899c0.41,0.361,1.023,0.401,1.428,0l10.999-10.899c0.394-0.39,0.394-1.024,0-1.414   C24.334,10.003,23.695,10.003,23.3,10.393z" fill="#121313"></path></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                      {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                          <path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path>
+                        </svg>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            
+            {% for item in section.blocks %}
+                {% if item.type == 'compare_header' %}
+                  {% if forloop.index == 3 %}
+                    <div class="product-other-item-pc-{{section.id}} ">
+                      <div class="product-other-icon-pc-{{section.id}} icon-yes-pc-{{section.id}}">
+                        {% if block.settings.active_3 == true %}
+                          <svg
+                            enable-background="new 0 0 32 32"
+                            height="32px"
+                            id="Слой_1"
+                            version="1.1"
+                            viewBox="0 0 32 32"
+                            width="32px"
+                            xml:space="preserve"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <g id="Check_Circle"><path d="M16,0C7.163,0,0,7.163,0,16c0,8.837,7.163,16,16,16c8.836,0,16-7.164,16-16C32,7.163,24.836,0,16,0z M16,30   C8.268,30,2,23.732,2,16C2,8.268,8.268,2,16,2s14,6.268,14,14C30,23.732,23.732,30,16,30z" fill="#121313"></path><path d="M23.3,10.393L13.012,20.589l-4.281-4.196c-0.394-0.391-1.034-0.391-1.428,0   c-0.395,0.391-0.395,1.024,0,1.414l4.999,4.899c0.41,0.361,1.023,0.401,1.428,0l10.999-10.899c0.394-0.39,0.394-1.024,0-1.414   C24.334,10.003,23.695,10.003,23.3,10.393z" fill="#121313"></path></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          </svg>
+                        {% else %}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                            <path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path>
+                          </svg>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+
+
+              
+            {% for item in section.blocks %}
+                {% if item.type == 'compare_header' %}
+                  {% if forloop.index == 4 %}
+                    <div class="product-other-item-pc-{{section.id}} ">
+                      <div class="product-other-icon-pc-{{section.id}} icon-yes-pc-{{section.id}}">
+                        {% if block.settings.active_4 == true %}
+                          <svg
+                            enable-background="new 0 0 32 32"
+                            height="32px"
+                            id="Слой_1"
+                            version="1.1"
+                            viewBox="0 0 32 32"
+                            width="32px"
+                            xml:space="preserve"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <g id="Check_Circle"><path d="M16,0C7.163,0,0,7.163,0,16c0,8.837,7.163,16,16,16c8.836,0,16-7.164,16-16C32,7.163,24.836,0,16,0z M16,30   C8.268,30,2,23.732,2,16C2,8.268,8.268,2,16,2s14,6.268,14,14C30,23.732,23.732,30,16,30z" fill="#121313"></path><path d="M23.3,10.393L13.012,20.589l-4.281-4.196c-0.394-0.391-1.034-0.391-1.428,0   c-0.395,0.391-0.395,1.024,0,1.414l4.999,4.899c0.41,0.361,1.023,0.401,1.428,0l10.999-10.899c0.394-0.39,0.394-1.024,0-1.414   C24.334,10.003,23.695,10.003,23.3,10.393z" fill="#121313"></path></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                          </svg>
+                        {% else %}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                            <path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path>
+                          </svg>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "PC - Compare #2",
+    "settings": [
+      {
+            "type": "header",
+            "content": "This section is a property of PeakConversion",
+            "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+        },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Us vs others"
+            },
+            {
+                "type": "range",
+                "id": "heading_size",
+                "label": "Heading Size",
+                "default": 52,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "heading_weight",
+                "label": "Heading Weight",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Color",
+                "default": "#162471"
+            },
+            {
+                "type": "font_picker",
+                "id": "heading_font",
+                "label": "Heading Font",
+                "default": "josefin_sans_n4"
+            },
+            {
+                "type": "range",
+                "id": "heading_size_mobile",
+                "label": "Heading Size Mobile",
+                "default": 36,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "heading_weight_mobile",
+                "label": "Heading Weight Mobile",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "range",
+                "id": "compare_size",
+                "label": "Compare Size",
+                "default": 20,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "compare_weight",
+                "label": "Compare Weight",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "compare_color",
+                "label": "Compare Color",
+                "default": "#162471"
+            },
+            {
+                "type": "font_picker",
+                "id": "compare_font",
+                "label": "Compare Font",
+                "default": "josefin_sans_n4"
+            },
+            {
+                "type": "range",
+                "id": "compare_size_mobile",
+                "label": "Compare Size Mobile",
+                "default": 16,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "compare_weight_mobile",
+                "label": "Compare Weight Mobile",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "compare_active_color",
+                "label": "Compare Active Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "color",
+                "id": "compare_active_background",
+                "label": "Compare Active Background",
+                "default": "#162471"
+            },
+            {
+                "type": "range",
+                "id": "feature_size",
+                "label": "Feature Size",
+                "default": 18,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "feature_weight",
+                "label": "Feature Weight",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "feature_color",
+                "label": "Feature Color",
+                "default": "#162471"
+            },
+            {
+                "type": "font_picker",
+                "id": "feature_font",
+                "label": "Feature Font",
+                "default": "josefin_sans_n4"
+            },
+            {
+                "type": "range",
+                "id": "feature_size_mobile",
+                "label": "Feature Size Mobile",
+                "default": 10,
+                "min": 10,
+                "max": 100
+            },
+            {
+                "type": "select",
+                "id": "feature_weight_mobile",
+                "label": "Feature Weight Mobile",
+                "default": "700",
+                "options": [
+                    {
+                        "value": "400",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "layout_background",
+                "label": "Layout Background",
+                "default": "#f6f4f2"
+            },
+            {
+                "type": "range",
+                "id": "layout_margin_top",
+                "label": "Layout Margin Top",
+                "default": 0,
+                "min": 0,
+                "max": 100
+            },
+            {
+                "type": "range",
+                "id": "layout_margin_bottom",
+                "label": "Layout Margin Bottom",
+                "default": 0,
+                "min": 0,
+                "max": 100
+            },
+            {
+                "type": "checkbox",
+                "id": "layout_max_width",
+                "label": "Layout Max Width",
+                "default": false
+            },
+            {
+                "type": "color",
+                "id": "layout_line_color",
+                "label": "Layout Line Color",
+                "default": "#d7d8d5"
+            },
+            {
+                "type": "range",
+                "id": "layout_border_radius",
+                "label": "Layout Border Radius",
+                "default": 10,
+                "min": 0,
+                "max": 50
+            }
+    ],
+    "blocks": [
+        {
+            "type": "compare_header",
+            "name": "Compare header",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Logo"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "heading",
+                    "default": "lorem"
+                }
+            ]
+        },
+        {
+            "type": "compare_content",
+            "name": "Compare content",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default": "Lorem ipsum"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "active_1",
+                    "label": "Toggle Active 1",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "active_2",
+                    "label": "Toggle Active 2",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "active_3",
+                    "label": "Toggle Active 3",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "active_4",
+                    "label": "Toggle Active 4",
+                    "default": true
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Product comparison",
+            "name": "PC - Compare #2",
+            "blocks": [
+                {
+                    "type": "compare_header",
+                    "settings": {
+                        "logo": "",
+                        "heading": "Lorem US"
+                    }
+                },
+                {
+                    "type": "compare_header",
+                    "settings": {
+                        "logo": "",
+                        "heading": "Lorem "
+                    }
+                },
+                {
+                    "type": "compare_header",
+                    "settings": {
+                        "logo": "",
+                        "heading": "Lorem "
+                    }
+                },
+                {
+                    "type": "compare_content",
+                    "settings": {
+                        "heading": "Feature 1",
+                        "active_1": true,
+                        "active_2": false,
+                        "active_3": true,
+                        "active_4": false
+                    }
+                },
+                {
+                    "type": "compare_content",
+                    "settings": {
+                        "heading": "Feature 2",
+                        "active_1": false,
+                        "active_2": true,
+                        "active_3": false,
+                        "active_4": true
+                    }
+                },
+                {
+                    "type": "compare_content",
+                    "settings": {
+                        "heading": "Feature 3",
+                        "active_1": true,
+                        "active_2": true,
+                        "active_3": false,
+                        "active_4": false
+                    }
+                },
+                {
+                    "type": "compare_content",
+                    "settings": {
+                        "heading": "Feature 4",
+                        "active_1": false,
+                        "active_2": false,
+                        "active_3": true,
+                        "active_4": true
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

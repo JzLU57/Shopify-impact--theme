@@ -1,0 +1,937 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign heading = section.settings.heading 
+  assign heading_size = section.settings.heading_size
+  assign heading_weight = section.settings.heading_weight
+  assign heading_color = section.settings.heading_color
+  assign heading_size_mobile = section.settings.heading_size_mobile
+
+  assign text = section.settings.text
+  assign text_size  = section.settings.text_size
+  assign text_color = section.settings.text_color
+  assign text_size_mobile = section.settings.text_size_mobile
+
+  assign button_label = section.settings.button_label
+    assign button_link = section.settings.button_link
+    assign button_size = section.settings.button_size
+    assign button_weight = section.settings.button_weight
+    assign button_color = section.settings.button_color
+    assign button_size_mobile = section.settings.button_size_mobile
+    assign button_radius = section.settings.button_radius
+    assign button_border_width = section.settings.button_border_width
+    assign button_border_style = section.settings.button_border_style
+    assign button_border_color = section.settings.button_border_color
+    assign button_background = section.settings.button_background
+
+
+    assign item_border_width = section.settings.item_border_width
+    assign item_border_style = section.settings.item_border_style
+    assign item_border_color = section.settings.item_border_color
+    assign item_radius = section.settings.item_radius
+    assign enable_shadow = section.settings.enable_shadow
+    assign item_background = section.settings.item_background
+
+    assign item_title_size = section.settings.item_title_size
+    assign item_title_weight = section.settings.item_title_weight
+    assign item_title_color = section.settings.item_title_color
+    assign item_title_size_mobile = section.settings.item_title_size_mobile
+
+    assign item_text_size = section.settings.item_text_size
+    assign item_text_color = section.settings.item_text_color
+    assign item_text_size_mobile = section.settings.item_text_size_mobile
+
+    assign layout_background = section.settings.layout_background
+    assign layout_margin_top = section.settings.layout_margin_top
+    assign layout_margin_bottom = section.settings.layout_margin_bottom
+    assign enable_max_width = section.settings.enable_max_width
+
+    
+%}
+
+<style>
+
+
+    .section-pc-{{section.id}} {
+      margin-top: {{ layout_margin_top }}px;
+      margin-bottom: {{ layout_margin_bottom }}px;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      
+      border: 0px solid #000000;
+      overflow: hidden;
+    }
+  
+    .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 45px;
+      padding-bottom: 45px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  
+    .faq-body-pc-{{section.id}} {
+      display: grid;
+      gap: 20px;
+    }
+  
+    .faq-item-pc-{{section.id}} {
+      padding: 20px 20px;
+      border-radius: {{ item_radius }}px;
+      border: {{ item_border_width }}px {{ item_border_style }} {{ item_border_color }};
+      background-color: {{ item_background }};
+      position: relative;
+    }
+  
+    .faq-item-pc-{{section.id}}:not(:first-child) {
+      margin-top: 8px;
+    }
+  
+    .faq-toggle-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 12px;
+    }
+  
+    .faq-arrow-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 24px;
+      height: 24px;
+      transition: all 0.3s ease 0s;
+      transform: rotate(var(--rotate));
+      border-radius: 50%;
+      border: 0px solid #6c584c;
+    }
+  
+    .faq-arrow-pc-{{section.id}} svg {
+      width: 12px;
+      height: 12px;
+    }
+  
+    .faq-arrow-pc-{{section.id}} svg path {
+      fill: {{ item_title_color }};
+    }
+  
+    .faq-question-pc-{{section.id}} {
+      margin: 0px;
+      font-size: {{ item_title_size_mobile }}px;
+      color: {{ item_title_color }};
+      line-height: 0%;
+      text-transform: unset;
+      font-weight: {{ item_title_weight }};
+    }
+  
+    .faq-answer-pc-{{section.id}} {
+      transition: all 0.2s ease-in-out;
+      overflow: hidden;
+    }
+  
+    .faq-answer-pc-{{section.id}} * {
+      margin: 0px;
+      font-size: {{ item_text_size_mobile }}px;
+      color: {{ item_text_color }};
+      line-height: 170%;
+      text-transform: unset;
+    }
+  
+    .faq-answer-pc-{{section.id}} p {
+      min-height: 10px;
+    }
+  
+    .faq-answer-pc-{{section.id}} p:not(:first-child ) {
+      margin-top: 10px;
+    }
+  
+    .faq-height-cal-pc-{{section.id}} {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 40px);
+      padding-top: 16px;
+    }
+  
+    .faq-height-cal-pc-{{section.id}} * {
+      margin: 0px;
+      font-size: {{ item_text_size_mobile }}px;
+      color: {{ item_text_color }};
+      line-height: 170%;
+      text-transform: unset;
+    }
+  
+    .faq-height-cal-pc-{{section.id}} p {
+      min-height: 10px;
+    }
+  
+    .faq-height-cal-pc-{{section.id}} p:not(:first-child ) {
+      margin-top: 10px;
+    }
+  
+    @media(min-width: 1024px) {
+  
+      .section-pc-{{section.id}} {
+        margin-top: {{ layout_margin_top }}px;
+        margin-bottom: {{ layout_margin_bottom }}px;
+        margin-left: 5rem;
+        margin-right: 5rem;
+      }
+  
+      .section-pc-{{section.id}}-settings {
+        padding: 0 5rem;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+  
+      .faq-body-pc-{{section.id}} {
+        gap: 30px;
+      }
+  
+      .faq-item-pc-{{section.id}} {
+        padding: 20px 20px;
+      }
+  
+      .faq-item-pc-{{section.id}}:not(:first-child) {
+        margin-top: 10px;
+      }
+  
+      .faq-question-pc-{{section.id}} {
+        font-size: {{ item_title_size }}px;
+      }
+  
+      .faq-answer-pc-{{section.id}} * {
+        font-size: {{ item_text_size }}px;
+      }
+  
+      .faq-arrow-pc-{{section.id}} {
+        flex: 0 0 24px;
+        height: 24px;
+      }
+  
+      .faq-arrow-pc-{{section.id}} svg {
+        width: 12px;
+        height: 12px;
+      }
+  
+      .faq-height-cal-pc-{{section.id}} {
+        width: calc(100% - 40px);
+      }
+  
+      .faq-height-cal-pc-{{section.id}} * {
+        font-size: {{ item_text_size }}px;
+      }
+    }
+  </style>
+  <style>
+    
+  </style>
+  
+  <style>
+    .faq-items-pc-{{section.id}} {
+      order: 2;
+    }
+  
+    .faq-content-pc-{{section.id}} {
+      order: 1;
+    }
+  </style>
+  
+  <style>
+    @media(min-width: 1024px) {
+      .faq-body-pc-{{section.id}} {
+        grid-template-columns: 1fr 1fr;
+      }
+  
+      .faq-items-pc-{{section.id}} {
+        order: 2;
+      }
+  
+      .faq-content-pc-{{section.id}} {
+        order: 1;
+      }
+    }
+  </style>
+  
+  <style>
+    {% if enable_shadow == true %}
+    .faq-item-pc-{{section.id}} {
+      box-shadow: rgba(18, 18, 23, 0.08) 0px 6px 4px -1px;
+    }
+{% endif %}
+  </style>
+  
+  <style>
+    
+  
+    .faq-heading-heading_APYixb {
+      text-align: center;
+      margin-top: 0px;
+    }
+  
+    .faq-heading-heading_APYixb * {
+      margin: 0;
+      font-size: {{ heading_size_mobile }}px;
+      color: {{ heading_color }};
+      font-weight: {{ heading_weight }};
+      line-height: 130%;
+      text-transform: unset;
+    }
+  
+    @media (min-width: 1024px) {
+      .faq-heading-heading_APYixb {
+        text-align: left;
+        margin-top: 0px;
+      }
+  
+      .faq-heading-heading_APYixb * {
+        font-size: {{ heading_size }}px;
+      }
+    }
+  </style>
+  
+  <style>
+    
+  
+    .faq-text-text_qBChHB {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .faq-text-text_qBChHB * {
+      margin: 0;
+      font-size: {{ text_size_mobile }}px;
+      color: {{ text_color }};
+      line-height: 130%;
+      text-transform: unset;
+    }
+  
+    @media (min-width: 1024px) {
+      .faq-text-text_qBChHB {
+        text-align: left;
+        margin-top: 20px;
+      }
+  
+      .faq-text-text_qBChHB * {
+        font-size: {{ text_size }}px;
+      }
+    }
+  </style>
+  
+  
+  
+  <style>
+    .faq-button-button_Hi7hP3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 200px;
+      margin: 0;
+      margin-top: 16px;
+      font-size: {{ button_size_mobile }}px;
+      color: {{ button_color }};
+      line-height: 100%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: {{ button_radius }}px;
+      border: {{ button_border_width }}px {{ button_border_style }} {{ button_border_color }};
+      transition: all 0.25s ease 0s;
+      position: relative;
+      font-weight: {{ button_weight }};
+      z-index: 2;
+    }
+  
+    .faq-button-button_Hi7hP3:hover {
+      color: {{ button_color}};
+      transition: all 0.25s ease 0s;
+    }
+  
+    .faq-button-button_Hi7hP3 svg {
+      width: 14px;
+      height: 14px;
+    }
+  
+    .faq-button-button_Hi7hP3 svg path {
+      fill: {{ button_color }};
+      transition: all 0.25s ease 0s;
+    }
+  
+    .faq-button-button_Hi7hP3:hover svg path {
+      fill: {{ button_color }};
+      transition: all 0.25s ease 0s;
+    }
+  
+    @media (min-width: 1024px) {
+      .faq-button-button_Hi7hP3 {
+        margin-top: 40px;
+        max-width: 200px;
+        padding: 16px 24px;
+        font-size: {{ button_size }}px;
+      }
+    }
+  </style>
+  
+  <style>
+    .faq-button-button_Hi7hP3 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  
+  <style>
+    @media (min-width: 1024px) {
+      .faq-button-button_Hi7hP3 {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+      }
+    }
+  </style>
+  
+  <style>
+    .faq-button-button_Hi7hP3 {
+      background-color: {{ button_background }};
+    }
+  
+    .faq-button-button_Hi7hP3:hover {
+      background-color: {{  button_background }};
+    }
+  </style>
+  
+  <div class="section-pc-{{section.id}} faq-pc-{{section.id}}" style="background-color:{{ layout_background }}; background-image: ;">
+    <div class="section-pc-{{section.id}}-settings">
+      <div class="faq-body-pc-{{section.id}}">
+        <div class="faq-content-pc-{{section.id}}">
+            {% if heading != blank %}
+          <div class="faq-heading-heading_APYixb">
+            <h2>
+              {{ heading }}
+            </h2>
+          </div>
+        {% endif %}
+        {% if text != blank %}
+          <div class="faq-text-text_qBChHB">
+            {{ text }}
+          </div>
+        {% endif %}
+        
+        {% if button_label != blank %}
+          <a href="{{ button_link }}" class="faq-button-button_Hi7hP3">
+            {{  button_label}}
+  
+            <svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M187.827 98.7858C188.123 98.4749 188.123 98.4749 188.123 98.1761C188.419 97.8652 188.419 97.5663 188.704 97.5663C189 96.9566 189 96.6458 189 96.0361C189 95.4263 189 94.8166 188.704 94.5058C188.704 94.195 188.408 93.8961 188.123 93.5852C188.123 93.2744 187.827 93.2744 187.827 92.9755L103.287 4.21945C102.41 3.29889 101.533 3 100.668 3C99.791 3 98.6295 3.31083 98.0488 4.21945C97.1719 5.14 96.8872 6.06058 96.8872 6.96919C96.8872 7.88974 97.1833 9.10918 98.0488 9.7189L175.587 92.0539H6.79206C4.75371 92.0539 3 93.895 3 96.0351C3 98.1751 4.75365 100.016 6.79206 100.016H175.575L97.7543 182.042C96.2967 183.572 96.2967 186.322 97.7543 187.852C99.2119 189.383 101.831 189.383 103.288 187.852L187.827 98.7858Z" fill="black"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M188.607 97.5657C188.432 97.5657 188.365 97.6788 188.27 97.8382C188.211 97.9378 188.141 98.0554 188.027 98.1748C188.027 98.4734 188.027 98.4734 187.731 98.7839L103.281 187.759C101.825 189.287 99.2085 189.287 97.7524 187.759C96.2963 186.23 96.2963 183.483 97.7524 181.954L175.492 100.013L6.88489 100.013C4.8486 100.013 3.09677 98.1739 3.09677 96.036C3.09677 93.8982 4.84866 92.059 6.88489 92.059L175.504 92.059L98.0465 9.80878C97.182 9.19968 96.8862 7.9815 96.8862 7.0619C96.8862 6.15422 97.1706 5.2346 98.0465 4.315C98.6267 3.40732 99.787 3.0968 100.663 3.0968C101.527 3.0968 102.403 3.39539 103.279 4.315L187.731 92.9796C187.731 93.1274 187.804 93.2021 187.877 93.2774C187.952 93.3543 188.027 93.4319 188.027 93.5887C188.046 93.6098 188.066 93.6308 188.085 93.6518C188.338 93.9267 188.584 94.1935 188.606 94.4689C188.607 94.482 188.607 94.4951 188.607 94.5083C188.903 94.8188 188.903 95.4279 188.903 96.037C188.903 96.6461 188.903 96.9566 188.607 97.5657ZM191.489 93.2767C191.79 93.8661 191.89 94.4204 191.934 94.7363C192.001 95.2226 192 95.7194 192 95.9856L192 96.037C192 96.0544 192 96.0729 192 96.0926C192 96.3523 192.001 96.8096 191.924 97.2931C191.828 97.8884 191.64 98.41 191.393 98.9184L190.546 100.663H190.212C190.127 100.759 190.038 100.852 189.988 100.905L189.974 100.92L105.527 189.891C102.85 192.701 98.1865 192.704 95.51 189.895C94.1476 188.464 93.5636 186.587 93.5636 184.857C93.5636 183.128 94.1468 181.252 95.5071 179.822M191.489 93.2767C191.316 92.7908 191.078 92.4357 190.938 92.2406C190.903 92.1912 190.866 92.142 190.828 92.0939V91.7408L105.522 2.17912C104.076 0.661813 102.397 0 100.663 0C99.3914 0 97.0569 0.401401 95.6212 2.37737C94.3151 3.83819 93.7895 5.45521 93.7895 7.0619C93.7895 8.26663 94.1183 10.6061 95.9608 12.111L168.333 88.9622L6.88489 88.9622C2.9981 88.9622 0 92.3316 0 96.036C0 99.7405 2.99801 103.11 6.88489 103.11L168.285 103.11" fill="black"></path>
+              <path d="M169.5 104L16.5 102.5V90H171L97.5 10.5V7L107.5 4.5C131.167 29.6667 180.2 81.5 187 87.5C193.8 93.5 191.5 99 189.5 101L105.5 184L94 181.5L169.5 104Z" fill="black"></path>
+            </svg>
+          </a>
+        {% endif %}
+        </div>
+        <div class="faq-items-pc-{{section.id}}">
+        {% for block in section.blocks %}
+          <div class="faq-item-pc-{{section.id}}">
+            <div class="faq-toggle-pc-{{section.id}}">
+              <p class="faq-question-pc-{{section.id}}">
+                {{ block.settings.question }}
+              </p>
+              <div class="faq-arrow-pc-{{section.id}}" style="--rotate: 0deg;">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.0"
+                  viewBox="0 0 143.000000 83.000000"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <g transform="translate(0.000000,83.000000) scale(0.100000,-0.100000)" fill="" stroke="none">
+                  <path d="M57 772 l-57 -57 360 -360 360 -360 357 357 358 358 -63 62 -62 63 -298 -298 -297 -297 -295 295 c-162 162 -297 295 -300 295 -3 0 -31 -26 -63 -58z"></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="faq-answer-pc-{{section.id}}"
+              style="display: none; height: 0px; padding-top: 0px; padding-bottom: 0px;"
+            >
+              {{ block.settings.answer }}
+            </div>
+            <div class="faq-height-cal-pc-{{section.id}}">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% schema %}
+  {
+      "name": "PC - FAQ #10",
+      "settings": [
+        {
+          "type": "header",
+          "content": "This section is a property of PeakConversion",
+          "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+      },
+        {
+            "type": "header",
+            "content": "Header Settings"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Heading Size",
+            "default": 48,
+            "min": 10,
+            "max": 72,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "heading_weight",
+            "label": "Heading Weight",
+            "default": "700",
+            "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "700", "label": "Bold" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Color",
+            "default": "#005c53"
+        },
+        {
+            "type": "range",
+            "id": "heading_size_mobile",
+            "label": "Heading Size (Mobile)",
+            "default": 30,
+            "min": 10,
+            "max": 50,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Text Settings"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+        },
+        {
+            "type": "range",
+            "id": "text_size",
+            "label": "Text Size",
+            "default": 18,
+            "min": 10,
+            "max": 30,
+            "unit": "px"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#757575"
+        },
+        {
+            "type": "range",
+            "id": "text_size_mobile",
+            "label": "Text Size (Mobile)",
+            "default": 16,
+            "min": 10,
+            "max": 30,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Button Settings"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Lorem ipsum"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "range",
+            "id": "button_size",
+            "label": "Button Size",
+            "default": 16,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "button_weight",
+            "label": "Button Weight",
+            "default": "700",
+            "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "700", "label": "Bold" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "range",
+            "id": "button_size_mobile",
+            "label": "Button Size (Mobile)",
+            "default": 14,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "button_radius",
+            "label": "Button Border Radius",
+            "default": 4,
+            "min": 0,
+            "max": 100,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "button_border_width",
+            "label": "Button Border Width",
+            "default": 0,
+            "min": 0,
+            "max": 5,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "button_border_style",
+            "label": "Button Border Style",
+            "default": "solid",
+            "options": [
+            { "value": "solid", "label": "Solid" },
+            { "value": "dashed", "label": "Dashed" },
+            { "value": "dotted", "label": "Dotted" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Button Border Color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "button_background",
+            "label": "Button Background",
+            "default": "#000000"
+        },
+        {
+            "type": "header",
+            "content": "FAQ Item Settings"
+        },
+        {
+            "type": "range",
+            "id": "item_border_width",
+            "label": "Item Border Width",
+            "default": 0,
+            "min": 0,
+            "max": 5,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "item_border_style",
+            "label": "Item Border Style",
+            "default": "solid",
+            "options": [
+            { "value": "solid", "label": "Solid" },
+            { "value": "dashed", "label": "Dashed" },
+            { "value": "dotted", "label": "Dotted" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "item_border_color",
+            "label": "Item Border Color",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "item_radius",
+            "label": "Item Border Radius",
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "unit": "px"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_shadow",
+            "label": "Enable Shadow",
+            "default": true
+        },
+        {
+            "type": "color",
+            "id": "item_background",
+            "label": "Item Background",
+            "default": "#ffffff"
+        },
+        {
+            "type": "range",
+            "id": "item_title_size",
+            "label": "Item Title Size",
+            "default": 18,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "item_title_weight",
+            "label": "Item Title Weight",
+            "default": "700",
+            "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "700", "label": "Bold" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "item_title_color",
+            "label": "Item Title Color",
+            "default": "#005c53"
+        },
+        {
+            "type": "range",
+            "id": "item_title_size_mobile",
+            "label": "Item Title Size (Mobile)",
+            "default": 14,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "item_text_size",
+            "label": "Item Text Size",
+            "default": 16,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "color",
+            "id": "item_text_color",
+            "label": "Item Text Color",
+            "default": "#757575"
+        },
+        {
+            "type": "range",
+            "id": "item_text_size_mobile",
+            "label": "Item Text Size (Mobile)",
+            "default": 12,
+            "min": 10,
+            "max": 20,
+            "unit": "px"
+        },
+        {
+            "type": "header",
+            "content": "Layout Settings"
+        },
+        {
+            "type": "color",
+            "id": "layout_background",
+            "label": "Layout Background",
+            "default": "#fff"
+        },
+        {
+            "type": "range",
+            "id": "layout_margin_top",
+            "label": "Layout Margin Top",
+            "default": 12,
+            "min": 0,
+            "max": 50,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "layout_margin_bottom",
+            "label": "Layout Margin Bottom",
+            "default": 12,
+            "min": 0,
+            "max": 50,
+            "unit": "px"
+        }
+      ],
+      "blocks": [
+        {
+            "type": "faq",
+            "name": "FAQ",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question",
+                    "default": "Lorem ipsum dolor ?"
+                },
+                {
+                    "type": "richtext",
+                    "id": "answer",
+                    "label": "Answer",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+                }
+            ]
+        }
+      ],
+      "presets": [
+          {
+              "name": "PC - FAQ #10",
+              "blocks": [
+                    {
+                        "type": "faq",
+                        "settings": {
+                            "question": "Lorem ipsum dolor sit amet?",
+                            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+                        }
+                    },
+                    {
+                        "type": "faq",
+                        "settings": {
+                            "question": "Curabitur vehicula elit?",
+                            "answer": "<p>Curabitur vehicula elit at magna efficitur, nec varius justo scelerisque.</p>"
+                        }
+                    },
+                    {
+                        "type": "faq",
+                        "settings": {
+                            "question": "Sed do eiusmod tempor?",
+                            "answer": "<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+                        }
+                    },
+                    {
+                        "type": "faq",
+                        "settings": {
+                            "question": "Ut enim ad minim veniam?",
+                            "answer": "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+                        }
+                    },
+                    {
+                        "type": "faq",
+                        "settings": {
+                            "question": "Duis aute irure dolor?",
+                            "answer": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+                        }
+                    }
+              ]
+          }
+      ]
+  }
+  {% endschema %}
+  <script>
+    function initFAQ9() {
+      const answerPaddingTop = 16;
+      const answerPaddingBottom = 0;
+  
+      const faqs = document.querySelectorAll('.faq-item-pc-{{section.id}}');
+      const buttons = document.querySelectorAll('.faq-toggle-pc-{{section.id}}');
+      const answers = document.querySelectorAll('.faq-answer-pc-{{section.id}}');
+      const answersHeightCalElements = document.querySelectorAll('.faq-height-cal-pc-{{section.id}}');
+      const icons = document.querySelectorAll('.faq-arrow-pc-{{section.id}}');
+  
+      let activeIndex = -1;
+  
+      function openAnswer(index) {
+        console.log(answersHeightCalElements[index]);
+        const height = answersHeightCalElements[index].offsetHeight;
+  
+        answers[index].style.display = 'block';
+        setTimeout(() => {
+          answers[index].style.paddingTop = `${answerPaddingTop}px`;
+          answers[index].style.paddingBottom = `${answerPaddingBottom}px`;
+          answers[index].style.height = `${height}px`;
+          icons[index].style.setProperty('--rotate', '180deg');
+        });
+      }
+      function closeAnswer(index) {
+        answers[index].style.paddingTop = 0;
+        answers[index].style.paddingBottom = 0;
+        answers[index].style.height = 0;
+        icons[index].style.setProperty('--rotate', '0deg');
+  
+        setTimeout(() => {
+          answers[index].style.display = 'none';
+        }, 300);
+      }
+      function toggleAnswer(index) {
+        if (answers[index].style.display === 'none') {
+          openAnswer(index);
+          activeIndex = index;
+        } else {
+          closeAnswer(index);
+          activeIndex = -1;
+        }
+      }
+      function closeAllAnswerBut(index) {
+        answers.forEach((answer, i) => {
+          if (i !== index) {
+            closeAnswer(i);
+          }
+        });
+      }
+  
+      // When clicked, toggle the answer, animate the answer's height:
+      buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          toggleAnswer(index);
+          // closeAllAnswerBut(index);
+        });
+      });
+  
+      // When the window is resized, debounce the answer's height:
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (activeIndex !== -1) {
+            const height = answersHeightCalElements[activeIndex].offsetHeight;
+            answers[activeIndex].style.height = `${height}px`;
+          }
+        }, 250);
+      });
+    }
+  
+    document.addEventListener('DOMContentLoaded', initFAQ9);
+  
+    if (Shopify.designMode) {
+      document.addEventListener('shopify:section:unload', initFAQ9);
+      document.addEventListener('shopify:section:load', initFAQ9);
+    }
+  </script>
+  

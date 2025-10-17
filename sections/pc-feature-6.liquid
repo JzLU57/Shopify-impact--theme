@@ -1,0 +1,520 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign heading = section.settings.heading %}
+{% assign heading_size = section.settings.heading_size %}
+{% assign heading_size_mobile = section.settings.heading_size_mobile %}
+{% assign heading_weight = section.settings.heading_weight %}
+{% assign heading_color = section.settings.heading_color %}
+
+{% assign feat_heading_size = section.settings.feat_heading_size %}
+{% assign feat_heading_size_mobile = section.settings.feat_heading_size_mobile %}
+{% assign feat_heading_weight = section.settings.feat_heading_weight %}
+{% assign feat_heading_color = section.settings.feat_heading_color %}
+
+{% assign feat_desc_size = section.settings.feat_desc_size %}
+{% assign feat_desc_size_mobile = section.settings.feat_desc_size_mobile %}
+{% assign feat_desc_color = section.settings.feat_desc_color %}
+
+{% assign img_radius = section.settings.img_radius %}
+{% assign img_border_w = section.settings.img_border_w %}
+{% assign img_border_color = section.settings.img_border_color %}
+
+{% assign feat_radius = section.settings.feat_radius %}
+{% assign feat_border_w = section.settings.feat_border_w %}
+{% assign feat_border_color = section.settings.feat_border_color %}
+{% assign feat_bg = section.settings.feat_bg %}
+{% assign feat_shadow = section.settings.feat_shadow %}
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg = section.settings.section_bg %}
+
+<style>
+  .section-pc-{{section.id}} {
+    padding: 0 1.5rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+          border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+       background-color: {{section_bg}};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-pc-{{section.id}} {
+      padding: 0 5rem;
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+
+  p {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .heading {
+            font-size: {{ heading_size }}px;
+            font-weight: {{ heading_weight }};
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: {{ heading_color }};
+            text-align: center;
+            padding: 20px;
+        }
+
+  .feature-logo-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .feature-logo-row-block {
+      background-color: {{feat_bg}};
+      flex: 1;
+      max-width: 500px;
+      min-width: 450px;
+      margin: 10px;
+      display: flex;
+      border: solid {{feat_border_w}}px {{feat_border_color}};
+      height: auto;
+      padding: 20px;
+      text-align: left;
+      transition: 0.2s;
+      border-radius: {{feat_radius}}px;
+      position: relative;
+      align-items: center;
+      color: white;
+      box-shadow: 0 2px 6px {{feat_shadow}}0d;
+  }
+
+  .feature-logo-row-icon {
+      margin-right: 30px;
+      height: 60px;
+      border-radius: {{ img_radius }}px;
+      border: {{ img_border_w }}px solid {{ img_border_color }};
+    }
+
+    .feature-logo-row-icon-svg {
+      margin-right: 30px;
+      width: 50%;
+      border-radius: {{ img_radius }}px;
+      border: {{ img_border_w }}px solid {{ img_border_color }};
+    }
+
+  .feature-logo-row-header {
+      margin: 15px 0px 5px 0px;
+      font-size: {{feat_heading_size}}px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-style: normal;
+      font-weight:  {{feat_heading_weight}};
+      line-height: 1.2;
+      color:  {{feat_heading_color}};
+  }
+
+  .feature-logo-row-subtext {
+      font-size: {{feat_desc_size}}px;
+      color: {{feat_desc_color}};
+      line-height: 1.4;
+      margin: 5px 0px;
+  }
+
+  @media (max-width: 680px) {
+      .feature-logo-row-block {
+          flex-direction: column;
+          justify-content: center;
+          padding: 20px;
+          min-width: 100%;
+          text-align: center;
+      }
+      .heading {
+          font-size: {{ heading_size_mobile }}px;
+      }
+      .feature-logo-row-icon {
+          margin-right: 0px;
+      }
+      .feature-logo-row-header {
+          text-align: center;
+          font-size: {{feat_heading_size_mobile}}px;
+      }
+      .feature-logo-row-subtext {
+          text-align: center;
+          margin-bottom: 5px;
+          font-size: {{feat_desc_size_mobile}}px;
+      }
+  }
+</style>
+
+<div>
+  <div class="section-pc-{{section.id}}">
+    <h1 class="heading">{{ heading }}</h1>
+    <div class="feature-logo-row">
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank %}
+          <div class="feature-logo-row-block">
+            {% if block.settings.image != blank %}
+              <img
+                class="feature-logo-row-icon"
+                src="{{ block.settings.image | img-url:'master' }}"
+                alt="Image_{{ block.settings.title }}"
+              >
+            {% else %}
+              <div class="feature-logo-row-icon-svg">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+              </div>
+            {% endif %}
+            <div class="feature-logo-row-text">
+              <p class="feature-logo-row-header">{{ block.settings.title }}</p>
+              <div class="feature-logo-row-subtext">
+                {{ block.settings.desc }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PC - Feature #6",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+     {
+        "type": "header",
+        "content": "Heading"
+    },
+    {
+          "type": "text",
+          "id": "heading",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet."
+    },
+    {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Size",
+        "default":42,
+        "min": 10,
+        "max": 80,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "heading_size_mobile",
+        "label": "Mobile Size",
+        "default":32,
+        "min": 10,
+        "max":50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "heading_weight",
+        "label": "Font Weight",
+        "default":700,
+        "min": 100,
+        "max":900,
+        "step": 100
+    },
+    {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Color",
+        "default":"#121212"
+    },
+    {
+        "type": "header",
+        "content": "Feature Heading"
+    },
+    {
+        "type": "range",
+        "id": "feat_heading_size",
+        "label": "Size",
+        "default":18,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "feat_heading_size_mobile",
+        "label": "Mobile Size",
+        "default":18,
+        "min": 10,
+        "max":50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "feat_heading_weight",
+        "label": "Font Weight",
+        "default":600,
+        "min": 100,
+        "max":900,
+        "step": 100
+    },
+    {
+        "type": "color",
+        "id": "feat_heading_color",
+        "label": "Color",
+        "default":"#212121"
+    },
+    {
+        "type": "header",
+        "content": "Feature description"
+    },
+    {
+        "type": "range",
+        "id": "feat_desc_size",
+        "label": "Size",
+        "default":15,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "feat_desc_size_mobile",
+        "label": "Mobile Size",
+        "default":15,
+        "min": 10,
+        "max":50,
+        "step": 1,
+        "unit": "px"
+    },
+    {
+        "type": "color",
+        "id": "feat_desc_color",
+        "label": "Color",
+        "default":"#000"
+    },
+     {
+  "type": "header",
+  "content": "feature Image"
+},
+  {
+  "type": "range",
+  "id": "img_radius",
+  "label": "Border Radius",
+  "default":0,
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px"
+},
+{
+  "type": "range",
+  "id": "img_border_w",
+  "label": "Border Width",
+  "default":0,
+  "min": 0,
+  "max": 20,
+  "step": 1,
+  "unit": "px"
+},
+{
+  "type": "color",
+  "id": "img_border_color",
+  "label": "Content Color",
+  "default":"#000000"
+},
+      {
+  "type": "header",
+  "content": "Feature Block"
+},
+  {
+  "type": "range",
+  "id": "feat_radius",
+  "label": "Border Radius",
+  "default":4,
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px"
+},
+{
+  "type": "range",
+  "id": "feat_border_w",
+  "label": "Border Width",
+  "default":1,
+  "min": 0,
+  "max": 20,
+  "step": 1,
+  "unit": "px"
+},
+{
+  "type": "color",
+  "id": "feat_border_color",
+  "label": "Content Color",
+  "default":"#efefef"
+},
+{
+  "type": "color",
+  "id": "feat_bg",
+  "label": "Background Color",
+  "default":"#fff"
+},
+    {
+  "type": "color",
+  "id": "feat_shadow",
+  "label": "Sahdow Color",
+  "default":"#000000"
+},
+      {
+    "type": "header",
+    "content": "Section"
+    },
+    {
+    "type": "checkbox",
+    "id":"full_width",
+    "label":"Enabled Full Width",
+    "default": false
+    },
+    {
+    "type": "range",
+    "id": "section_mt",
+    "label": "Margin Top",
+    "default":20,
+    "min": 10,
+    "max": 100,
+    "step": 2,
+    "unit": "px"
+    },
+    {
+    "type": "range",
+    "id": "section_mb",
+    "label": "Margin Bottom",
+    "default":20,
+    "min": 10,
+    "max": 100,
+    "step": 2,
+    "unit": "px"
+    },
+    {
+    "type": "checkbox",
+    "id":"full_border",
+    "label":"Enabled Border",
+    "default": false
+    },
+    {
+    "type": "range",
+    "id": "section_radius",
+    "label": "Border Radius",
+    "default":0,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "unit": "px"
+    },
+    {
+    "type": "range",
+    "id": "section_border_w",
+    "label": "Border Width",
+    "default":1,
+    "min": 0,
+    "max": 20,
+    "step": 1,
+    "unit": "px"
+    },
+    {
+    "type": "color",
+    "label": "Border Color",
+    "id": "section_border_color",
+    "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#fff"
+    },
+  ],
+   "blocks": [
+    {
+      "type":"feature",
+      "name":"Feature Item",
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image",
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title"},
+        {
+          "type":"textarea",
+          "id":"desc",
+          "label":"Description" },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Feature #6",
+       "blocks": [
+        {
+          "type": "feature",
+          "settings":{
+            "image":"",
+            "title":"Lorem Ipsum",
+            "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, sed!"
+          }
+        },
+        {
+          "type": "feature",
+          "settings":{
+            "image":"",
+            "title":"Ipsum Dolor",
+            "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, blanditiis!"
+          }
+        },
+        {
+          "type": "feature",
+          "settings":{
+            "image":"",
+            "title":"Lorem Ipsum",
+            "desc":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, nesciunt!"
+          }
+        },
+        {
+          "type": "feature",
+          "settings":{
+            "image":"",
+            "title":"Ipsum Dolor",
+            "desc":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, nesciunt!"
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

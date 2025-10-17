@@ -1,0 +1,636 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign title_size = section.settings.title_size %}
+{% assign title_size_mobile = section.settings.title_size_mobile %}
+{% assign title_weight = section.settings.title_weight %}
+{% assign title_color = section.settings.title_color %}
+
+{% assign desc_size = section.settings.desc_size %}
+{% assign desc_size_mobile = section.settings.desc_size_mobile %}
+{% assign desc_color = section.settings.desc_color %}
+
+{% assign progress_h = section.settings.progress_h %}
+{% assign progress_bg = section.settings.progress_bg %}
+{% assign progress_border_w = section.settings.progress_border_w %}
+{% assign progress_border_color = section.settings.progress_border_color %}
+
+{% assign video = section.settings.video %}
+{% assign video_radius = section.settings.video_radius %}
+{% assign video_border_w = section.settings.video_border_w %}
+{% assign video_border_color = section.settings.video_border_color %}
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg = section.settings.section_bg %}
+
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      background-color: {{section_bg}};
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 42px;
+      padding-bottom: 42px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .feature-body-pc-{{section.id}} {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0px;
+      align-items: center;
+  }
+
+  .feature-features-pc-{{section.id}} {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+
+  }
+
+  .feature-features-pc-{{section.id}}:last-child {
+      margin-top: 32px;
+  }
+
+  .feature-features-pc-{{section.id}}:first-child {
+      order: 2;
+      margin-top: 32px;
+  }
+
+  .feature-title-pc-{{section.id}} {
+      margin: 0;
+      text-align: left;
+      text-transform: unset;
+      word-wrap: break-word;
+      font-size: {{ title_size_mobile }}px;
+      line-height: 130%;
+      color: {{ title_color }};
+  }
+
+  .feature-progress-pc-{{section.id}} {
+      position: relative;
+      display: block !important;
+      margin-top: 16px;
+      border-top: {{ progress_border_w }}px solid {{ progress_border_color }};
+      height: {{ progress_h }}px;
+  }
+
+  .feature-progress-pc-{{section.id}}::after {
+      content: "";
+      position: absolute;
+      background-color: {{ progress_bg }};
+      height: 100%;
+      top: 0;
+      left: 0;
+  }
+
+  .feature-text-pc-{{section.id}} {
+      text-align: left;
+      margin-top: 20px;
+  }
+
+  .feature-text-pc-{{section.id}} * {
+      margin: 0;
+      text-transform: unset;
+      word-wrap: break-word;
+      font-size: {{ desc_size_mobile }}px;
+      line-height: 150%;
+      color: {{ desc_color }};
+  }
+
+  .feature-media-pc-{{section.id}} {
+      border: {{video_border_w}}px solid {{video_border_color}};
+      border-radius: {{video_radius}}px;
+      overflow: hidden;
+  }
+
+  .feature-media-pc-{{section.id}} img,
+  .feature-media-pc-{{section.id}} svg,
+  .feature-media-pc-{{section.id}} video,
+  .feature-media-pc-{{section.id}} iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+  }
+
+  .feature-media-pc-{{section.id}} .img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+  }
+
+  .feature-media-pc-{{section.id}} svg {
+      background-color: #AFAFAF;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 56px;
+          padding-bottom: 56px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .feature-body-pc-{{section.id}} {
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 32px;
+          align-items: center;
+      }
+
+      .feature-features-pc-{{section.id}} {
+          gap: 70px;
+      }
+
+      .feature-features-pc-{{section.id}}:last-child {
+          margin-top: 0;
+      }
+
+      .feature-features-pc-{{section.id}}:first-child {
+          margin-top: 0px;
+          order: initial;
+      }
+
+      .feature-title-pc-{{section.id}} {
+          font-size: {{ title_size }}px;
+          text-align: left;
+      }
+
+      .feature-progress-pc-{{section.id}} {
+          margin-top: 16px;
+          height: {{ progress_h }}px;
+      }
+
+      .feature-text-pc-{{section.id}} {
+          text-align: left;
+          margin-top: 20px;
+      }
+
+      .feature-text-pc-{{section.id}} * {
+          font-size: {{ desc_size }}px;
+      }
+  }
+
+
+  .feature-title-pc-{{section.id}} {
+      font-family: Montserrat, sans-serif;
+      font-weight: {{ title_weight }};
+      font-style: normal;
+  }
+
+
+  .feature-media-pc-{{section.id}} {
+      aspect-ratio: 12/12;
+  }
+
+
+  @media (min-width: 1024px) {
+      .feature-media-pc-{{section.id}} {
+          aspect-ratio: 12/12;
+      }
+  }
+
+  {% for block in section.blocks %}
+    {% if block.type == 'feature_left' %}
+
+      .feature-progress-{{ block.id }}::after {
+            width:{{block.settings.percent}}%;
+        }
+
+    {% endif %}
+  {% endfor %}
+
+  {% for block in section.blocks %}
+    {% if block.type == 'feature_right' %}
+
+      .feature-progress-{{ block.id }}::after {
+            width:{{block.settings.percent}}%;
+        }
+
+    {% endif %}
+  {% endfor %}
+</style>
+
+<div class="section-pc-{{section.id}} feature-pc-{{section.id}}">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="feature-body-pc-{{section.id}}">
+      <div class="feature-features-pc-{{section.id}}">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature_left' %}
+            <div class="feature-feature-pc-{{section.id}}">
+              <h3 class="feature-title-pc-{{section.id}}">{{ block.settings.title }}</h3>
+
+              <div class="feature-progress-pc-{{section.id}} feature-progress-{{ block.id }}"></div>
+
+              <div class="feature-text-pc-{{section.id}}">
+                <p>{{ block.settings.percent }}% {{ block.settings.desc }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="feature-media-pc-{{section.id}}">
+        {% if video != blank %}
+          {{ video | video_tag: autoplay: true, muted: true, class: 'video' }}
+        {% else %}
+          <video
+            src=""
+            muted=""
+            autoplay=""
+            playsinline=""
+            preload="none"
+            loop=""
+            __idm_id__="1417217"
+          ></video>
+        {% endif %}
+      </div>
+      <div class="feature-features-pc-{{section.id}}">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature_right' %}
+            <div class="feature-feature-pc-{{section.id}}">
+              <h3 class="feature-title-pc-{{section.id}}">{{ block.settings.title }}</h3>
+
+              <div class="feature-progress-pc-{{section.id}} feature-progress-{{ block.id }}"></div>
+
+              <div class="feature-text-pc-{{section.id}}">
+                <p>{{ block.settings.percent }}% {{ block.settings.desc }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+
+<script>
+  function initFeature29() {
+      let lazyLoadInstance = new LazyLoad();
+
+      window.addEventListener(
+          "LazyLoad::Initialized",
+          function (event) {
+              window.lazyLoadInstance = event.detail.instance;
+          },
+          false
+      );
+  }
+
+  document.addEventListener('DOMContentLoaded', initFeature29);
+</script>
+
+{% schema %}
+{
+  "name": "PC - Feature #29",
+  "settings": [
+      {
+        "type": "header",
+        "content": "This section is a property of PeakConversion",
+        "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+      },
+      {
+          "type": "header",
+          "content": "Feature Title"
+      },
+      {
+          "type": "range",
+          "id": "title_size",
+          "label": "Size",
+          "default":36,
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "range",
+          "id": "title_size_mobile",
+          "label": "Mobile Size",
+          "default":26,
+          "min": 10,
+          "max":50,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "range",
+          "id": "title_weight",
+          "label": "Font Weight",
+          "default":500,
+          "min": 100,
+          "max":900,
+          "step": 100
+      },
+      {
+          "type": "color",
+          "id": "title_color",
+          "label": "Color",
+          "default":"#2e2d29"
+      },
+      {
+          "type": "header",
+          "content": "Feature description"
+      },
+      {
+          "type": "range",
+          "id": "desc_size",
+          "label": "Size",
+          "default":15,
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "range",
+          "id": "desc_size_mobile",
+          "label": "Mobile Size",
+          "default":12,
+          "min": 10,
+          "max":50,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "color",
+          "id": "desc_color",
+          "label": "Color",
+          "default":"#2e2d29"
+      },
+      {
+          "type": "header",
+          "content": "Feature Progress"
+      },
+      {
+          "type": "range",
+          "id": "progress_h",
+          "label": "Height",
+          "default":6,
+          "min": 1,
+          "max":20,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "color",
+          "id": "progress_bg",
+          "label": "Background Color",
+          "default":"#2e2d29"
+      },
+      {
+          "type": "range",
+          "id": "progress_border_w",
+          "label": "Border Top Width",
+          "default":1,
+          "min": 0,
+          "max":20,
+          "step": 1,
+          "unit": "px"
+      },
+      {
+          "type": "color",
+          "id": "progress_border_color",
+          "label": "Border Top Color",
+          "default":"#2e2d29"
+      },
+      {
+        "type": "header",
+        "content": "Video"
+      },
+      {
+        "type": "video",
+        "id":"video",
+        "label":"Video"
+      },
+      {
+        "type": "range",
+        "id": "video_radius",
+        "label": "Border Radius",
+        "default":100,
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "video_border_w",
+        "label": "Border Width",
+        "default":0,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "video_border_color",
+        "label": "Border Color",
+        "default":"#f3f3f3"
+      },
+      {
+        "type": "header",
+        "content": "Section"
+     },
+     {
+        "type": "checkbox",
+        "id":"full_width",
+        "label":"Enabled Full Width",
+        "default": false
+     },
+     {
+        "type": "range",
+        "id": "section_mt",
+        "label": "Margin Top",
+        "default":20,
+        "min": 10,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "section_mb",
+        "label": "Margin Bottom",
+        "default":20,
+        "min": 10,
+        "max": 100,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id":"full_border",
+        "label":"Enabled Border",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "section_radius",
+        "label": "Border Radius",
+        "default":0,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "section_border_w",
+        "label": "Border Width",
+        "default":1,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "label": "Border Color",
+        "id": "section_border_color",
+        "default":"#000"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "section_bg",
+        "default":"#fff"
+      },
+  ],
+  "blocks": [
+    {
+      "type":"feature_left",
+      "name":"Left Feature Item",
+      "settings": [
+        {
+          "type": "range",
+          "id": "percent",
+          "label": "Percent",
+          "default":50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"textarea",
+          "id":"desc",
+          "label":"Description"
+        },
+      ]
+    },
+    {
+      "type":"feature_right",
+      "name":"Right Feature Item",
+      "settings": [
+        {
+          "type": "range",
+          "id": "percent",
+          "label": "Percent",
+          "default":50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"textarea",
+          "id":"desc",
+          "label":"Description"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Feature #29",
+      "blocks": [
+        {
+          "type":"feature_left",
+          "settings":{
+            "percent":80,
+            "title":"Lorem",
+            "desc":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt doloribus ab saepe nemo nam omnis"
+          }
+        },
+        {
+          "type":"feature_left",
+          "settings":{
+            "percent":65,
+            "title":"Ipsum",
+            "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio officia dolorem qui, sed nesciunt possimus!"
+          }
+        },
+        {
+          "type":"feature_left",
+          "settings":{
+            "title":"Lorem",
+            "desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate adipisci, non ducimus esse dolorum alias."
+          }
+        },
+        {
+          "type":"feature_right",
+          "settings":{
+            "percent":30,
+            "title":"Lorem",
+            "desc":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt doloribus ab saepe nemo nam omnis"
+          }
+        },
+        {
+          "type":"feature_right",
+          "settings":{
+            "title":"Ipsum",
+            "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio officia dolorem qui, sed nesciunt possimus!"
+          }
+        },
+        {
+          "type":"feature_right",
+          "settings":{
+            "percent":90,
+            "title":"Lorem",
+            "desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate adipisci, non ducimus esse dolorum alias."
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

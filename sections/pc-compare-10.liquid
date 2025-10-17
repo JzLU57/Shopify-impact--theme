@@ -1,0 +1,921 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+
+{% assign heading = section.settings.heading %}
+{% assign heading_size = section.settings.heading_size %}
+{% assign heading_size_mobile = section.settings.heading_size_mobile %}
+{% assign heading_weight = section.settings.heading_weight %}
+{% assign heading_color = section.settings.heading_color %}
+
+{% assign vs_w = section.settings.vs_w %}
+{% assign vs_w_mobile = section.settings.vs_w_mobile %}
+{% assign vs_color = section.settings.vs_color %}
+{% assign vs_bg = section.settings.vs_bg %}
+
+{% assign left_img = section.settings.left_img %}
+{% assign right_img = section.settings.right_img %}
+
+{% assign img_radius = section.settings.img_radius %}
+{% assign img_border_w = section.settings.img_border_w %}
+{% assign img_border_color = section.settings.img_border_color %}
+
+{% assign compa_size = section.settings.compa_size %}
+{% assign compa_size_mobile = section.settings.compa_size_mobile %}
+{% assign compa_weight = section.settings.compa_weight %}
+{% assign compa_icon_w = section.settings.compa_icon_w %}
+{% assign compa_icon_w_mobile = section.settings.compa_icon_w_mobile %}
+{% assign compa_color = section.settings.compa_color %}
+{% assign compa_radius = section.settings.compa_radius %}
+{% assign compa_border_w = section.settings.compa_border_w %}
+{% assign compa_border_color = section.settings.compa_border_color %}
+{% assign compa_bg = section.settings.compa_bg %}
+
+{% assign btn_text = section.settings.btn_text %}
+{% assign btn_link = section.settings.btn_link %}
+{% assign btn_size = section.settings.btn_size %}
+{% assign btn_size_mobile = section.settings.btn_size_mobile %}
+{% assign btn_weight = section.settings.btn_weight %}
+{% assign btn_radius = section.settings.btn_radius %}
+{% assign btn_border_w = section.settings.btn_border_w %}
+{% assign btn_color = section.settings.btn_color %}
+{% assign btn_color_hover = section.settings.btn_color_hover %}
+{% assign btn_border_color = section.settings.btn_border_color %}
+{% assign btn_border_color_hover = section.settings.btn_border_color_hover %}
+{% assign btn_bg = section.settings.btn_bg %}
+{% assign btn_bg_hover = section.settings.btn_bg_hover %}
+
+{% assign full_width = section.settings.full_width %}
+{% assign section_mt = section.settings.section_mt %}
+{% assign section_mb = section.settings.section_mb %}
+{% assign full_border = section.settings.full_border %}
+{% assign section_radius = section.settings.section_radius %}
+{% assign section_border_w = section.settings.section_border_w %}
+{% assign section_border_color = section.settings.section_border_color %}
+{% assign section_bg = section.settings.section_bg %}
+
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+      {% if full_border %}
+          border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+     background-color: {{section_bg}};
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .comparison-heading-pc-{{section.id}} {
+      text-align: center;
+  }
+
+  .comparison-heading-pc-{{section.id}} * {
+      margin: 0px;
+      font-size: {{ heading_size_mobile }}px;
+      font-weight: {{ heading_weight }};
+      color: {{ heading_color }};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .comparison-body-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 10px;
+      position: relative;
+  }
+
+  .comparison-versus-icon-pc-{{section.id}} {
+      position: absolute;
+      left: 50%;
+      top: 14%;
+      transform: translateX(-50%);
+      width: {{vs_w_mobile}}px;
+      overflow: hidden;
+  }
+
+  .comparison-versus-icon-pc-{{section.id}} img,
+  .comparison-versus-icon-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .comparison-versus-icon-pc-{{section.id}} svg circle {
+      fill: {{vs_bg}};
+  }
+
+  .comparison-versus-icon-pc-{{section.id}} svg path {
+      fill: {{vs_color}};
+  }
+
+  .comparison-image-pc-{{section.id}} {
+      flex: 0 1 calc(50% - (10px / 2));
+      overflow: hidden;
+      border-radius: {{img_radius}}px;
+      border: {{img_border_w}}px solid {{img_border_color}};
+  }
+
+  .comparison-image-pc-{{section.id}} img,
+  .comparison-image-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+
+  .comparison-image-pc-{{section.id}} .img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .comparison-image-pc-{{section.id}} svg {
+      background: #AFAFAF;
+  }
+
+  .comparison-table-pc-{{section.id}} {
+      flex: 1 1 auto;
+      order: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+  }
+
+  .comparison-value-pc-{{section.id}} {
+      display: flex;
+      gap: 5px;
+      width: 100%
+  }
+
+  .comparison-right-value-pc-{{section.id}},
+  .comparison-left-value-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: {{compa_bg}};
+      border: {{compa_border_w}}px solid {{compa_border_color}};
+      padding: 16px 8px;
+      border-radius: {{compa_radius}}px;
+      width: 100%;
+  }
+
+  .comparison-icon-pc-{{section.id}} {
+      width: {{compa_icon_w_mobile}}px;
+      height: {{compa_icon_w_mobile}}px;
+      flex-shrink: 0;
+  }
+
+  .comparison-icon-pc-{{section.id}} img,
+  .comparison-icon-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .comparison-text-pc-{{section.id}} {
+      margin: 0px;
+      font-size: {{compa_size_mobile}}px;
+      color: {{compa_color}};
+      line-height: 160%;
+      text-transform: unset;
+      text-align: center;
+      text-decoration: none;
+  }
+
+  .comparison-button-wrapper-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .comparison-button-pc-{{section.id}} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: fit-content;
+      gap: 10px;
+      width: 100%;
+      margin: 0;
+      margin-top: 20px;
+      font-size: {{ btn_size_mobile }}px;
+      color: {{ btn_color }};
+      line-height: 100%;
+      text-align: center;
+      text-transform: unset;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: {{ btn_radius }}px;
+      transition: all 0.25s ease 0s;
+      background-color: transparent;
+      border: 0px;
+      cursor: pointer;
+      font-weight: {{ btn_weight }};
+  }
+
+  .comparison-button-inner-pc-{{section.id}} {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .comparison-button-pc-{{section.id}}:hover {
+      color: {{ btn_color_hover }};
+      transition: all 0.25s ease 0s;
+  }
+
+  .comparison-button-pc-{{section.id}} svg {
+      width: 14px;
+      height: 14px;
+  }
+
+  .comparison-button-pc-{{section.id}} svg path {
+      fill: {{ btn_color }};
+      transition: all 0.25s ease 0s;
+  }
+
+  .comparison-button-pc-{{section.id}}:hover svg path {
+      fill: {{ btn_color_hover }};
+      transition: all 0.25s ease 0s;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 2rem;
+          padding-right: 2rem;
+      }
+
+      .comparison-heading-pc-{{section.id}} {
+          text-align: center;
+      }
+
+      .comparison-heading-pc-{{section.id}} * {
+          font-size: {{ heading_size }}px;
+      }
+
+      .comparison-body-pc-{{section.id}} {
+          flex-wrap: nowrap;
+          gap: 16px;
+          margin-top: 30px;
+      }
+
+      .comparison-table-pc-{{section.id}} {
+          gap: 6px;
+      }
+
+      .comparison-image-pc-{{section.id}} {
+          flex: 0 1 320px;
+      }
+
+      .comparison-table-pc-{{section.id}} {
+          order: unset;
+      }
+
+      .comparison-right-value-pc-{{section.id}},
+      .comparison-left-value-pc-{{section.id}} {
+          padding: 18px 16px;
+      }
+
+      .comparison-icon-pc-{{section.id}} {
+          width: {{compa_icon_w}}px;
+          height: {{compa_icon_w}}px;
+      }
+
+      .comparison-text-pc-{{section.id}} {
+          font-size: {{compa_size}}px;
+      }
+
+      .comparison-versus-icon-pc-{{section.id}} {
+          top: 50% !important;
+          transform: translate(-50%, -50%);
+          width: {{vs_w}}px;
+      }
+
+      .comparison-button-wrapper-pc-{{section.id}} {
+          justify-content: center;
+      }
+
+      .comparison-button-pc-{{section.id}} {
+          margin-top: 28px;
+          padding: 12px 32px;
+          font-size: {{ btn_size }}px;
+      }
+
+  }
+
+
+  .section-pc-{{section.id}}-settings {
+      max-width: 1300px;
+  }
+
+
+  .comparison-heading-pc-{{section.id}} * {
+      font-style: normal;
+  }
+
+
+  .comparison-text-pc-{{section.id}} {
+      font-weight: {{compa_weight}};
+      font-style: normal;
+  }
+
+  .comparison-image-pc-{{section.id}} {
+      aspect-ratio: 12/12;
+  }
+
+  .comparison-versus-icon-pc-{{section.id}} {
+      top: 14%;
+  }
+
+
+  @media(min-width: 1024px) {
+      .comparison-image-pc-{{section.id}} {
+          aspect-ratio: 12/12;
+      }
+  }
+
+
+  .comparison-button-pc-{{section.id}} {
+      background-color: {{ btn_bg }};
+      border: {{ btn_border_w }}px solid {{ btn_border_color }};
+  }
+
+  .comparison-button-pc-{{section.id}}:hover {
+      background-color: {{ btn_bg_hover }};
+      border: {{ btn_border_w }}px solid {{ btn_border_color_hover }};
+  }
+</style>
+
+<div class="section-pc-{{section.id}} comparison-pc-{{section.id}}">
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="comparison-heading-pc-{{section.id}}">
+      <h2>{{ heading }}</h2>
+    </div>
+
+    <div class="comparison-body-pc-{{section.id}}">
+      <div class="comparison-versus-icon-pc-{{section.id}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" viewBox="0 0 73 73" fill="none">
+          <g id="Group 11849">
+              <circle id="Ellipse 5" cx="36.5" cy="36.5" r="36.5" fill="#131D18"></circle>
+              <g id="VS">
+                  <path id="Vector"
+                      d="M46.7948 34.4264C51.8466 34.8455 55.4204 35.8383 55.4204 39.39C55.4204 42.5667 52.4864 44.7287 46.883 44.7287C42.9121 44.7287 39.581 43.6477 37.1543 41.7064L39.5148 38.9267C41.3458 40.471 43.8828 41.3313 46.9712 41.3313C49.6185 41.3313 50.9421 40.846 50.9421 39.8312C50.9421 38.8385 49.7068 38.5076 46.53 38.2429C41.9414 37.8458 37.772 36.831 37.772 33.3895C37.772 30.0805 41.3458 28.2715 46.2432 28.2715C49.5523 28.2715 52.5967 29.0657 54.7145 30.5658L52.4423 33.3675C50.7215 32.1541 48.6478 31.6688 46.2432 31.6467C44.4343 31.6467 42.2503 31.9335 42.2503 33.0366C42.2503 34.0734 44.0372 34.2058 46.7948 34.4264Z"
+                      fill="white"></path>
+                  <path id="Vector_2"
+                      d="M17.5781 28.7793H22.4314L27.5274 39.8978L32.6014 28.7793H37.4106L29.8438 44.2217H25.1228L17.5781 28.7793Z"
+                      fill="white"></path>
+              </g>
+          </g>
+        </svg>
+      </div>
+      <div class="comparison-image-pc-{{section.id}}">
+        {% if left_img != blank %}
+          <img
+            src="{{ left_img | img_url:'master' }}"
+            alt="Image_left"
+          >
+        {% else %}
+          <div class="img">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="comparison-table-pc-{{section.id}}">
+        {% for block in section.blocks %}
+          <div class="comparison-value-pc-{{section.id}}">
+            <div class="comparison-left-value-pc-{{section.id}}">
+              <div class="comparison-icon-pc-{{section.id}}">
+                {{ block.settings.left_icon }}
+              </div>
+
+              <p class="comparison-text-pc-{{section.id}}">
+                {{ block.settings.left_text }}
+              </p>
+            </div>
+            <div class="comparison-right-value-pc-{{section.id}}">
+              <div class="comparison-icon-pc-{{section.id}}">
+                {{ block.settings.right_icon }}
+              </div>
+
+              <p class="comparison-text-pc-{{section.id}}">
+                {{ block.settings.right_text }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="comparison-image-pc-{{section.id}}">
+        {% if right_img != blank %}
+          <img
+            src="{{ right_img | img_url:'master' }}"
+            alt="Image_right"
+          >
+        {% else %}
+          <div class="img">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="comparison-button-wrapper-pc-{{section.id}}">
+      {% if btn_text != blank %}
+        <a
+          href="{{ btn_link }}"
+          class="comparison-button-pc-{{section.id}}"
+        >
+          <p class="comparison-button-inner-pc-{{section.id}}">
+            {{ btn_text }}
+          </p>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PC - Comparison Table #10",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+            "type": "header",
+            "content": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "type": "range",
+            "id": "heading_size",
+            "label": "Size",
+            "default":32,
+            "min": 10,
+            "max": 80,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "heading_size_mobile",
+            "label": "Mobile Size",
+            "default":28,
+            "min": 10,
+            "max":50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "heading_weight",
+            "label": "Font Weight",
+            "default":800,
+            "min": 100,
+            "max":900,
+            "step": 100
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Color",
+            "default":"#1a1a1a"
+        },
+        {
+          "type": "header",
+          "content": "VS Icon"
+        },
+        {
+            "type": "range",
+            "id": "vs_w",
+            "label": "Width",
+            "default":64,
+            "min": 10,
+            "max":100,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "vs_w_mobile",
+            "label": "Mobile Width",
+            "default":56,
+            "min": 10,
+            "max":80,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "color",
+            "id": "vs_color",
+            "label": "Color",
+            "default":"#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "vs_bg",
+            "label": "Background Color",
+            "default":"#5d635f"
+        },
+       {
+            "type": "header",
+            "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_img",
+          "label":"Left Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_img",
+          "label":"Right Image"
+        },
+        {
+          "type": "range",
+          "id": "img_radius",
+          "label": "Border Radius",
+          "default": 10,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "img_border_w",
+            "label": "Border Width",
+            "default":0,
+            "min": 0,
+            "max":20,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "img_border_color",
+          "label": "Border Color",
+          "default":"#000000"
+        },
+       {
+          "type": "header",
+          "content": "Comparison"
+        },
+        {
+            "type": "range",
+            "id": "compa_size",
+            "label": "Font Size",
+            "default":16,
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "compa_size_mobile",
+            "label": "Mobile Font Size",
+            "default":14,
+            "min": 10,
+            "max":50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "compa_weight",
+            "label": "Font Weight",
+            "default":400,
+            "min": 100,
+            "max":900,
+            "step": 100
+        },
+        {
+            "type": "range",
+            "id": "compa_icon_w",
+            "label": "Icon Width",
+            "default":18,
+            "min": 10,
+            "max":50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "compa_icon_w_mobile",
+            "label": "Icon Mobile Width",
+            "default":14,
+            "min": 10,
+            "max":50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "color",
+            "id": "compa_color",
+            "label": "Color",
+            "default":"#1a1a1a"
+        },
+         {
+          "type": "range",
+          "id": "compa_radius",
+          "label": "Border Radius",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "compa_border_w",
+            "label": "Border Width",
+            "default":1,
+            "min": 0,
+            "max":20,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "compa_border_color",
+          "label": "Border Color",
+          "default":"#5a5c5a"
+        },
+        {
+          "type": "color",
+          "id": "compa_bg",
+          "label": "Background Color",
+          "default":"#e0e4e2"
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Text Button",
+          "default":"Lorem Ipsum 1"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Link Button"
+        },
+        {
+            "type": "range",
+            "id": "btn_size",
+            "label": "Font Size",
+            "default":16,
+            "min": 10,
+            "max":50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "btn_size_mobile",
+            "label": "Mobile Font Size",
+            "default":14,
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "btn_weight",
+            "label": "Font Weight",
+            "default":700,
+            "min": 100,
+            "max":900,
+            "step": 100
+        },
+        {
+            "type": "range",
+            "id": "btn_radius",
+            "label": "Border Radius",
+            "default":0,
+            "min": 0,
+            "max":100,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "btn_border_w",
+            "label": "Border Width",
+            "default":1,
+            "min": 0,
+            "max":20,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "label": "Content Color",
+            "default":"#515a54"
+        },
+          {
+            "type": "color",
+            "id": "btn_color_hover",
+            "label": "Content Color Hover",
+            "default":"#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "btn_border_color",
+            "label": "Border Color",
+            "default":"#4d5750"
+        },
+        {
+            "type": "color",
+            "id": "btn_border_color_hover",
+            "label": "Border Color Hover",
+            "default":"#4d5750"
+        },
+        {
+            "type": "color",
+            "id": "btn_bg",
+            "label": "Background Color",
+            "default":"#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "btn_bg_hover",
+            "label": "Background Color Hover",
+            "default":"#4d5750"
+        },
+
+     {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#ffffff"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "comparison_item",
+      "name":"Comparison Item",
+      "settings":[
+        {
+          "type": "header",
+          "content": "Left Value"
+        },
+        {
+          "type":"html",
+          "id":"left_icon",
+          "label":"Icon",
+          "default":"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none'> <g clip-path='url(#clip0_813_3325)'> <path d='M9 18C11.3869 18 13.6761 17.0518 15.364 15.364C17.0518 13.6761 18 11.3869 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948212 11.3869 0 9 0C6.61305 0 4.32387 0.948212 2.63604 2.63604C0.948212 4.32387 0 6.61305 0 9C0 11.3869 0.948212 13.6761 2.63604 15.364C4.32387 17.0518 6.61305 18 9 18ZM12.9727 7.34766L8.47266 11.8477C8.14219 12.1781 7.60781 12.1781 7.28086 11.8477L5.03086 9.59766C4.70039 9.26719 4.70039 8.73281 5.03086 8.40586C5.36133 8.07891 5.8957 8.07539 6.22266 8.40586L7.875 10.0582L11.7773 6.15234C12.1078 5.82188 12.6422 5.82188 12.9691 6.15234C13.2961 6.48281 13.2996 7.01719 12.9691 7.34414L12.9727 7.34766Z' fill='#437453'></path> </g> <defs> <clipPath id='clip0_813_3325'> <rect width='18' height='18' fill='white'></rect> </clipPath> </defs> </svg>"
+        },
+        {
+          "type":"text",
+          "id":"left_text",
+          "label":"Text"
+        },
+        {
+          "type": "header",
+          "content": "Right Value"
+        },
+        {
+          "type":"html",
+          "id":"right_icon",
+          "label":"Icon",
+          "default":"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 15' fill='none'> <g clip-path='url(#clip0_408_5968)'> <path d='M7 1.8125C8.50842 1.8125 9.95506 2.41172 11.0217 3.47833C12.0883 4.54494 12.6875 5.99158 12.6875 7.5C12.6875 9.00842 12.0883 10.4551 11.0217 11.5217C9.95506 12.5883 8.50842 13.1875 7 13.1875C5.49158 13.1875 4.04494 12.5883 2.97833 11.5217C1.91172 10.4551 1.3125 9.00842 1.3125 7.5C1.3125 5.99158 1.91172 4.54494 2.97833 3.47833C4.04494 2.41172 5.49158 1.8125 7 1.8125ZM7 14.5C8.85652 14.5 10.637 13.7625 11.9497 12.4497C13.2625 11.137 14 9.35652 14 7.5C14 5.64348 13.2625 3.86301 11.9497 2.55025C10.637 1.2375 8.85652 0.5 7 0.5C5.14348 0.5 3.36301 1.2375 2.05025 2.55025C0.737498 3.86301 0 5.64348 0 7.5C0 9.35652 0.737498 11.137 2.05025 12.4497C3.36301 13.7625 5.14348 14.5 7 14.5ZM4.78516 5.28516C4.52812 5.54219 4.52812 5.95781 4.78516 6.21211L6.07031 7.49727L4.78516 8.78242C4.52812 9.03945 4.52812 9.45508 4.78516 9.70937C5.04219 9.96367 5.45781 9.96641 5.71211 9.70937L6.99727 8.42422L8.28242 9.70937C8.53945 9.96641 8.95508 9.96641 9.20937 9.70937C9.46367 9.45234 9.46641 9.03672 9.20937 8.78242L7.92422 7.49727L9.20937 6.21211C9.46641 5.95508 9.46641 5.53945 9.20937 5.28516C8.95234 5.03086 8.53672 5.02812 8.28242 5.28516L6.99727 6.57031L5.71211 5.28516C5.45508 5.02812 5.03945 5.02812 4.78516 5.28516Z' fill='#437453'></path></g> <defs> <clipPath id='clip0_408_5968'> <rect width='14' height='14' fill='white' transform='translate(0 0.5)'> </rect> </clipPath> </defs> </svg>"
+        },
+        {
+          "type":"text",
+          "id":"right_text",
+          "label":"Text"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Comparison Table #10",
+      "blocks": [
+        {
+          "type": "comparison_item",
+          "settings":{
+            "left_text":"Lorem Ipsum",
+            "right_text":"Dolor Ipsum"
+          }
+        },
+        {
+          "type": "comparison_item",
+          "settings":{
+            "left_text":"Lorem Dolor",
+            "right_text":"Dolor Ipsum"
+          }
+        },
+        {
+          "type": "comparison_item",
+          "settings":{
+            "left_text":"Lorem Ipsum",
+            "right_text":"Dolor Ipsum"
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

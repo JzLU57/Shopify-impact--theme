@@ -1,0 +1,1399 @@
+<!--
+  :danger: ATTENTION : Cette section est la propriété exclusive de PeakConversion.
+  Elle est protégée par la loi sur la propriété intellectuelle en vertu de l'article L122-4 du Code de la Propriété Intellectuelle en France.
+  Vous n'avez pas le droit de copier, vendre ou redistribuer cette section sous quelque forme que ce soit sans autorisation.
+  Pour accéder légalement à ces sections personnalisables, visitez notre site : https://peakconversion.fr/pages/sections-personnalisables
+-->
+{% liquid
+  assign heading = section.settings.heading
+  assign heading_size = section.settings.heading_size
+  assign heading_size_mobile = section.settings.heading_size_mobile
+  assign heading_weight = section.settings.heading_weight
+  assign heading_color = section.settings.heading_color
+
+  assign sub_heading = section.settings.sub_heading
+  assign sub_heading_size = section.settings.sub_heading_size
+  assign sub_heading_size_mobile = section.settings.sub_heading_size_mobile
+  assign sub_heading_color = section.settings.sub_heading_color
+
+  assign hover_watch_text = section.settings.hover_watch_text
+  assign hover_watch_size = section.settings.hover_watch_size
+  assign hover_watch_weight = section.settings.hover_watch_weight
+  assign hover_watch_color = section.settings.hover_watch_color
+  assign hover_watch_radius = section.settings.hover_watch_radius
+  assign hover_watch_border_w = section.settings.hover_watch_border_w
+  assign hover_watch_border_color = section.settings.hover_watch_border_color
+  assign hover_watch_bg = section.settings.hover_watch_bg
+
+  assign btn_watch_text = section.settings.btn_watch_text
+  assign btn_watch_size = section.settings.btn_watch_size
+  assign btn_watch_weight = section.settings.btn_watch_weight
+  assign btn_watch_icon_w = section.settings.btn_watch_icon_w
+  assign btn_watch_color = section.settings.btn_watch_color
+  assign btn_watch_radius = section.settings.btn_watch_radius
+  assign btn_watch_border_w = section.settings.btn_watch_border_w
+  assign btn_watch_border_color = section.settings.btn_watch_border_color
+  assign btn_watch_bg = section.settings.btn_watch_bg
+
+  assign slider_video_radius = section.settings.slider_video_radius
+  assign slider_video_border_w = section.settings.slider_video_border_w
+  assign slider_video_border_color = section.settings.slider_video_border_color
+  assign slider_video_shadow_color = section.settings.slider_video_shadow_color
+
+  assign popup_video_behind_bg = section.settings.popup_video_behind_bg
+  assign popup_video_icon_w = section.settings.popup_video_icon_w
+  assign popup_video_icon_color = section.settings.popup_video_icon_color
+  assign popup_video_icon_radius = section.settings.popup_video_icon_radius
+  assign popup_video_icon_border_w = section.settings.popup_video_icon_border_w
+  assign popup_video_icon_border_color = section.settings.popup_video_icon_border_color
+  assign popup_video_icon_bg = section.settings.popup_video_icon_bg
+
+  assign bot_text = section.settings.bot_text
+  assign bot_text_size = section.settings.bot_text_size
+  assign bot_text_size_mobile = section.settings.bot_text_size_mobile
+  assign bot_text_color = section.settings.bot_text_color
+
+  assign full_width = section.settings.full_width
+  assign section_mt = section.settings.section_mt
+  assign section_mb = section.settings.section_mb
+  assign full_border = section.settings.full_border
+  assign section_radius = section.settings.section_radius
+  assign section_border_w = section.settings.section_border_w
+  assign section_border_color = section.settings.section_border_color
+  assign section_bg = section.settings.section_bg
+%}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+  .section-pc-{{section.id}} {
+      max-width: {% if full_width %} 100% {% else %} 1200px {% endif %};
+     {% if full_border %}
+        border: {{section_border_w}}px solid {{section_border_color}};
+      {% endif %}
+      background-color: {{section_bg}};
+      border-radius: {{section_radius}}px;
+      margin: 0 auto;
+      margin-top: {{section_mt}}px !important;
+      margin-bottom: {{section_mb}}px !important;
+      overflow: hidden;
+  }
+
+  .section-pc-{{section.id}}-settings {
+      margin: 0 auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
+
+  .video-heading-pc-{{section.id}} {
+      width: 100%;
+      text-align: center;
+  }
+
+  .video-heading-pc-{{section.id}} * {
+      margin: 0;
+      font-size: {{ heading_size_mobile }}px;
+      color: {{ heading_color }};
+      font-weight: {{ heading_weight }};
+      line-height: 130%;
+      text-transform: unset;
+  }
+
+  .video-subheading-pc-{{section.id}} {
+      width: 100%;
+      margin-top: 16px;
+      text-align: center;
+      padding: 0px 0px;
+  }
+
+  .video-subheading-pc-{{section.id}} * {
+      margin: 0;
+      font-size: {{ sub_heading_size_mobile }}px;
+      color: {{ sub_heading_color }};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .video-text-pc-{{section.id}} {
+      width: 100%;
+      margin-top: 40px;
+      text-align: center;
+      padding: 0px 0px;
+  }
+
+  .video-text-pc-{{section.id}} * {
+      margin: 0;
+      font-size: {{ bot_text_size_mobile }}px;
+      color: {{ bot_text_color }};
+      line-height: 150%;
+      text-transform: unset;
+  }
+
+  .video-slider-wrapper-pc-{{section.id}} {
+      margin-top: 48px;
+  }
+
+  .video-slider-pc-{{section.id}} {
+      overflow: visible !important;
+  }
+
+  .video-grid-pc-{{section.id}} {
+      display: none;
+  }
+
+  .video-item-pc-{{section.id}} {
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.25s ease 0s;
+  }
+
+  .video-watch-icon-pc-{{section.id}} {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(5px);
+      background-color: {{ btn_watch_bg }}33;
+      border-radius: {{ btn_watch_radius }}px;
+      border:{{ btn_watch_border_w }}px solid {{ btn_watch_border_color }};
+      padding: .625rem 1rem;
+  }
+
+  .video-watch-icon-pc-{{section.id}} span {
+      margin: 0px;
+      font-size: {{ btn_watch_size }}px;
+      font-weight:{{ btn_watch_weight }};
+      line-height: 150%;
+      text-transform: none;
+      text-decoration: none;
+      color: {{ btn_watch_color }};
+  }
+
+  .video-icon-pc-{{section.id}} {
+      width: {{ btn_watch_icon_w }}px;
+      height: {{ btn_watch_icon_w }}px;
+  }
+
+  .video-icon-pc-{{section.id}} svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .video-icon-pc-{{section.id}} svg path {
+      fill: {{ btn_watch_color }};
+  }
+
+  .video-hover-text-pc-{{section.id}} {
+      display: none;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      background: {{ hover_watch_bg }};
+      margin: 0px;
+      font-size: {{ hover_watch_size }}px;
+      line-height: 150%;
+      text-transform: none;
+      text-decoration: none;
+      color: {{ hover_watch_color }};
+      padding: 10px;
+      border-radius: {{ hover_watch_radius }}px;
+      border: {{ hover_watch_border_w }}px solid {{ hover_watch_border_color }};
+      font-weight: {{ hover_watch_weight }};
+  }
+
+  .video-item-pc-{{section.id}} {
+      position: relative;
+  }
+
+  .video-item-pc-{{section.id}}.swiper-slide {
+      transform: rotate(2.2deg) !important;
+  }
+
+  .video-item-pc-{{section.id}} iframe,
+  .video-item-pc-{{section.id}} video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+  }
+
+
+  .video-item-pc-{{section.id}} .video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+  }
+
+  .video-item-pc-{{section.id}}:before {
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+  }
+
+  .video-modal-pc-{{section.id}} {
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      overflow-y: scroll;
+      pointer-events: none;
+      background: {{popup_video_behind_bg}}80;
+      padding: 10px;
+  }
+
+  .video-modal-pc-{{section.id}}.active {
+      opacity: 1;
+      z-index: 100;
+      pointer-events: all;
+      transition: all 250ms ease-in 0s;
+  }
+
+  .video-modal-inner-pc-{{section.id}} {
+      position: relative;
+      width: 100%;
+      max-height: 96vh;
+      overflow: hidden;
+  }
+
+  .video-modal-inner-pc-{{section.id}} video,
+  .video-modal-inner-pc-{{section.id}} iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+      max-height: 96vh;
+  }
+
+  .video-modal-inner-pc-{{section.id}} .video{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: none;
+      border-radius: {{ slider_video_radius }}px;
+      border: {{ slider_video_border_w }}px solid {{ slider_video_border_color }};
+      max-height: 96vh;
+  }
+
+  .video-modal-inner-pc-{{section.id}} iframe {
+      min-height: 70vh;
+  }
+
+  .video-modal-inner-video-pc-{{section.id}} {
+      position: relative;
+  }
+
+  .video-close-pc-{{section.id}} {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      box-shadow: none;
+      background-color: {{popup_video_icon_bg}}80;
+      border: {{popup_video_icon_border_w}}px solid {{popup_video_icon_border_color}};
+      padding: 10px;
+      border-radius: {{popup_video_icon_radius}}%;
+      cursor: pointer;
+      z-index: 2;
+  }
+
+  .video-close-pc-{{section.id}} svg {
+      display: block;
+      width: {{popup_video_icon_w}}px;
+      height: {{popup_video_icon_w}}px;
+  }
+
+  .video-close-pc-{{section.id}} svg path {
+      fill: {{popup_video_icon_color}};
+  }
+
+  .portrait-video-pc-{{section.id}} {
+      max-width: 100%;
+      margin: 0px auto;
+  }
+
+  .landspace-video-pc-{{section.id}} {
+      max-width: 100%;
+      margin: 0px auto;
+  }
+
+  .video-modal-action-pc-{{section.id}} {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: {{popup_video_icon_radius}}%;
+      border: {{popup_video_icon_border_w}}px solid {{popup_video_icon_border_color}};
+      background-color: {{popup_video_icon_bg}}80;
+      display: flex !important;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transition: all 0.25s ease 0s;
+      z-index: 2;
+  }
+
+  .video-modal-action-pc-{{section.id}} svg {
+      width: {{popup_video_icon_w}}px;
+      height: {{popup_video_icon_w}}px;
+  }
+
+  .video-modal-action-pc-{{section.id}} svg {
+      fill: {{popup_video_icon_color}};
+  }
+
+  .video-modal-action-pc-{{section.id}} .video-modal-unmute-pc-{{section.id}} {
+      display: none;
+  }
+
+  .video-modal-action-pc-{{section.id}}.active .video-modal-unmute-pc-{{section.id}} {
+      display: block;
+  }
+
+  .video-modal-action-pc-{{section.id}}.active .video-modal-mute-pc-{{section.id}} {
+      display: none;
+  }
+
+  @media(min-width: 1024px) {
+
+      .section-pc-{{section.id}}-settings {
+          padding: 0 5rem;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          padding-left: 5rem;
+          padding-right: 5rem;
+      }
+
+      .video-heading-pc-{{section.id}} {
+          text-align: center;
+      }
+
+      .video-heading-pc-{{section.id}} * {
+          font-size: {{ heading_size }}px;
+      }
+
+      .video-subheading-pc-{{section.id}} {
+          margin-top: 16px;
+          text-align: center;
+      }
+
+      .video-subheading-pc-{{section.id}} * {
+          font-size: {{ sub_heading_size }}px;
+      }
+
+      .video-text-pc-{{section.id}} {
+          margin-top: 68px;
+          text-align: center;
+      }
+
+      .video-text-pc-{{section.id}} * {
+          font-size: {{ bot_text_size }}px;
+      }
+
+      .video-slider-wrapper-pc-{{section.id}} {
+          display: none;
+      }
+
+      .video-grid-pc-{{section.id}} {
+          margin-top: 72px;
+          display: grid;
+          gap: 0px;
+          grid-template-columns: repeat(4, 1fr);
+      }
+
+      .video-item-pc-{{section.id}}:hover {
+          z-index: 2;
+      }
+
+      .video-item-pc-{{section.id}}:nth-child(odd) {
+          transform: rotate(2.5deg) scale(1.1);
+      }
+
+      .video-item-pc-{{section.id}}:nth-child(odd):hover {
+          transform: rotate(-3.2deg) scale(1.2);
+      }
+
+      .video-item-pc-{{section.id}}:nth-child(even) {
+          transform: rotate(-3.2deg) scale(1.1);
+      }
+
+      .video-item-pc-{{section.id}}:nth-child(even):hover {
+          transform: rotate(2.5deg) scale(1.2);
+      }
+
+      .video-modal-inner-pc-{{section.id}} {
+          max-width: 70%;
+      }
+
+      .portrait-video-pc-{{section.id}} {
+          max-width: 40%;
+      }
+
+      .landspace-video-pc-{{section.id}} {
+          max-width: 80%;
+      }
+
+      .video-watch-icon-pc-{{section.id}} {
+          display: none;
+      }
+  }
+
+
+  .section-pc-{{section.id}}-settings {
+      max-width: 120rem;
+  }
+
+
+  .video-hover-text-pc-{{section.id}} {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+  }
+
+
+  .video-item-pc-{{section.id}} {
+      aspect-ratio: 9.6/12;
+  }
+
+
+  @media(min-width: 1024px) {
+      .video-item-pc-{{section.id}} {
+          aspect-ratio: 9.6/12;
+      }
+  }
+
+
+  .video-item-pc-{{section.id}} {
+      box-shadow: 0 25px 16px {{slider_video_shadow_color}}0d, 0 10px 10px {{slider_video_shadow_color}}1a, 0 3px 6px {{slider_video_shadow_color}}1a;
+  }
+</style>
+
+<div class="section-pc-{{section.id}} video-pc-{{section.id}}">
+  <p class="video-hover-text-pc-{{section.id}}">
+    {{ hover_watch_text }}
+  </p>
+  <div class="section-pc-{{section.id}}-settings">
+    <div class="video-heading-pc-{{section.id}}">
+      <h2>{{ heading }}</h2>
+    </div>
+
+    <div class="video-subheading-pc-{{section.id}}">
+      {{ sub_heading }}
+    </div>
+
+    <div class="video-slider-wrapper-pc-{{section.id}}">
+      <div
+        class="video-slider-pc-{{section.id}} swiper"
+      >
+        <div class="swiper-wrapper" id="swiper-wrapper-pc-{{section.id}}">
+          {% for block in section.blocks %}
+            <div
+              class="video-item-pc-{{section.id}} swiper-slide"
+              id="item_{{ forloop.index }}"
+              data-cursor="{{ btn_watch_text }}"
+            >
+              <div class="video-watch-icon-pc-{{section.id}}">
+                <span>{{ btn_watch_text }}</span>
+
+                <div class="video-icon-pc-{{section.id}}">
+                  <svg
+                    width="8"
+                    height="9"
+                    viewBox="0 0 8 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                        d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                        fill="white"></path>
+                  </svg>
+                </div>
+              </div>
+
+              {% if block.settings.video != blank %}
+                {{
+                  block.settings.video
+                  | video_tag: loop: true, muted: true, controls: false, autoplay: false, class: 'video'
+                }}
+              {% else %}
+                <div class="video">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="video-grid-pc-{{section.id}}">
+      {% for block in section.blocks %}
+        <div class="video-item-pc-{{section.id}}" id="item_{{ forloop.index }}" data-cursor="{{ btn_watch_text }}">
+          <div class="video-watch-icon-pc-{{section.id}}">
+            <span>{{ btn_watch_text }}</span>
+
+            <div class="video-icon-pc-{{section.id}}">
+              <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1.52083 0.135596L7.52083 3.67115C7.8125 3.85194 8 4.17336 8 4.49477C8 4.83627 7.8125 5.15768 7.52083 5.31839L1.52083 8.85394C1.20833 9.03474 0.8125 9.05483 0.5 8.87403C0.1875 8.71332 0 8.39191 0 8.03032V0.959219C0 0.617717 0.1875 0.296303 0.5 0.135596C0.8125 -0.0451988 1.20833 -0.0451988 1.52083 0.135596Z"
+                    fill="white"></path>
+              </svg>
+            </div>
+          </div>
+
+          {% if block.settings.video != blank %}
+            {{
+              block.settings.video
+              | video_tag: loop: true, muted: true, controls: false, autoplay: false, class: 'video'
+            }}
+          {% else %}
+            <div class="video">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="video-text-pc-{{section.id}}">
+      {{ bot_text }}
+    </div>
+  </div>
+</div>
+
+{% for block in section.blocks %}
+  <div class="video-modal-pc-{{section.id}}" data-id="item_{{ forloop.index }}">
+    <div class="video-modal-inner-pc-{{section.id}}">
+      <div
+        class="video-modal-inner-video-pc-{{section.id}} portrait-video-pc-{{section.id}}"
+      >
+        <button class="video-close-pc-{{section.id}}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.0002 10.586L4.70718 3.29297L3.29297 4.70718L10.586 12.0002L3.29297 19.2933L4.70718 20.7075L12.0002 13.4145L19.2933 20.7075L20.7075 19.2933L13.4145 12.0002L20.7075 4.70723L19.2933 3.29302L12.0002 10.586Z"
+                fill="white"></path>
+          </svg>
+        </button>
+        <div class="video-modal-action-pc-{{section.id}}">
+          <svg
+            class="video-modal-mute-pc-{{section.id}}"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm14.525-4l3.536 3.536-1.414 1.414L19 13.414l-3.536 3.536-1.414-1.414L17.586 12 14.05 8.464l1.414-1.414L19 10.586l3.536-3.536 1.414 1.414L20.414 12z">
+            </path>
+          </svg>
+          <svg
+            class="video-modal-unmute-pc-{{section.id}}"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+                d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134l-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-3.304-6.968l1.42-1.42A10.976 10.976 0 0 1 23 12c0 3.223-1.386 6.122-3.594 8.134zm-3.543-3.543l-1.422-1.422A3.993 3.993 0 0 0 16 12c0-1.43-.75-2.685-1.88-3.392l1.439-1.439A5.991 5.991 0 0 1 18 12c0 1.842-.83 3.49-2.137 4.591z">
+            </path>
+          </svg>
+        </div>
+        {% if block.settings.video != blank %}
+          {{ block.settings.video | video_tag: loop: true, muted: true, controls: false, autoplay: false }}
+        {% else %}
+          <div class="video">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder_svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+
+<script>
+            function loadSwiper(callback) {
+                if (window.Swiper) {
+                    callback();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+                    script.onload = callback;
+                    document.head.appendChild(script);
+                }
+            }
+
+            function initVideoGrid4() {
+
+                var lazyLoadInstance = new LazyLoad();
+
+                window.addEventListener(
+                    "LazyLoad::Initialized",
+                    function (event) {
+                        window.lazyLoadInstance = event.detail.instance;
+                    },
+                    false
+                );
+
+                const slider = new Swiper(`.video-slider-pc-{{section.id}}`, {
+                    speed: 300,
+                    spaceBetween: 20,
+                    breakpoints: {
+                        320: {
+                            centeredSlides: true,
+                            loop: false,
+                            spaceBetween: 8,
+                            slidesPerView: 1.5
+                        },
+                        768: {
+                            centeredSlides: false,
+                            loop: false,
+                            spaceBetween: 8,
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            centeredSlides: false,
+                            loop: false,
+                            spaceBetween: 0,
+                            slidesPerView: 4
+                        }
+                    },
+                    on: {
+                        slideChange: function () {
+                            const slides = this.slides;
+
+                            for (let i = 0; i < slides.length; i++) {
+                                let video = slides[i].querySelector('video');
+                                let frame = slides[i].querySelector('iframe');
+                                let src;
+                                let src1;
+                                let src2;
+                                if (frame) {
+                                    src1 = frame.getAttribute('data-src1');
+                                    src2 = frame.getAttribute('data-src2');
+                                }
+
+                                if (i === this.activeIndex) {
+                                    if (video) {
+                                        video.play();
+                                        video.muted = true;
+                                    }
+
+                                    if (frame) {
+                                        frame.src = src2;
+                                    }
+
+                                } else {
+                                    if (video) {
+                                        video.pause();
+                                    }
+
+                                    if (frame) {
+                                        frame.src = src1;
+                                    }
+                                }
+                            }
+                        },
+                    },
+                });
+
+                let videoGrid = document.querySelector(`.video-grid-pc-{{section.id}}`);
+                if (videoGrid) {
+                    let items = videoGrid.querySelectorAll(`.video-item-pc-{{section.id}}`);
+                    if (items) {
+                        items.forEach(el => {
+
+
+                            el.addEventListener("mouseover", function (event) {
+                                var floatingText = document.querySelector(`.video-hover-text-pc-{{section.id}}`);
+                                if (floatingText) {
+                                    let text = el.getAttribute("data-cursor");
+                                    if (text) {
+                                        floatingText.innerText = text;
+                                        floatingText.style.display = "block";
+                                    }
+                                }
+
+                                el.addEventListener("mousemove", function (event) {
+                                    if (floatingText) {
+                                        floatingText.style.left = event.clientX + 10 + "px";
+                                        floatingText.style.top = event.clientY + 10 + "px";
+                                    }
+                                });
+
+                                el.addEventListener("mouseout", function (event) {
+                                    if (floatingText) {
+                                        floatingText.style.display = "none";
+                                    }
+                                });
+                            });
+
+                            let video = el.querySelector('video');
+                            let frame = el.querySelector('iframe');
+                            let src;
+                            let src1;
+                            let src2;
+                            if (frame) {
+                                src1 = frame.getAttribute('data-src1');
+                                src2 = frame.getAttribute('data-src2');
+                            }
+                            el.addEventListener('mouseover', () => {
+                                if (video) {
+                                    video.play();
+                                    video.muted = true;
+                                }
+
+                                if (frame) {
+                                    frame.src = src2;
+                                }
+                            });
+                            el.addEventListener('mouseleave', () => {
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (frame) {
+                                    frame.src = src1;
+                                }
+                            });
+                        })
+                    }
+                }
+
+                let btns = document.querySelectorAll(`.video-item-pc-{{section.id}}`);
+                let modals = document.querySelectorAll(`.video-modal-pc-{{section.id}}`);
+
+                if (btns) {
+                    btns.forEach(el => {
+                        el.addEventListener('click', () => {
+                            if (modals) {
+                                modals.forEach(element => {
+                                    let btn = element.querySelector(`.video-modal-action-pc-{{section.id}}`);
+                                    let dataId = element.getAttribute('data-id');
+                                    let video = element.querySelector('video');
+                                    let frame = element.querySelector('iframe');
+                                    if (el.id == dataId) {
+                                        element.classList.add('active');
+                                        document.body.style.overflow = 'hidden';
+
+                                        if (video) {
+                                            setTimeout(() => {
+                                                video.play();
+                                                video.muted = false;
+                                                if (btn) {
+                                                    btn.classList.add('active');
+                                                }
+                                            }, 300);
+                                        }
+
+                                        if (frame) {
+                                            let dataSrc = frame.getAttribute('data-src');
+                                            setTimeout(() => {
+                                                frame.src = dataSrc;
+                                                if (btn) {
+                                                    btn.classList.add('active');
+                                                }
+                                            }, 300);
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                    })
+                }
+
+                if (modals) {
+                    modals.forEach(el => {
+                        let video = el.querySelector('video');
+                        let frame = el.querySelector('iframe');
+                        let close = el.querySelector(`.video-close-pc-{{section.id}}`);
+                        let btn = el.querySelector(`.video-modal-action-pc-{{section.id}}`);
+
+                        let dataSrc;
+                        if (frame) {
+                            let dataSrc = frame.getAttribute('data-src');
+                        }
+
+                        if (btn) {
+                            btn.addEventListener('click', () => {
+                                btn.classList.toggle('active');
+                                if (btn.classList.contains('active')) {
+                                    if (frame) {
+                                        frame.src = dataSrc;
+                                    }
+                                    if (video) {
+                                        video.muted = false;
+                                        video.setAttribute("mute", "false");
+                                    }
+                                } else {
+                                    if (frame) {
+                                        frame.src += "&mute=1";
+                                    }
+                                    if (video) {
+                                        video.muted = true;
+                                        video.setAttribute("mute", "true");
+                                    }
+                                }
+                            })
+                        }
+
+                        if (close) {
+                            close.addEventListener('click', () => {
+                                document.body.style.overflow = '';
+                                el.classList.remove('active');
+
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (btn) {
+                                    btn.classList.remove('active');
+                                }
+
+                                if (frame) {
+                                    let dataSrc2 = frame.getAttribute('data-src2');
+                                    frame.src = dataSrc2;
+                                }
+                            });
+                        }
+
+                        document.addEventListener('click', (e) => {
+                            if (e.target == el) {
+                                document.body.style.overflow = '';
+                                el.classList.remove('active');
+
+                                if (video) {
+                                    video.pause();
+                                }
+
+                                if (frame) {
+                                    let dataSrc2 = frame.getAttribute('data-src2');
+                                    frame.src = dataSrc2;
+                                }
+                            }
+                        });
+                    })
+                }
+            }
+
+           
+            
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSwiper(() => initVideoGrid4()));
+            } else {
+                loadSwiper(() => initVideoGrid4());
+            }
+</script>
+
+{% schema %}
+{
+  "name": "PC - Grid #4",
+  "settings": [
+    {
+      "type": "header",
+      "content": "This section is a property of PeakConversion",
+      "info": "Do not sell or reproduce. contact us at franklinjounda@gmail.com for more info"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem Ipsum Dolor!"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "default":48,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile Size",
+      "default":22,
+      "min": 10,
+      "max":60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Font Weight",
+      "default":500,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Sub Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading",
+      "label": "Text",
+      "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, hic!</p>"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size_mobile",
+      "label": "Mobile Size",
+      "default":16,
+      "min": 10,
+      "max":60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Hover Watch Button"
+    },
+    {
+      "type": "text",
+      "id": "hover_watch_text",
+      "label": "Text",
+      "default": "Watch"
+    },
+    {
+      "type": "range",
+      "id": "hover_watch_size",
+      "label": "Size",
+      "default":14,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "hover_watch_weight",
+      "label": "Font Weight",
+      "default":700,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "hover_watch_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "range",
+      "id": "hover_watch_radius",
+      "label": "Border Radius",
+      "default":100,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "hover_watch_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "hover_watch_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "hover_watch_bg",
+      "label": "Background Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Watch Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_watch_text",
+      "label": "Text",
+      "default": "Watch"
+    },
+    {
+      "type": "range",
+      "id": "btn_watch_size",
+      "label": "Size",
+      "default":12,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_watch_weight",
+      "label": "Font Weight",
+      "default":500,
+      "min": 100,
+      "max":900,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "id": "btn_watch_icon_w",
+      "label": "Icon",
+      "default":8,
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_watch_color",
+      "label": "Content Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "btn_watch_radius",
+      "label": "Border Radius",
+      "default":8,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "btn_watch_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "btn_watch_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_watch_bg",
+      "label": "Background Color",
+      "default":"#4f4f4f"
+    },
+    {
+      "type": "header",
+      "content": "Slider Video"
+    },
+    {
+      "type": "range",
+      "id": "slider_video_radius",
+      "label": "Border Radius",
+      "default":16,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "slider_video_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "slider_video_border_color",
+      "label": "Border Color",
+      "default":"#000000"
+    },
+    {
+      "type": "color",
+      "id": "slider_video_shadow_color",
+      "label": "Shadow Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Video Pop Up"
+    },
+    {
+      "type": "color",
+      "id": "popup_video_behind_bg",
+      "label": "Behind Background Color",
+      "default":"#000000"
+    },
+    {
+      "type": "header",
+      "content": "Video Pop Up Icon"
+    },
+    {
+      "type": "range",
+      "id": "popup_video_icon_w",
+      "label": "Width",
+      "default":20,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "popup_video_icon_color",
+      "label": "Color",
+      "default":"#000000"
+    },
+    {
+      "type": "range",
+      "id": "popup_video_icon_radius",
+      "label": "Border Radius",
+      "default":50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "popup_video_icon_border_w",
+      "label": "Border Width",
+      "default":0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "popup_video_icon_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "popup_video_icon_bg",
+      "default":"#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Text"
+    },
+    {
+      "type": "richtext",
+      "id": "bot_text",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim dolores eum deserunt, repudiandae dolorum.</p>"
+    },
+    {
+      "type": "range",
+      "id": "bot_text_size",
+      "label": "Size",
+      "default":16,
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bot_text_size_mobile",
+      "label": "Mobile Size",
+      "default":16,
+      "min": 10,
+      "max":50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bot_text_color",
+      "label": "Color",
+      "default":"#000"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_width",
+      "label":"Enabled Full Width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Margin Top",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Margin Bottom",
+      "default":20,
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id":"full_border",
+      "label":"Enabled Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Border Radius",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_border_w",
+      "label": "Border Width",
+      "default":1,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "label": "Border Color",
+      "id": "section_border_color",
+      "default":"#000"
+    },
+    {
+      "type": "color",
+      "label": "Background Color",
+      "id": "section_bg",
+      "default":"#ffffff"
+    },
+  ],
+  "blocks":[
+    {
+      "type":"slider_video",
+      "name":"Video Slider",
+      "settings":[
+        {
+          "type":"video",
+          "id":"video",
+          "label":"Video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PC - Grid #4",
+      "blocks":[
+        {
+          "type":"slider_video",
+          "settings":{
+            "video":""
+          }
+        },
+        {
+          "type":"slider_video",
+          "settings":{
+            "video":""
+          }
+        },
+        {
+          "type":"slider_video",
+          "settings":{
+            "video":""
+          }
+        },
+        {
+          "type":"slider_video",
+          "settings":{
+            "video":""
+          }
+        },
+      ],
+    }
+  ]
+}
+{% endschema %}
