@@ -11,6 +11,17 @@
   "sections": {
     "main": {
       "type": "main-product",
+      "blocks": {
+        "liquid_PJcHWg": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.eira-hero-mobile {\n  text-align: left;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;\n  padding: 0;\n  max-width: 100%;\n}\n\n.eira-rating-line {\n  font-size: 14px;\n  color: #444;\n  margin-bottom: 8px;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n}\n\n.eira-stars-mobile {\n  color: #FFD700;\n  letter-spacing: 1px;\n}\n\n.eira-main-title {\n  font-size: 28px;\n  font-weight: 700;\n  margin: 0;\n  line-height: 1.2;\n  color: #1a1a1a;\n}\n\n.eira-subtitle-mobile {\n  font-size: 15px;\n  color: #444;\n  margin: 10px 0 0 0;\n  line-height: 1.5;\n}\n\n/* Optimisation Mobile */\n@media (max-width: 480px) {\n  .eira-rating-line {\n    font-size: 13px;\n    gap: 5px;\n  }\n  \n  .eira-main-title {\n    font-size: 24px;\n  }\n  \n  .eira-subtitle-mobile {\n    font-size: 14px;\n    line-height: 1.5;\n  }\n}\n\n/* Tablettes */\n@media (min-width: 481px) and (max-width: 768px) {\n  .eira-rating-line {\n    font-size: 15px;\n  }\n  \n  .eira-main-title {\n    font-size: 30px;\n  }\n  \n  .eira-subtitle-mobile {\n    font-size: 16px;\n  }\n}\n\n/* Desktop */\n@media (min-width: 769px) {\n  .eira-rating-line {\n    font-size: 16px;\n  }\n  \n  .eira-main-title {\n    font-size: 36px;\n  }\n  \n  .eira-subtitle-mobile {\n    font-size: 17px;\n  }\n}\n</style>\n\n<div class=\"eira-hero-mobile\">\n  <div class=\"eira-rating-line\">\n    <span class=\"eira-stars-mobile\">★★★★★</span>\n    <span><strong>4,9/5</strong> · 2 547 clients satisfaits</span>\n  </div>\n  \n  <h1 class=\"eira-main-title\">\n    EIRA BRIX™ Ours Géant\n  </h1>\n  \n  <p class=\"eira-subtitle-mobile\">\n    Redonne-toi un moment de déconnexion total avec cet ours géant de 47cm en briques ultra-fines. \n    Une expérience de construction addictive qui devient un objet déco unique et remarquable.\n  </p>\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_PJcHWg"
+      ],
       "settings": {
         "full_width": true,
         "show_fixed_add_to_cart": false,
