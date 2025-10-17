@@ -29,12 +29,24 @@
           "settings": {
             "product": "eira-smartcard"
           }
+        },
+        "buy_buttons_mjDV3w": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
         }
       },
       "block_order": [
         "liquid_PJcHWg",
         "liquid_fGAiKm",
-        "kaching_bundles_app_block_4AB9Pf"
+        "kaching_bundles_app_block_4AB9Pf",
+        "buy_buttons_mjDV3w"
       ],
       "settings": {
         "full_width": true,
