@@ -46,6 +46,12 @@
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
+        },
+        "liquid_G9Fmag": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 16px; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 10px; color: #000;\">\n  \n  <!-- Livraison Offerte -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=https://cdn.shopify.com/s/files/1/0887/8922/1706/files/dz.png?v=1744660335\" \n      alt=\"Livraison Offerte\" \n      style=\"width: 18px; height: auto;\"\n    />\n    <span style=\"font-size: 10px;\">Livraison gratuite dès 40€</span>\n  </div>\n\n  <!-- 30j Satisfait ou remboursé -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=\"https://cdn.shopify.com/s/files/1/0887/8922/1706/files/gdrseqsd.png?v=1744660334\" \n      alt=\"30j Satisfait ou remboursé\" \n      style=\"width: 18px; height: auto;\"\n    />\n    <span style=\"font-size: 10px;\">Garantie 30 jours</span>\n  </div>\n\n</div>"
+          }
         }
       },
       "block_order": [
@@ -53,7 +59,8 @@
         "liquid_PJcHWg",
         "liquid_fGAiKm",
         "kaching_bundles_app_block_4AB9Pf",
-        "buy_buttons_mjDV3w"
+        "buy_buttons_mjDV3w",
+        "liquid_G9Fmag"
       ],
       "settings": {
         "full_width": true,
