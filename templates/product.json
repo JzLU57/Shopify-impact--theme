@@ -52,6 +52,12 @@
           "settings": {
             "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 16px; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 10px; color: #000;\">\n  \n  <!-- Livraison Offerte -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=https://cdn.shopify.com/s/files/1/0887/8922/1706/files/dz.png?v=1744660335\" \n      alt=\"Livraison Offerte\" \n      style=\"width: 18px; height: auto;\"\n    />\n    <span style=\"font-size: 10px;\">Livraison gratuite dès 40€</span>\n  </div>\n\n  <!-- 30j Satisfait ou remboursé -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=\"https://cdn.shopify.com/s/files/1/0887/8922/1706/files/gdrseqsd.png?v=1744660334\" \n      alt=\"30j Satisfait ou remboursé\" \n      style=\"width: 18px; height: auto;\"\n    />\n    <span style=\"font-size: 10px;\">Garantie 30 jours</span>\n  </div>\n\n</div>"
           }
+        },
+        "liquid_p9Kq6K": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.eira-original-section {\n  border: 2px dashed #1a1a1a;\n  padding: 25px 20px;\n  margin: 30px auto;\n  max-width: 500px;\n  text-align: center;\n  background: white;\n}\n\n.eira-badge-top {\n  background: #1a1a1a;\n  color: white;\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 20px;\n  border-radius: 25px;\n  margin-bottom: 20px;\n  font-family: 'Poppins', sans-serif;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.eira-badge-icon {\n  font-size: 16px;\n}\n\n.eira-original-title {\n  font-family: 'Poppins', sans-serif;\n  font-size: 22px;\n  font-weight: 700;\n  color: #1a1a1a;\n  margin: 0 0 15px 0;\n  line-height: 1.2;\n}\n\n.eira-original-text {\n  font-family: 'Poppins', sans-serif;\n  font-size: 14px;\n  color: #444;\n  line-height: 1.6;\n  margin: 0 0 15px 0;\n}\n\n.eira-original-text strong {\n  font-weight: 700;\n  color: #1a1a1a;\n}\n\n.eira-warning-text {\n  font-family: 'Poppins', sans-serif;\n  font-size: 13px;\n  color: #1a1a1a;\n  line-height: 1.6;\n  margin: 0;\n  font-weight: 600;\n}\n\n@media (max-width: 768px) {\n  .eira-original-section {\n    padding: 20px 15px;\n    margin: 25px auto;\n  }\n  \n  .eira-badge-top {\n    font-size: 11px;\n    padding: 6px 15px;\n  }\n  \n  .eira-original-title {\n    font-size: 20px;\n  }\n  \n  .eira-original-text {\n    font-size: 13px;\n  }\n  \n  .eira-warning-text {\n    font-size: 12px;\n  }\n}\n</style>\n\n<div class=\"eira-original-section\">\n  <div class=\"eira-badge-top\">\n    <span class=\"eira-badge-icon\">🛡️</span>\n    <span>Exclusivement sur EIRA BRIX™</span>\n  </div>\n  \n  <h3 class=\"eira-original-title\">Nous sommes l'original</h3>\n  \n  <p class=\"eira-original-text\">\n    Le seul <strong>officiel EIRA BRIX™</strong> — conçu en France, \n    avec des modèles exclusifs et une qualité de construction premium.\n  </p>\n  \n  <p class=\"eira-warning-text\">\n    Attention aux contrefaçons vendues sur Amazon ou d'autres sites : \n    elles se ressemblent, mais n'ont pas du tout la même qualité.\n  </p>\n</div>"
+          }
         }
       },
       "block_order": [
@@ -60,7 +66,8 @@
         "liquid_fGAiKm",
         "kaching_bundles_app_block_4AB9Pf",
         "buy_buttons_mjDV3w",
-        "liquid_G9Fmag"
+        "liquid_G9Fmag",
+        "liquid_p9Kq6K"
       ],
       "settings": {
         "full_width": true,
