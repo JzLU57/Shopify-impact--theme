@@ -280,12 +280,198 @@
         "background": "#F2F2F2",
         "background_gradient": ""
       }
+    },
+    "ss_testimonial_10_7LCCdf": {
+      "type": "ss-testimonial-10",
+      "blocks": {
+        "testimonial_fmfJ97": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'I've been getting so many compliments on my skin. In love.'</p>",
+            "author": "- SYMONE K <3 GLAZE"
+          }
+        },
+        "testimonial_R6EVwJ": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'Been using thif for months add it has given me the best glow.'</p>",
+            "author": "- ANGELA C <3 BRC"
+          }
+        },
+        "testimonial_EayYBQ": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'The glazing milk is definitely my new staple in my routine!'</p>",
+            "author": "- KIRSTEN C <3 BRC"
+          }
+        },
+        "testimonial_YjJA7N": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'This things is the real deal. Love it so much.'</p>",
+            "author": "- VANESSA <3 GLAZE"
+          }
+        },
+        "testimonial_HFHepg": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'This BRC thing is insane. It really does work!.'</p>",
+            "author": "- KAYA <3 BRC"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fmfJ97",
+        "testimonial_R6EVwJ",
+        "testimonial_EayYBQ",
+        "testimonial_YjJA7N",
+        "testimonial_HFHepg"
+      ],
+      "name": "SS - Testimonials #10",
+      "settings": {
+        "body_padding_vertical": 38,
+        "body_padding_vertical_mobile": 16,
+        "body_padding_horizontal": 50,
+        "body_padding_horizontal_mobile": 16,
+        "body_radius": 12,
+        "body_border_thickness": 0,
+        "heading": "<h2>you + us</h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 24,
+        "heading_height": 150,
+        "heading_align": "left",
+        "heading_align_mobile": "left",
+        "sub_heading": "",
+        "sub_heading_custom": false,
+        "sub_heading_font": "josefin_sans_n4",
+        "sub_heading_size": 18,
+        "sub_heading_size_mobile": 14,
+        "sub_heading_height": 150,
+        "slider_view": 3.7,
+        "slider_view_mobile": 1,
+        "slider_gap": 36,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "image_radius": 12,
+        "image_border_thickness": 0,
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "stars_size": 20,
+        "stars_mt": 24,
+        "stars_align": "start",
+        "stars_align_mobile": "start",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_mt": 12,
+        "text_align": "left",
+        "text_align_mobile": "left",
+        "author_custom": false,
+        "author_font": "josefin_sans_n4",
+        "author_size": 20,
+        "author_size_mobile": 16,
+        "author_height": 130,
+        "author_mt": 8,
+        "author_align": "left",
+        "author_align_mobile": "left",
+        "arrow_size": 50,
+        "arrow_size_mobile": 42,
+        "arrow_icon_size": 40,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "dots_mt": 32,
+        "dots_show_desktop": false,
+        "dots_show_mobile": true,
+        "body_bg_color": "#000000",
+        "body_border_color": "#000000",
+        "stars_color": "#ffffff",
+        "text_color": "#ffffff",
+        "author_color": "#ffffff",
+        "arrow_color": "#ffffff",
+        "arrow_hover_color": "#FFFFFF",
+        "arrow_bg_color": "#FFFFFF",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#ffffff",
+        "dots_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "sub_heading_color": "#ffffff",
+        "background_color": "#000000",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "slideshow_G4DqKt": {
+      "type": "slideshow",
+      "blocks": {
+        "image_Ga7Cwd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Designbrique2_a72bef3f-5d53-4a42-aa52-8897f53cffa1.png",
+            "content_max_width": 580,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Ga7Cwd"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#F2F2F2",
+        "background_gradient": ""
+      }
     }
   },
   "order": [
     "main",
+    "slideshow_WAnh9c",
+    "ss_testimonial_10_7LCCdf",
+    "slideshow_G4DqKt",
     "ss_feature_13_DMeBYh",
-    "custom_html_rUL6Dy",
-    "slideshow_WAnh9c"
+    "custom_html_rUL6Dy"
   ]
 }
