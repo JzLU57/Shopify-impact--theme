@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "liquid_9teEw9": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.eira-urgency-badge {\n  background: white;\n  border: 2px solid #1a1a1a;\n  padding: 8px 18px;\n  text-align: center;\n  margin: 0 auto 10px;\n  max-width: fit-content;\n  display: block;\n}\n\n.eira-urgency-text {\n  font-family: 'Poppins', sans-serif;\n  font-size: 13px;\n  font-weight: 700;\n  color: #1a1a1a;\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n  margin: 0;\n}\n\n@media (max-width: 768px) {\n  .eira-urgency-badge {\n    padding: 6px 15px;\n    margin: 0 auto 8px;\n  }\n  \n  .eira-urgency-text {\n    font-size: 11px;\n  }\n}\n</style>\n\n<div class=\"eira-urgency-badge\">\n  <p class=\"eira-urgency-text\">STOCKS LIMITÉS | DERNIÈRE CHANCE</p>\n</div>"
+          }
+        },
         "liquid_PJcHWg": {
           "type": "liquid",
           "settings": {
@@ -43,6 +49,7 @@
         }
       },
       "block_order": [
+        "liquid_9teEw9",
         "liquid_PJcHWg",
         "liquid_fGAiKm",
         "kaching_bundles_app_block_4AB9Pf",
