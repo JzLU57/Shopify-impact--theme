@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_587183277207454699": {
+      "block_order": [
+        "gp_app_kaching-bundles_g7niwA_YGe"
+      ],
+      "blocks": {
+        "gp_app_kaching-bundles_g7niwA_YGe": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        }
+      },
+      "settings": {
+        "checksum": "6421df59a6300624ec9cba23eeed578e1a7e48b3ac6a8536e36a91493f2d13bb_1_1_0_0__1",
+        "gg4fJAxAH_c_text": "<p>l'installation de votre eira smartcard est <strong>ultra-simple</strong> et ne prend que 30 secondes. suivez ces étapes :</p><p>&nbsp;</p><p><i><strong>Appareil android :</strong></i></p><p>&nbsp;</p><p>1. téléchargez <strong>google find hub</strong> depuis le <strong>Google Play Store</strong> si ce n’est pas déjà fait, puis connectez-vous à votre compte google sur l’application.</p><p>&nbsp;</p><p>2. allumez la <strong>carte eira</strong> en appuyant sur le bouton d’allumage.</p><p>&nbsp;</p><p>3. assurez-vous que le <strong>bluetooth</strong> est activé.</p><p>&nbsp;</p><p>4. allez dans les <strong>paramètres</strong> de votre téléphone → <strong>google → appareils et partage → détection d’appareils à proximité</strong> (ou recherchez “nearby device scanning”).</p><p>&nbsp;</p><p>5. connectez votre <strong>carte eira</strong> à votre appareil.</p><p>&nbsp;</p><p>&nbsp;</p><p><i><strong>appareil apple :</strong></i></p><p>&nbsp;</p><p>1. ouvrez l’application <strong>localiser</strong> (ou <i>find my</i>).</p><p>&nbsp;</p><p>2. cliquez sur <strong>ajouter un objet</strong>.</p><p>&nbsp;</p><p>3. cliquez sur <strong>autre objet pris en charge</strong>.</p><p>&nbsp;</p><p>4. allumez la <strong>carte eira</strong> en appuyant sur le bouton d’allumage.</p><p>&nbsp;</p><p>5. connectez votre <strong>carte eira</strong>, qui vient d’être détectée par votre appareil.</p>",
+        "ggMKfk8f53N_continueSelling": "10% du stock restant",
+        "ggMKfk8f53N_outOfStockMessage": "OUT OF STOCK",
+        "ggMKfk8f53N_template": "Limited availability",
+        "ggMKfk8f53N_unlimitedQuantityMessage": "\n      <mark class='gp-text-white gp-py-1 gp-px-2 gp-mr-1 gp-inline-block gp-my-[1px] gp-bg-g-text-1'>\n    HURRY!</mark> LET BUY NOW",
+        "ggN05a1TLcZ_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:14px;\"><strong>4.8 / 5</strong> avec 3349 avis</span></p>",
+        "ggScQ5HiWVW_text": "<p>or 4 interest-free payments of&nbsp;$15.00&nbsp;with</p>",
+        "ggZnkNq9o-h_text": "<p>La carte traçable la plus fine au monde, de confiance par <strong>plus de 2300 utilisateurs. Ultra-fine, rechargeable. Compatible iPhone &amp; Android.</strong></p>",
+        "gga8aqtE8k2_text": "<p><strong>Comment se passe la livraison ?</strong><br>Nous livrons partout en Europe dans un délai de 5 à 7 jours ouvrés. Une fois votre commande expédiée, vous recevrez un email de suivi pour savoir exactement où elle se trouve.</p><p>&nbsp;</p><p><strong>Et si je change d’avis ?</strong><br>Vous avez 30 jours pour exercer votre droit de rétractation, sans justification.</p>",
+        "ggg0BP38eC5_label": "Ajouter au panier",
+        "ggg0BP38eC5_outOfStockLabel": "Out of stock",
+        "ggg0BP38eC5_unavailableLabel": "Unavailable",
+        "gggHR1fg-N9_text": "<p><strong>Satisfait ou remboursé</strong></p>",
+        "ggqmO62yLKG_text": "<p><span style=\"color:#000000;\"><strong>Oui</strong>, EIRA fonctionne parfaitement avec les portefeuilles&nbsp;bloquant les RFID.&nbsp;</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\"><strong>Elle n'interférera pas avec la protection RFID</strong>, donc vos cartes&nbsp;</span><br><span style=\"color:#000000;\">restent en sécurité tout en vous permettant de suivre votre&nbsp;portefeuille sans aucun problème.</span></p><p>&nbsp;</p><p><span style=\"color:#000000;\">💡 Conseil : Pour une meilleure connectivité, placez EIRA dans la poche la plus proche de l'extérieur du portefeuille.</span></p>",
+        "ggrk1p2D0Nw_text": "<p>Support 24/7</p><p>Français</p>",
+        "ggrkgmZAmP5_text": "<p>Livraison</p><p>Offerte</p>",
+        "ggt0z8DU0DG_childItem_0": "<p>Détails, Taille &amp; Logiciel</p>",
+        "ggt0z8DU0DG_childItem_1": "<p>Déballage &amp; Installation</p>",
+        "ggt0z8DU0DG_childItem_2": "<p>Conçu pour les portefeuilles bloquant les RFID ?</p>",
+        "ggt0z8DU0DG_childItem_3": "<p>Livraison et retours</p>",
+        "ggu3G8JYKLF_text": "<p><strong>EIRA Smartcard </strong>est le traceur le plus fin qui fonctionne&nbsp;dans le monde entier avec les appareils iPhone et Android.</p><p>&nbsp;</p><p>Connectez-la via Apple Find My ou l'application&nbsp;<br>Find My Device de Google.</p><p>&nbsp;</p><p>Dimensions : 85 x 54 x 1,8 mm (3,3 x 2,1 x 0,07 pouces)</p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-587183277207454699"
+    },
+    "gp_section_587197904540664490": {
+      "settings": {
+        "checksum": "002d599844d7eca7a70b02e7897a98e31cd8559549cdcc75870be047ad2a5df1_1_1_0_0__1",
+        "gg1nVBjdwCi_text": "<p>Customer&nbsp;</p>",
+        "gg3cQOnhjwf_text": "<p>Customer&nbsp;</p>",
+        "gg5MYtEP_8B_text": "<p>Verified Buyer</p>",
+        "gg5SzEbzgm6_text": "<p>Customer&nbsp;</p>",
+        "gg662TA98YM_text": "<p>Rejuvenated every time I use it</p>",
+        "gg6H2fgE2bu_text": "<p>“I've struggled with dry skin for years, but this cream has been a game-changer. It keeps my skin hydrated all day long.”</p>",
+        "gg7CfQEVHXQ_text": "<p>Olivia</p>",
+        "gg8Lddnp3f__text": "<p>Verified Buyer</p>",
+        "ggJoJ3UGgFs_text": "<p>“I'm impressed by how versatile this skin cream is. It works seamlessly with my makeup, providing a smooth canvas.”</p>",
+        "ggKUmHVX3l1_text": "<p>It soothes and nourishes my skin</p>",
+        "ggLL7eNCbg__text": "<p>Jessica</p>",
+        "ggP8XjtOflt_text": "<p>“I absolutely love this skin cream! It has transformed my complexion and given me a radiant glow.”</p>",
+        "ggPb99jwXw8_text": "<p>“I&nbsp;have sensitive skin, and finding a cream that doesn't irritate it is a challenge. This skin cream is a game-changer for me.”</p>",
+        "ggRCvja9HVY_text": "<p>Verified Buyer</p>",
+        "ggSJVtD6XgY_text": "<p>Ken K</p>",
+        "ggTOcKgUtkR_text": "<p>Verified Buyer</p>",
+        "ggTQtkIeDrS_text": "<p>Verified Buyer</p>",
+        "ggUTHk4jaB8_text": "<p>“I've found the fountain of youth!</p>",
+        "ggXS2gUy8rL_text": "<p>Michael</p>",
+        "gg_AFJIr77m_text": "<p>Amazing product!</p>",
+        "ggb1VcgJpjx_text": "<p>“I've tried many skin creams, but this one takes the cake. It deeply hydrates my skin without feeling heavy or greasy.”</p>",
+        "ggbwB6w1lUa_text": "<p>My skin has never looked better!</p>",
+        "ggdRcq-psiO_text": "<p>Sarah</p>",
+        "ggecrmgn5Mv_text": "<p>\"I can't get enough of this skin cream! It has noticeably improved my skin's texture and reduced the appearance of fine lines.”</p>",
+        "gghEvRdPmUD_text": "<p>Highly recommend!</p>",
+        "ggirGkdMnAl_text": "<p>Verified Buyer</p>",
+        "ggk6te1UFNm_text": "<p>2000+ Customers Who Love Us</p>",
+        "ggnLZ5GmdK5_text": "Hear from Our Customers",
+        "ggnczBbXtBW_text": "<p>Customer&nbsp;</p>",
+        "ggtUD20SXjm_text": "<p>Emily</p>",
+        "ggti2lylarV_text": "<p>Customer&nbsp;</p>",
+        "ggwyzEFaCj5_text": "<p>Customer&nbsp;</p>"
+      },
+      "type": "gp-section-587197904540664490"
+    },
+    "gp_section_587297469046456889": {
+      "settings": {
+        "checksum": "04bbd76457057524d50cd49afc85e8768605dabe666213efcc182be7ee4b9aa1_1_1_0_0__1",
+        "ggiwDkdf20t_text": "Les avantages d'EIRA",
+        "ggliydCNJDf_text": "<p>Chaque carte est conçue pour vous apporter la tranquillité d'esprit, du suivi intelligent à la portabilité sans effort.</p>"
+      },
+      "type": "gp-section-587297469046456889"
+    },
+    "gp_section_587301676084364138": {
+      "settings": {
+        "checksum": "5ec7a1740a354b71b9d7bcd8008150b951a7010055ed0895acb63161a6a9efb1_1_1_0_0__1"
+      },
+      "type": "gp-section-587301676084364138"
+    },
+    "gp_section_587303457807926251": {
+      "settings": {
+        "checksum": "e7de04fb9d46881c46827eb5c5210e3722998aead2a22ec09ef84523a486fa32_1_1_0_0__1",
+        "ggAXENmLstp_text": "<p>Utilisez l'application Apple Find My (iPhone) ou Find My Device (Android). Rien à installer. C'est déjà sur votre téléphone.</p>",
+        "ggElPFkF0Ao_text": "Compatible iPhone &amp; Android !",
+        "ggZyA71x8_4_dayLabel": "Jours",
+        "ggZyA71x8_4_hourLabel": "Hrs",
+        "ggZyA71x8_4_minuteLabel": "Min",
+        "ggZyA71x8_4_secondLabel": "Sec",
+        "ggZyA71x8_4_weekLabel": "Weeks",
+        "ggujHrIdDGc_text": "Ne passez pas à côté !"
+      },
+      "type": "gp-section-587303457807926251"
+    },
+    "gp_section_587304318479106730": {
+      "settings": {
+        "checksum": "cdfb1fcce74931bf76349e4b234a2978ba7671590243380a3488bce816cb5c69_1_1_0_0__1",
+        "gg0fG1n8qFX_text": "<p><span style=\"color:#000000;font-size:17px;\">Rappels d'oubli</span></p><p><span style=\"color:#474747;font-size:13px;\">Recevez une notification dès que la carte est trop loin de vous.</span></p>",
+        "gg4GbZHP6C5_text": "Choisissez le meilleur pour vos affaires !",
+        "gg9xjuwqHac_text": "<p>Compatible Android ET iPhone&nbsp;</p>",
+        "ggANIRMWBsN_text": "<p><span style=\"color:#000000;font-size:17px;\">Alerte sonore&nbsp;</span></p><p><span style=\"color:#474747;font-size:13px;\">Son puissant de 65 dB. Retrouvez-la instantanément.</span></p>",
+        "ggDmwp5PCwd_text": "<p>Format Carte bancaire (85x54mm)</p>",
+        "ggQsfrLwEfx_text": "<p>Rechargeable &nbsp;(charge sans fil)</p>",
+        "ggXP9uc6Hcu_text": "CARTE DE LOCALISATION NOUVELLE GÉNÉRATION",
+        "ggZe1tZ2Lv2_text": "<p><span style=\"color:#000000;font-size:17px;\">Charge sans fil</span></p><p><span style=\"color:#474747;font-size:13px;\">Votre carte tiendra jusqu'à 5 mois avec une charge de seulement 2 heures.</span></p>",
+        "ggc9FKC3NL2_text": "<p><span style=\"color:#000000;font-size:17px;\">Ultra-fine</span></p><p><span style=\"color:#474747;font-size:13px;\">1,8 mm, à peine plus épais qu'une carte bancaire.</span></p>",
+        "ggsFPsboK12_text": "<p>AirTag</p>",
+        "ggvJNd9QW16_text": "<p>Son puissant (65 dB)&nbsp;</p>",
+        "ggwiT7WR-Ud_text": "<p>Étanche IP67</p>",
+        "ggxTFWoT4Hg_text": "<p>Ultra-fin (1,8mm</p><p>d'épaisseur)&nbsp;</p>"
+      },
+      "type": "gp-section-587304318479106730"
+    },
+    "gp_section_587309186589655722": {
+      "settings": {
+        "checksum": "a593becabbf241098e64027cef9c64a568489ad3c2bf247d29498feb150f5a57_1_1_0_0__1",
+        "gg-tY1l5Bx__text": "<p>Étape 3&nbsp;:</p>",
+        "gg40QEdkUYb_text": "<p>Ouvrez l'app pour voir où elle est sur la carte. À proximité ? Appuyez pour la faire sonner.</p>",
+        "ggWeo2fZ4Cf_text": "<p>Connectez EIRA</p>",
+        "ggi0NtQjzxQ_text": "<p>Ouvrez l'app \"Localiser\" (iPhone) ou \"Find My Device\" (Android). Ajoutez EIRA comme nouvel objet.</p>",
+        "ggiATSprRh8_text": "<p>Étape 2&nbsp;:</p>",
+        "ggmbLLuwtaq_text": "<p>Ultra-fine (1,8 mm), elle se fond parmi vos cartes. Portefeuille, sac, passeport... mettez-la où vous voulez.</p>",
+        "ggyMoXtQQKe_text": "<p>Étape 1&nbsp;:</p>",
+        "ggzbMEaC2jC_text": "Prête en 30 secondes"
+      },
+      "type": "gp-section-587309186589655722"
+    },
+    "gp_section_587310770560172601": {
+      "settings": {
+        "checksum": "8ecbc47c7837c40a03d6d994a80f8350811ce78ed4e6348b9b59812639c8e60e_1_1_0_0__1",
+        "gg4ryjmB-50_text": "<p>\"Je perdais mon portefeuille 3 fois par semaine. Depuis que j'ai EIRA, je gagne littéralement 30 minutes par jour. Fini de retourner toute la maison. Meilleur achat de l'année.\"</p>",
+        "ggDyoGxWnux_text": "<p>— <strong>David D.</strong></p>",
+        "ggInUHYFNeS_text": "<p>— <strong>Hélène M.</strong></p>",
+        "ggNQKOwDjSP_text": "Ce qu'ils disent d'EIRA",
+        "ggYx2qmRavf_text": "<p><span style=\"color:#242424;\"><strong>— Claire D.</strong></span></p>",
+        "ggcnec012Tc_text": "<p>\"J'ai oublié mon sac dans un restaurant à Barcelone. Grâce à EIRA, j'ai pu le localiser en 2 minutes et y retourner avant qu'il ne disparaisse. Cette carte m'a sauvée.\"</p>",
+        "ggfDfOuPVRI_text": "<p>\"J'en ai offert une à ma fille qui part en Erasmus. Ça me rassure énormément de savoir qu'elle peut toujours retrouver ses affaires. Le meilleur cadeau que je lui ai fait.\"</p>",
+        "gghIHuXz0aB_text": "<p>— Sophie L.</p>",
+        "ggrol2Vfd1n_text": "<p>\"Je cherchais une alternative à mon AirTag, beaucoup trop épais pour mon portefeuille. EIRA est parfait : ultra-fin, discret, et le son est même plus fort. Je ne pourrais plus m'en passer.\"</p>"
+      },
+      "type": "gp-section-587310770560172601"
+    },
+    "gp_section_587437883472741226": {
+      "settings": {
+        "checksum": "ee0965fb7bd320b282c0b08d1bf5f37f53d3659a68c1cb511630dcdd6eabbcfe_1_1_0_0__1"
+      },
+      "type": "gp-section-587437883472741226"
+    },
+    "gp_section_587452831015896043": {
+      "settings": {
+        "checksum": "1a921ca98d57aa1ada49332b5b8773b78ba4041438d9e9332d83e713f5f43575_1_1_0_0__1"
+      },
+      "type": "gp-section-587452831015896043"
+    },
+    "gp_section_588339179776115289": {
+      "settings": {
+        "checksum": "8604b98709effa23356da75ef4ca98a50be9b88f570b530c217c1c5ca299bc64_1_1_0_0__1",
+        "gg-fIUM_SGU_text": "<p>Vous avez d'autres questions ? Contactez notre équipe à <span style=\"background-color:rgb(233,238,246);color:rgb(31,31,31);font-size:14px;\">contacteirafrance@gmail.com </span>Réponse garantie sous 24h</p>",
+        "gg0w4k_uQ7G_text": "<p><strong>EIRA</strong> : 1,8 mm d'épaisseur, format carte bancaire, rechargeable, compatible iPhone ET Android, parfaite pour les portefeuilles.</p><p>&nbsp;</p><p><strong>AirTag</strong> : 8 mm d'épaisseur, format rond, pile à changer tous les ans, iPhone uniquement, idéal pour clés et sacs épais.</p><p>EIRA est 4 fois plus fine et se glisse parfaitement dans un portefeuille sans le déformer.</p>",
+        "ggJ_AOv_iIO_text": "<p>Non, EIRA ne nécessite <strong>aucun abonnement</strong> mensuel ou annuel. Un seul paiement à l'achat, et c'est tout.&nbsp;</p><p>Contrairement aux trackers GPS traditionnels, il n'y a aucun frais récurrent.</p>",
+        "ggO7_-iScfi_text": "Tout savoir sur EIRA",
+        "ggPhQ3Poy36_text": "<p>Posez simplement EIRA sur n'importe quel chargeur sans fil Qi (iPhone, Samsung, ou chargeur universel).&nbsp;</p><p>&nbsp;</p><p>Une charge complète prend environ 2 heures et vous offre 5 mois d'autonomie. Le chargeur sans fil est offert avec le pack de 4 cartes.</p>",
+        "ggSTl_DLqXE_text": "<p><strong>Livraison gratuite en France : 5-8 jours </strong>(ouvré). Les commandes passées avant 14h sont expédiées rapidement.&nbsp;</p><p>&nbsp;</p><p>Vous recevez un numéro de suivi par email dès l'expédition.</p><p>&nbsp;</p><p>Vous disposez de <strong>30 jours</strong> pour retourner votre produit si vous n'êtes pas satisfait, sans avoir à vous justifier.</p>",
+        "ggWFtW-qqG0_text": "<p>Oui, EIRA fonctionne avec :</p><ul><li><strong>iPhone</strong> : iOS 14.5 ou supérieur (iPhone 6s et modèles ultérieurs)</li><li><strong>Android</strong> : Android 9 ou supérieur avec Google Play Services</li></ul><p>L'application Find My (iPhone) ou Find My Device (Android) est déjà préinstallée sur votre téléphone. Aucune application tierce n'est nécessaire.</p>",
+        "ggXOgaUYb67_childItem_0": "<p>Qu'est-ce qu'EIRA exactement ?</p>",
+        "ggXOgaUYb67_childItem_1": "<p>EIRA est-elle compatible avec mon téléphone ?</p>",
+        "ggXOgaUYb67_childItem_2": "<p>Quelle est l'autonomie de la batterie ?</p>",
+        "ggXOgaUYb67_childItem_3": "<p>Quelle est la différence avec un AirTag et EIRA ?</p>",
+        "ggXOgaUYb67_childItem_4": "<p>EIRA nécessite un abonnement ?&nbsp;</p>",
+        "ggXOgaUYb67_childItem_5": "<p>Comment recharger EIRA ?&nbsp;</p>",
+        "ggXOgaUYb67_childItem_6": "<p>Vos délais de livraison ?&nbsp;</p>",
+        "ggoBTqvAfxw_text": "<p>La batterie d'EIRA dure jusqu'à <strong>5 mois</strong> avec une utilisation normale. Elle se recharge par induction sans fil (comme votre smartphone) sur n'importe quel chargeur Qi.&nbsp;</p><p>Une charge complète prend environ 2 heures. Vous recevez une notification quand la batterie est faible.</p>",
+        "ggxpH3JHMZC_text": "<p>EIRA est une carte de localisation ultra-fine (1,8 mm) au format carte bancaire qui vous permet de retrouver vos objets perdus en quelques secondes. Elle se glisse dans votre portefeuille, sac ou valise et fonctionne avec Apple Find My et Android Find My Device, utilisant un réseau de centaines de millions d'appareils pour localiser vos affaires partout dans le monde</p>"
+      },
+      "type": "gp-section-588339179776115289"
+    }
+  },
+  "order": [
+    "gp_section_587183277207454699",
+    "gp_section_587452831015896043",
+    "gp_section_587197904540664490",
+    "gp_section_587297469046456889",
+    "gp_section_587301676084364138",
+    "gp_section_587303457807926251",
+    "gp_section_587304318479106730",
+    "gp_section_587309186589655722",
+    "gp_section_587310770560172601",
+    "gp_section_588339179776115289",
+    "gp_section_587437883472741226"
+  ]
+}
