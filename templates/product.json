@@ -21,7 +21,7 @@
         "liquid_PJcHWg": {
           "type": "liquid",
           "settings": {
-            "liquid": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');\n\n.eira-hero-mobile {\n  text-align: left;\n  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n  padding: 0;\n  max-width: 100%;\n}\n\n.eira-rating-line {\n  font-size: 14px;\n  color: #444;\n  margin-bottom: 8px;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n}\n\n.eira-stars-mobile {\n  color: #FFD700;\n  letter-spacing: 1px;\n}\n\n.eira-main-title {\n  font-size: 28px;\n  font-weight: 700;\n  font-family: 'Poppins', sans-serif;\n  margin: 0;\n  line-height: 1.2;\n  color: #1a1a1a;\n}\n\n.eira-subtitle-mobile {\n  font-size: 13px;\n  font-weight: 400;\n  font-family: 'Poppins', sans-serif;\n  color: #444;\n  margin: 10px 0 0 0;\n  line-height: 1.5;\n}\n\n@media (max-width: 480px) {\n  .eira-rating-line {\n    font-size: 13px;\n  }\n  .eira-main-title {\n    font-size: 24px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 12px;\n  }\n}\n\n@media (min-width: 481px) and (max-width: 768px) {\n  .eira-rating-line {\n    font-size: 15px;\n  }\n  .eira-main-title {\n    font-size: 30px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 13px;\n  }\n}\n\n@media (min-width: 769px) {\n  .eira-rating-line {\n    font-size: 16px;\n  }\n  .eira-main-title {\n    font-size: 36px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 15px;\n  }\n}\n</style>\n\n<div class=\"eira-hero-mobile\">\n  <div class=\"eira-rating-line\">\n    <span class=\"eira-stars-mobile\">★★★★★</span>\n    <span><strong>4,9/5</strong> · 2 547 clients satisfaits</span>\n  </div>\n  \n  <h1 class=\"eira-main-title\">\n    EIRA BRIX™  Ours Géant\n  </h1>\n  \n  <p class=\"eira-subtitle-mobile\">\n    L'ours en briques de 43cm qui explose sur TikTok. 3 600 pièces addictives \n    qui se transforment en pièce déco impressionnante.\n  </p>\n</div>"
+            "liquid": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');\n.eira-hero-mobile {\n  text-align: left;\n  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n  padding: 0;\n  max-width: 100%;\n}\n.eira-rating-line {\n  font-size: 14px;\n  color: #444;\n  margin-bottom: 8px;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n}\n.eira-stars-mobile {\n  color: #FFD700;\n  letter-spacing: 1px;\n}\n.eira-main-title {\n  font-size: 25px;\n  font-weight: 700;\n  font-family: 'Poppins', sans-serif;\n  margin: 0;\n  line-height: 1.2;\n  color: #1a1a1a;\n}\n.eira-subtitle-mobile {\n  font-size: 13px;\n  font-weight: 400;\n  font-family: 'Poppins', sans-serif;\n  color: #444;\n  margin: 10px 0 0 0;\n  line-height: 1.5;\n}\n@media (max-width: 480px) {\n  .eira-rating-line {\n    font-size: 13px;\n  }\n  .eira-main-title {\n    font-size: 20px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 12px;\n  }\n}\n@media (min-width: 481px) and (max-width: 768px) {\n  .eira-rating-line {\n    font-size: 15px;\n  }\n  .eira-main-title {\n    font-size: 30px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 13px;\n  }\n}\n@media (min-width: 769px) {\n  .eira-rating-line {\n    font-size: 16px;\n  }\n  .eira-main-title {\n    font-size: 36px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 15px;\n  }\n}\n</style>\n<div class=\"eira-hero-mobile\">\n  <div class=\"eira-rating-line\">\n    <span class=\"eira-stars-mobile\">★★★★★</span>\n    <span><strong>4.9/5</strong> · 2,000+ happy UK homes</span>\n  </div>\n  \n  <h1 class=\"eira-main-title\">\n    EIRA™ Pet Hair Remover Glove\n  </h1>\n  \n  <p class=\"eira-subtitle-mobile\">\n    Remove pet hair from furniture, clothes and cars in seconds. \n    Reusable, washable, and kind to the planet. The last hair remover you'll ever need.\n  </p>\n</div>"
           }
         },
         "liquid_fGAiKm": {
@@ -125,121 +125,6 @@
         "input_text_color": ""
       }
     },
-    "ss_feature_13_DMeBYh": {
-      "type": "ss-feature-13",
-      "blocks": {
-        "item_MFn7Ch": {
-          "type": "item",
-          "settings": {
-            "icon": "heart",
-            "title": "Eye Comfort",
-            "text": "Reduces eye strain by blocking harmful blue light from screens, making digital time more comfortable."
-          }
-        },
-        "item_ibGrqe": {
-          "type": "item",
-          "settings": {
-            "icon": "time",
-            "title": "Better Sleep",
-            "text": "Improves sleep quality by minimizing blue light exposure, which can interfere with circadian rhythms."
-          }
-        },
-        "item_t9GVig": {
-          "type": "item",
-          "settings": {
-            "icon": "gift",
-            "title": "Enhanced Protection",
-            "text": "Shields your screen from scratches and impacts, extending the lifespan of your device."
-          }
-        },
-        "item_nKJm7x": {
-          "type": "item",
-          "settings": {
-            "icon": "plant",
-            "title": "Anti-Glare",
-            "text": "Reduces glare from sunlight and artificial lighting, improving visibility in bright conditions."
-          }
-        }
-      },
-      "block_order": [
-        "item_MFn7Ch",
-        "item_ibGrqe",
-        "item_t9GVig",
-        "item_nKJm7x"
-      ],
-      "name": "SS - Feature #13",
-      "settings": {
-        "heading": "<h2>Why we are better</h2>",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 52,
-        "heading_size_mobile": 32,
-        "heading_height": 150,
-        "heading_align": "center",
-        "heading_align_mobile": "center",
-        "body_gap": 80,
-        "items_gap": 50,
-        "items_gap_mobile": 30,
-        "items_mt": 24,
-        "items_mt_mobile": 22,
-        "image_position": "center",
-        "image_position_mobile": "first",
-        "image_ratio": "portrait",
-        "image_ratio_mobile": "portrait",
-        "image_radius": 0,
-        "image_border_thickness": 0,
-        "content_align": "center",
-        "content_align_mobile": "center",
-        "icon_size": 50,
-        "icon_size_mobile": 40,
-        "title_custom": false,
-        "title_font": "josefin_sans_n4",
-        "title_size": 22,
-        "title_size_mobile": 16,
-        "title_height": 130,
-        "title_mt": 16,
-        "title_mt_mobile": 8,
-        "text_custom": false,
-        "text_font": "josefin_sans_n4",
-        "text_size": 16,
-        "text_size_mobile": 16,
-        "text_height": 150,
-        "text_mt": 10,
-        "text_mt_mobile": 6,
-        "text_hide_mobile": true,
-        "icon_color": "#131313",
-        "title_color": "#131313",
-        "text_color": "#131313",
-        "heading_color": "#131313",
-        "image_border_color": "#000000",
-        "background_color": "#FFFFFF",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": false,
-        "content_width": 160,
-        "border_thickness": 0,
-        "lazy": true
-      }
-    },
-    "custom_html_rUL6Dy": {
-      "type": "custom-html",
-      "name": "Custom HTML",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "html": "<p style=\"text-align: center\">Write or copy/paste HTML code</p>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "slideshow_WAnh9c": {
       "type": "slideshow",
       "blocks": {
@@ -277,7 +162,7 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
     },
@@ -401,8 +286,8 @@
         "text_color": "#ffffff",
         "author_color": "#ffffff",
         "arrow_color": "#ffffff",
-        "arrow_hover_color": "#FFFFFF",
-        "arrow_bg_color": "#FFFFFF",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#ffffff",
         "arrow_bg_hover_color": "#ffffff",
         "arrow_border_color": "#ffffff",
         "arrow_border_hover_color": "#ffffff",
@@ -461,8 +346,123 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
+      }
+    },
+    "ss_feature_13_DMeBYh": {
+      "type": "ss-feature-13",
+      "blocks": {
+        "item_MFn7Ch": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "title": "Eye Comfort",
+            "text": "Reduces eye strain by blocking harmful blue light from screens, making digital time more comfortable."
+          }
+        },
+        "item_ibGrqe": {
+          "type": "item",
+          "settings": {
+            "icon": "time",
+            "title": "Better Sleep",
+            "text": "Improves sleep quality by minimizing blue light exposure, which can interfere with circadian rhythms."
+          }
+        },
+        "item_t9GVig": {
+          "type": "item",
+          "settings": {
+            "icon": "gift",
+            "title": "Enhanced Protection",
+            "text": "Shields your screen from scratches and impacts, extending the lifespan of your device."
+          }
+        },
+        "item_nKJm7x": {
+          "type": "item",
+          "settings": {
+            "icon": "plant",
+            "title": "Anti-Glare",
+            "text": "Reduces glare from sunlight and artificial lighting, improving visibility in bright conditions."
+          }
+        }
+      },
+      "block_order": [
+        "item_MFn7Ch",
+        "item_ibGrqe",
+        "item_t9GVig",
+        "item_nKJm7x"
+      ],
+      "name": "SS - Feature #13",
+      "settings": {
+        "heading": "<h2>Why we are better</h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 52,
+        "heading_size_mobile": 32,
+        "heading_height": 150,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "body_gap": 80,
+        "items_gap": 50,
+        "items_gap_mobile": 30,
+        "items_mt": 24,
+        "items_mt_mobile": 22,
+        "image_position": "center",
+        "image_position_mobile": "first",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "image_radius": 0,
+        "image_border_thickness": 0,
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "icon_size": 50,
+        "icon_size_mobile": 40,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 22,
+        "title_size_mobile": 16,
+        "title_height": 130,
+        "title_mt": 16,
+        "title_mt_mobile": 8,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 16,
+        "text_size_mobile": 16,
+        "text_height": 150,
+        "text_mt": 10,
+        "text_mt_mobile": 6,
+        "text_hide_mobile": true,
+        "icon_color": "#131313",
+        "title_color": "#131313",
+        "text_color": "#131313",
+        "heading_color": "#131313",
+        "image_border_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 160,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "custom_html_rUL6Dy": {
+      "type": "custom-html",
+      "name": "Custom HTML",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "html": "<p style=\"text-align: center\">Write or copy/paste HTML code</p>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     }
   },
