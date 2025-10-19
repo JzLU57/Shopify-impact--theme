@@ -28,14 +28,6 @@
           "type": "separator",
           "settings": {}
         },
-        "image_YmAjQj": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/graphepromoHalloweenV2.png",
-            "alignment": "center",
-            "max_width": 340
-          }
-        },
         "kaching_bundles_app_block_4AB9Pf": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
@@ -91,7 +83,6 @@
         "liquid_PJcHWg",
         "liquid_fGAiKm",
         "separator_PXkFVB",
-        "image_YmAjQj",
         "kaching_bundles_app_block_4AB9Pf",
         "buy_buttons_mjDV3w",
         "liquid_G9Fmag",
