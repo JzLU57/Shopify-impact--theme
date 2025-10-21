@@ -1,0 +1,461 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "liquid_PJcHWg": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n@import url('https:\/\/fonts.googleapis.com\/css2?family=Poppins:wght@400;700&display=swap');\n.eira-hero-mobile {\n  text-align: left;\n  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n  padding: 0;\n  max-width: 100%;\n}\n.eira-rating-line {\n  font-size: 14px;\n  color: #444;\n  margin-bottom: 8px;\n  font-weight: 500;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex-wrap: wrap;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;\n}\n.eira-stars-mobile {\n  color: #FFD700;\n  letter-spacing: 1px;\n}\n.eira-main-title {\n  font-size: 25px;\n  font-weight: 700;\n  font-family: 'Poppins', sans-serif;\n  margin: 0;\n  line-height: 1.2;\n  color: #1a1a1a;\n}\n.eira-subtitle-mobile {\n  font-size: 13px;\n  font-weight: 400;\n  font-family: 'Poppins', sans-serif;\n  color: #444;\n  margin: 10px 0 0 0;\n  line-height: 1.5;\n}\n@media (max-width: 480px) {\n  .eira-rating-line {\n    font-size: 13px;\n  }\n  .eira-main-title {\n    font-size: 20px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 12px;\n  }\n}\n@media (min-width: 481px) and (max-width: 768px) {\n  .eira-rating-line {\n    font-size: 15px;\n  }\n  .eira-main-title {\n    font-size: 30px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 13px;\n  }\n}\n@media (min-width: 769px) {\n  .eira-rating-line {\n    font-size: 16px;\n  }\n  .eira-main-title {\n    font-size: 36px;\n  }\n  .eira-subtitle-mobile {\n    font-size: 15px;\n  }\n}\n<\/style>\n<div class=\"eira-hero-mobile\">\n  <div class=\"eira-rating-line\">\n    <span class=\"eira-stars-mobile\">★★★★★<\/span>\n    <span><strong>4.9\/5<\/strong> · 2,000+ happy UK homes<\/span>\n  <\/div>\n  \n  <h1 class=\"eira-main-title\">\n    EIRA™ Pet Hair Remover Glove\n  <\/h1>\n  \n  <p class=\"eira-subtitle-mobile\">\n    Remove pet hair from furniture, clothes and cars in seconds. \n    Reusable, washable, and kind to the planet. The last hair remover you'll ever need.\n  <\/p>\n<\/div>"
+          }
+        },
+        "liquid_fGAiKm": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n@import url('https:\/\/fonts.googleapis.com\/css2?family=Poppins:wght@600&display=swap');\n\n.benefits-clean {\n  background: white;\n  padding: 0;\n  max-width: 100%;\n}\n\n.benefit-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 10px;\n  padding: 0;\n}\n\n.benefit-item:last-child {\n  margin-bottom: 0;\n}\n\n.benefit-icon-clean {\n  width: 20px;\n  height: 20px;\n  flex-shrink: 0;\n}\n\n.benefit-text-clean {\n  font-size: 14px;\n  font-family: 'Poppins', sans-serif;\n  font-weight: 600;\n  color: #1a1a1a;\n  line-height: 1.3;\n  white-space: nowrap;\n}\n\n@media (max-width: 768px) {\n  .benefit-icon-clean {\n    width: 18px;\n    height: 18px;\n  }\n  \n  .benefit-text-clean {\n    font-size: 13px;\n  }\n}\n<\/style>\n\n<div class=\"benefits-clean\">\n  <div class=\"benefit-item\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0989\/0067\/2861\/files\/4a382234-92e2-4d37-832c-19657b076d53_f4e3c44c-419d-46f7-af1b-b31e8ad81f10.png?v=1760888691\" alt=\"Check\" class=\"benefit-icon-clean\">\n    <span class=\"benefit-text-clean\">Pet hair gone in seconds<\/span>\n  <\/div>\n  <div class=\"benefit-item\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0989\/0067\/2861\/files\/4a382234-92e2-4d37-832c-19657b076d53_f4e3c44c-419d-46f7-af1b-b31e8ad81f10.png?v=1760888691\" alt=\"Check\" class=\"benefit-icon-clean\">\n    <span class=\"benefit-text-clean\">Reusable forever<\/span>\n  <\/div>\n  <div class=\"benefit-item\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0989\/0067\/2861\/files\/4a382234-92e2-4d37-832c-19657b076d53_f4e3c44c-419d-46f7-af1b-b31e8ad81f10.png?v=1760888691\" alt=\"Check\" class=\"benefit-icon-clean\">\n    <span class=\"benefit-text-clean\">All fabrics, all pets<\/span>\n  <\/div>\n  <div class=\"benefit-item\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0989\/0067\/2861\/files\/4a382234-92e2-4d37-832c-19657b076d53_f4e3c44c-419d-46f7-af1b-b31e8ad81f10.png?v=1760888691\" alt=\"Check\" class=\"benefit-icon-clean\">\n    <span class=\"benefit-text-clean\">2,000+ homes fur-free<\/span>\n  <\/div>\n<\/div>"
+          }
+        },
+        "separator_PXkFVB": {
+          "type": "separator",
+          "settings": {}
+        },
+        "kaching_bundles_app_block_4AB9Pf": {
+          "type": "shopify:\/\/apps\/kaching-bundles\/blocks\/app-block\/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "eira-smartcard"
+          }
+        },
+        "buy_buttons_mjDV3w": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_G9Fmag": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 16px; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 10px; color: #000;\">\n  \n  <!-- Livraison Offerte -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=https:\/\/cdn.shopify.com\/s\/files\/1\/0887\/8922\/1706\/files\/dz.png?v=1744660335\" \n      alt=\"Livraison Offerte\" \n      style=\"width: 18px; height: auto;\"\n    \/>\n    <span style=\"font-size: 10px;\">Livraison gratuite dès 40€<\/span>\n  <\/div>\n\n  <!-- 30j Satisfait ou remboursé -->\n  <div style=\"display: flex; align-items: center; gap: 6px;\">\n    <img \n      src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0887\/8922\/1706\/files\/gdrseqsd.png?v=1744660334\" \n      alt=\"30j Satisfait ou remboursé\" \n      style=\"width: 18px; height: auto;\"\n    \/>\n    <span style=\"font-size: 10px;\">Garantie 30 jours<\/span>\n  <\/div>\n\n<\/div>"
+          }
+        },
+        "liquid_p9Kq6K": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.eira-original-section {\n  border: 2px dashed #1a1a1a;\n  padding: 25px 20px;\n  margin: 30px auto;\n  max-width: 500px;\n  text-align: center;\n  background: white;\n}\n\n.eira-badge-top {\n  background: #1a1a1a;\n  color: white;\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 20px;\n  border-radius: 25px;\n  margin-bottom: 20px;\n  font-family: 'Poppins', sans-serif;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.eira-badge-icon {\n  font-size: 16px;\n}\n\n.eira-original-title {\n  font-family: 'Poppins', sans-serif;\n  font-size: 22px;\n  font-weight: 700;\n  color: #1a1a1a;\n  margin: 0 0 15px 0;\n  line-height: 1.2;\n}\n\n.eira-original-text {\n  font-family: 'Poppins', sans-serif;\n  font-size: 14px;\n  color: #444;\n  line-height: 1.6;\n  margin: 0 0 15px 0;\n}\n\n.eira-original-text strong {\n  font-weight: 700;\n  color: #1a1a1a;\n}\n\n.eira-warning-text {\n  font-family: 'Poppins', sans-serif;\n  font-size: 13px;\n  color: #1a1a1a;\n  line-height: 1.6;\n  margin: 0;\n  font-weight: 600;\n}\n\n@media (max-width: 768px) {\n  .eira-original-section {\n    padding: 20px 15px;\n    margin: 25px auto;\n  }\n  \n  .eira-badge-top {\n    font-size: 11px;\n    padding: 6px 15px;\n  }\n  \n  .eira-original-title {\n    font-size: 20px;\n  }\n  \n  .eira-original-text {\n    font-size: 13px;\n  }\n  \n  .eira-warning-text {\n    font-size: 12px;\n  }\n}\n<\/style>\n\n<div class=\"eira-original-section\">\n  <div class=\"eira-badge-top\">\n    <span class=\"eira-badge-icon\">🛡️<\/span>\n    <span>Exclusivement sur EIRA BRIX™<\/span>\n  <\/div>\n  \n  <h3 class=\"eira-original-title\">Nous sommes l'original<\/h3>\n  \n  <p class=\"eira-original-text\">\n    Le seul <strong>officiel EIRA BRIX™<\/strong> — marque française, \n    avec des modèles exclusifs et une qualité de construction premium.\n  <\/p>\n  \n  <p class=\"eira-warning-text\">\n    Attention aux contrefaçons vendues sur Amazon ou d'autres sites : \n    elles se ressemblent, mais n'ont pas du tout la même qualité.\n  <\/p>\n<\/div>"
+          }
+        },
+        "collapsible_text_ew89Wz": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "C'est difficile à construire ?",
+            "content": "<p>Non, c'est accessible à tous. Les instructions sont illustrées étape par étape, très claires. <\/p><p>Si vous savez faire un puzzle, vous savez faire cela. La construction est satisfaisante et progressive.<\/p>"
+          }
+        },
+        "collapsible_text_zzhdcH": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Quelle est la vraie taille ?",
+            "content": "<p>43 cm de hauteur. C'est GROS. Pour te donner une idée : la taille d'un gros chat assis, ou 6 canettes empilées. <\/p><p>Impossible à rater sur ton étagère. Ça impressionne vraiment.<\/p>"
+          }
+        },
+        "collapsible_text_jr9Jxb": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Livraison et garantie ?",
+            "content": "<p>Livraison gratuite partout en France sous 6-10 jours ouvrés avec suivi. <\/p><p>Vous recevez un email de tracking dès l'expédition. <\/p><p>Garantie satisfait ou remboursé de 30 jours : si le produit ne vous convient pas, vous pouvez le retourner pour un remboursement complet, sans condition.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_PJcHWg",
+        "liquid_fGAiKm",
+        "separator_PXkFVB",
+        "kaching_bundles_app_block_4AB9Pf",
+        "buy_buttons_mjDV3w",
+        "liquid_G9Fmag",
+        "liquid_p9Kq6K",
+        "collapsible_text_ew89Wz",
+        "collapsible_text_zzhdcH",
+        "collapsible_text_jr9Jxb"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": false,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 1,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "slideshow_WAnh9c": {
+      "type": "slideshow",
+      "blocks": {
+        "image_GXCJCA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Up_separator_black.png",
+            "content_max_width": 580,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_GXCJCA"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "ss_testimonial_10_7LCCdf": {
+      "type": "ss-testimonial-10",
+      "blocks": {
+        "testimonial_fmfJ97": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'I've been getting so many compliments on my skin. In love.'<\/p>",
+            "author": "- SYMONE K <3 GLAZE"
+          }
+        },
+        "testimonial_R6EVwJ": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'Been using thif for months add it has given me the best glow.'<\/p>",
+            "author": "- ANGELA C <3 BRC"
+          }
+        },
+        "testimonial_EayYBQ": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'The glazing milk is definitely my new staple in my routine!'<\/p>",
+            "author": "- KIRSTEN C <3 BRC"
+          }
+        },
+        "testimonial_YjJA7N": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'This things is the real deal. Love it so much.'<\/p>",
+            "author": "- VANESSA <3 GLAZE"
+          }
+        },
+        "testimonial_HFHepg": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>'This BRC thing is insane. It really does work!.'<\/p>",
+            "author": "- KAYA <3 BRC"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fmfJ97",
+        "testimonial_R6EVwJ",
+        "testimonial_EayYBQ",
+        "testimonial_YjJA7N",
+        "testimonial_HFHepg"
+      ],
+      "name": "SS - Testimonials #10",
+      "settings": {
+        "body_padding_vertical": 38,
+        "body_padding_vertical_mobile": 16,
+        "body_padding_horizontal": 50,
+        "body_padding_horizontal_mobile": 16,
+        "body_radius": 12,
+        "body_border_thickness": 0,
+        "heading": "<h2>you + us<\/h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 24,
+        "heading_height": 150,
+        "heading_align": "left",
+        "heading_align_mobile": "left",
+        "sub_heading": "",
+        "sub_heading_custom": false,
+        "sub_heading_font": "josefin_sans_n4",
+        "sub_heading_size": 18,
+        "sub_heading_size_mobile": 14,
+        "sub_heading_height": 150,
+        "slider_view": 3.7,
+        "slider_view_mobile": 1,
+        "slider_gap": 36,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "image_radius": 12,
+        "image_border_thickness": 0,
+        "image_ratio": "square",
+        "image_ratio_mobile": "square",
+        "stars_size": 20,
+        "stars_mt": 24,
+        "stars_align": "start",
+        "stars_align_mobile": "start",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_mt": 12,
+        "text_align": "left",
+        "text_align_mobile": "left",
+        "author_custom": false,
+        "author_font": "josefin_sans_n4",
+        "author_size": 20,
+        "author_size_mobile": 16,
+        "author_height": 130,
+        "author_mt": 8,
+        "author_align": "left",
+        "author_align_mobile": "left",
+        "arrow_size": 50,
+        "arrow_size_mobile": 42,
+        "arrow_icon_size": 40,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "dots_mt": 32,
+        "dots_show_desktop": false,
+        "dots_show_mobile": true,
+        "body_bg_color": "#000000",
+        "body_border_color": "#000000",
+        "stars_color": "#ffffff",
+        "text_color": "#ffffff",
+        "author_color": "#ffffff",
+        "arrow_color": "#ffffff",
+        "arrow_hover_color": "#ffffff",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#ffffff",
+        "arrow_border_hover_color": "#ffffff",
+        "dots_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "sub_heading_color": "#ffffff",
+        "background_color": "#000000",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "slideshow_G4DqKt": {
+      "type": "slideshow",
+      "blocks": {
+        "image_Ga7Cwd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Designbrique2_a72bef3f-5d53-4a42-aa52-8897f53cffa1.png",
+            "content_max_width": 580,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Ga7Cwd"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "ss_feature_13_DMeBYh": {
+      "type": "ss-feature-13",
+      "blocks": {
+        "item_MFn7Ch": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "title": "Eye Comfort",
+            "text": "Reduces eye strain by blocking harmful blue light from screens, making digital time more comfortable."
+          }
+        },
+        "item_ibGrqe": {
+          "type": "item",
+          "settings": {
+            "icon": "time",
+            "title": "Better Sleep",
+            "text": "Improves sleep quality by minimizing blue light exposure, which can interfere with circadian rhythms."
+          }
+        },
+        "item_t9GVig": {
+          "type": "item",
+          "settings": {
+            "icon": "gift",
+            "title": "Enhanced Protection",
+            "text": "Shields your screen from scratches and impacts, extending the lifespan of your device."
+          }
+        },
+        "item_nKJm7x": {
+          "type": "item",
+          "settings": {
+            "icon": "plant",
+            "title": "Anti-Glare",
+            "text": "Reduces glare from sunlight and artificial lighting, improving visibility in bright conditions."
+          }
+        }
+      },
+      "block_order": [
+        "item_MFn7Ch",
+        "item_ibGrqe",
+        "item_t9GVig",
+        "item_nKJm7x"
+      ],
+      "name": "SS - Feature #13",
+      "settings": {
+        "heading": "<h2>Why we are better<\/h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 52,
+        "heading_size_mobile": 32,
+        "heading_height": 150,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "body_gap": 80,
+        "items_gap": 50,
+        "items_gap_mobile": 30,
+        "items_mt": 24,
+        "items_mt_mobile": 22,
+        "image_position": "center",
+        "image_position_mobile": "first",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "image_radius": 0,
+        "image_border_thickness": 0,
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "icon_size": 50,
+        "icon_size_mobile": 40,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 22,
+        "title_size_mobile": 16,
+        "title_height": 130,
+        "title_mt": 16,
+        "title_mt_mobile": 8,
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 16,
+        "text_size_mobile": 16,
+        "text_height": 150,
+        "text_mt": 10,
+        "text_mt_mobile": 6,
+        "text_hide_mobile": true,
+        "icon_color": "#131313",
+        "title_color": "#131313",
+        "text_color": "#131313",
+        "heading_color": "#131313",
+        "image_border_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 160,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "custom_html_rUL6Dy": {
+      "type": "custom-html",
+      "name": "Custom HTML",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "html": "<p style=\"text-align: center\">Write or copy\/paste HTML code<\/p>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_WAnh9c",
+    "ss_testimonial_10_7LCCdf",
+    "slideshow_G4DqKt",
+    "ss_feature_13_DMeBYh",
+    "custom_html_rUL6Dy"
+  ]
+}
